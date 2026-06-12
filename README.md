@@ -6,9 +6,12 @@ Landing page da **Evoluze Marketing** com posicionamento local: *"A agência de 
 
 | Pasta / arquivo | O que é |
 |---|---|
-| `index.html` | O site completo (HTML único, sem build, pronto pra publicar) |
-| `assets/img/` | Todas as imagens próprias (logo, clientes, fotos) — **extraídas do v7 e salvas como arquivos**, sem depender do Manus |
-| `referencia/` | Os arquivos originais que serviram de base (v7 + guia de clonagem), guardados pra nunca mais perder nada |
+| `public/index.html` | O site completo (HTML único, sem build, pronto pra publicar) |
+| `public/assets/img/` | Todas as imagens próprias (logo, clientes, fotos) — **extraídas do v7 e salvas como arquivos**, sem depender do Manus |
+| `referencia/` | Os arquivos originais que serviram de base (v7 + guia de clonagem), guardados pra nunca mais perder nada — **não vai pro ar** |
+| `netlify.toml` | Diz ao Netlify pra publicar só a pasta `public/` (preview) |
+
+> A pasta `public/` é exatamente o que vai pro ar — em qualquer host, é só subir o **conteúdo** dela.
 
 ## Como o site foi montado
 
@@ -29,10 +32,13 @@ Landing page da **Evoluze Marketing** com posicionamento local: *"A agência de 
 
 ## Como publicar
 
-O site é estático — qualquer host serve:
+Hospedagem definitiva: **Hostinger**, com o domínio próprio `evoluzemarketing.com.br`.
 
-- **Netlify / Vercel**: arrastar a pasta ou conectar este repositório (deploy automático a cada push).
-- Apontar o domínio `evoluzemarketing.com.br` depois do deploy.
+1. No hPanel da Hostinger: **Sites → Gerenciar → Gerenciador de Arquivos → `public_html`**.
+2. Envie o `evoluze-hostinger.zip` (ou o conteúdo da pasta `public/`) e extraia ali — o `index.html` precisa ficar direto em `public_html/`, não dentro de subpasta.
+3. Confira se o domínio `evoluzemarketing.com.br` está apontado pro plano (se foi comprado na própria Hostinger, já vem apontado) e ative o **SSL grátis (Let's Encrypt)** em Segurança → SSL.
+
+Há também um **preview no Netlify** (deploy da pasta `public/` deste repo) pra validar o site antes/depois de subir na Hostinger.
 
 ## Observações
 
