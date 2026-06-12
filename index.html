@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Evoluze Marketing — Agência de Marketing na Baixada Santista | A gente vai até você</title>
+<meta name="description" content="Agência de marketing da Baixada Santista com atendimento presencial. Tráfego pago, conteúdo, vídeo e estratégia para empresas de Santos, São Vicente, Praia Grande e região."/>
+<link rel="icon" type="image/png" href="assets/img/evoluze-marketing.png"/>
+<!-- Open Graph -->
+<meta property="og:title" content="Evoluze Marketing — Agência de Marketing na Baixada Santista"/>
+<meta property="og:description" content="Tráfego pago, conteúdo, vídeo e estratégia com atendimento presencial. A gente vai até a sua empresa — Santos, São Vicente, Praia Grande e região."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<!-- GTM: substitua GTM-XXXXXXX -->
+<!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>-->
+<!-- Meta Pixel: substitua SEU_PIXEL_ID -->
+<!--<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','SEU_PIXEL_ID');fbq('track','PageView');</script>-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Evoluze Marketing",
+  "description": "Agência de marketing da Baixada Santista com atendimento presencial. Tráfego pago, conteúdo, vídeo e estratégia para empresas da região.",
+  "telephone": "+55-13-98228-7720",
+  "email": "guscaciotti@gmail.com",
+  "priceRange": "$$",
+  "areaServed": [
+    {"@type":"City","name":"Santos"},
+    {"@type":"City","name":"São Vicente"},
+    {"@type":"City","name":"Praia Grande"},
+    {"@type":"City","name":"Guarujá"},
+    {"@type":"City","name":"Cubatão"}
+  ],
+  "founder": {"@type":"Person","name":"Gustavo Scaciotti"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0;padding:0;box-sizing:border-box }
+html { scroll-behavior:smooth }
+body { font-family:'Inter',sans-serif;background:#f5f7f8;overflow-x:hidden;-webkit-font-smoothing:antialiased }
+
+/* ══════════════════════════
+   HERO SECTION
+══════════════════════════ */
+.hero {
+  min-height:100vh;
+  background:#f5f7f8;
+  position:relative
+}
+
+/* NAVBAR */
+.navbar {
+  width:100%;max-width:1500px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:36px 80px;
+  position:relative;z-index:10
+}
+.logo-area {
+  display:flex;align-items:center;gap:14px
+}
+.logo-area img {
+  height:72px;width:auto;object-fit:contain;display:block
+}
+.menu {
+  display:flex;gap:48px
+}
+.menu a {
+  text-decoration:none;color:#111827;font-size:16px;font-weight:500;
+  transition:color .2s
+}
+.menu a:hover { color:#12d6e3 }
+.header-cta {
+  background:#12d6e3;color:#fff;
+  padding:18px 34px;border-radius:14px;
+  text-decoration:none;font-weight:600;font-size:15px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:.3s ease
+}
+.header-cta:hover { transform:translateY(-2px);background:#00bcd4 }
+.header-cta svg { width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round }
+
+/* HERO CONTENT */
+.hero-content {
+  display:grid;
+  grid-template-columns:50% 50%;
+  min-height:calc(100vh - 120px);
+  position:relative
+}
+
+/* LEFT SIDE */
+.left-side {
+  padding-left:80px;
+  padding-top:70px;
+  position:relative;z-index:5
+}
+.tag {
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(18,214,227,0.08);
+  border:1px solid rgba(18,214,227,0.15);
+  color:#0aaec0;
+  padding:14px 22px;border-radius:999px;
+  font-size:14px;font-weight:600;
+  margin-bottom:42px;
+  opacity:0;animation:fU .5s .1s ease forwards
+}
+.tag-dot {
+  width:8px;height:8px;background:#12d6e3;border-radius:50%
+}
+.left-side h1 {
+  font-size:clamp(52px,5.5vw,88px);
+  line-height:.95;letter-spacing:-4px;font-weight:800;
+  color:#060a12;margin-bottom:34px;
+  opacity:0;animation:fU .7s .2s ease forwards
+}
+.left-side h1 span { color:#12d6e3 }
+.left-side p {
+  max-width:580px;
+  font-size:clamp(16px,1.5vw,22px);line-height:1.7;
+  color:#4b5565;margin-bottom:42px;
+  opacity:0;animation:fU .7s .35s ease forwards
+}
+.left-side p strong { color:#0b1320 }
+.main-cta {
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#12d6e3;color:#fff;
+  padding:22px 42px;border-radius:14px;
+  text-decoration:none;font-size:18px;font-weight:600;
+  margin-bottom:70px;
+  transition:.3s ease;
+  opacity:0;animation:fU .7s .5s ease forwards
+}
+.main-cta:hover { transform:translateY(-2px);background:#00bcd4 }
+.metrics {
+  display:flex;gap:52px;
+  opacity:0;animation:fU .7s .65s ease forwards
+}
+.metric-item h4 {
+  font-size:clamp(20px,2vw,28px);color:#0b1320;font-weight:800;margin-bottom:8px
+}
+.metric-item span { color:#7d8796;font-size:15px }
+
+/* RIGHT SIDE — exact from reference */
+.right-side {
+  position:relative;
+  background:#050816;
+  overflow:hidden
+}
+.dashboard-image {
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:blur(0.3px);
+  opacity:.95;
+  transform:scale(1.03);
+  display:block
+}
+.fade-overlay {
+  position:absolute;
+  left:-2%;top:0;
+  width:42%;height:100%;
+  z-index:3;
+  background:linear-gradient(
+    90deg,
+    #f5f7f8 0%,
+    rgba(245,247,248,.98) 10%,
+    rgba(245,247,248,.92) 22%,
+    rgba(245,247,248,.75) 38%,
+    rgba(245,247,248,.45) 52%,
+    rgba(245,247,248,.12) 72%,
+    rgba(245,247,248,0) 100%
+  );
+  backdrop-filter:blur(6px)
+}
+.top-fade {
+  position:absolute;top:0;left:0;
+  width:100%;height:160px;z-index:4;
+  background:linear-gradient(
+    180deg,
+    rgba(5,8,22,.55) 0%,
+    rgba(5,8,22,.15) 55%,
+    rgba(5,8,22,0) 100%
+  )
+}
+.bottom-fade {
+  position:absolute;bottom:0;left:0;
+  width:100%;height:180px;z-index:4;
+  background:linear-gradient(
+    0deg,
+    rgba(5,8,22,.75) 0%,
+    rgba(5,8,22,.22) 55%,
+    rgba(5,8,22,0) 100%
+  )
+}
+
+/* Floating badges on right side */
+.hero-badge {
+  position:absolute;z-index:5;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-radius:12px;padding:14px 18px;
+  box-shadow:0 8px 32px rgba(0,0,0,.22);
+  display:flex;align-items:center;gap:12px;
+  min-width:220px
+}
+.hb-top { top:14%;left:10%;opacity:0;animation:fD .6s .9s ease forwards }
+.hb-bot { bottom:10%;right:6%;opacity:0;animation:fD .6s 1.1s ease forwards }
+.hb-ic {
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(18,214,227,.12);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0
+}
+.hb-ic svg { width:20px;height:20px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
+.hb-txt strong { display:block;font-size:.84rem;font-weight:700;color:#111;line-height:1.3 }
+.hb-txt span { font-size:.71rem;color:#666 }
+.hb-dot { width:8px;height:8px;background:#22c55e;border-radius:50%;margin-left:auto;flex-shrink:0;animation:pulse 2s infinite }
+
+/* ══════════════════════════
+   CLIENTS STRIP — logo abaixo da hero
+══════════════════════════ */
+.clients-strip {
+  background:#fff;
+  padding:32px 80px;
+  border-top:1px solid #ebebeb;
+  border-bottom:1px solid #ebebeb
+}
+.clients-strip-label {
+  font-size:.7rem;font-weight:600;color:#9ca3af;
+  letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:24px
+}
+.clients-logos {
+  display:flex;align-items:center;gap:48px;flex-wrap:wrap
+}
+.clients-logos img {
+  max-height:38px;max-width:120px;width:auto;
+  object-fit:contain;opacity:.7;
+  mix-blend-mode:multiply;
+  transition:opacity .2s,transform .2s
+}
+.clients-logos img:hover { opacity:1;transform:scale(1.05) }
+
+/* ══════════════════════════
+   PLATFORMS CAROUSEL
+══════════════════════════ */
+.plat-car {
+  background:#fff;padding:28px 0;
+  border-bottom:1px solid #ebebeb;overflow:hidden
+}
+.plat-car-label {
+  text-align:center;font-size:.7rem;font-weight:600;
+  color:#9ca3af;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px
+}
+.plat-wrap { overflow:hidden;position:relative }
+.plat-wrap::before,.plat-wrap::after {
+  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none
+}
+.plat-wrap::before { left:0;background:linear-gradient(to right,#fff,transparent) }
+.plat-wrap::after { right:0;background:linear-gradient(to left,#fff,transparent) }
+.plat-track {
+  display:inline-flex;align-items:center;
+  white-space:nowrap;animation:logoScroll 30s linear infinite
+}
+.plat-slide {
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0 40px;flex-shrink:0;border-right:1px solid #f0f0f0
+}
+.plat-slide img {
+  max-height:34px;max-width:110px;width:auto;
+  object-fit:contain;opacity:.7;transition:opacity .2s
+}
+.plat-slide img:hover { opacity:1 }
+
+/* ══════════════════════════
+   SECTION COMMONS
+══════════════════════════ */
+section { padding:96px 80px }
+.s-tag {
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#12d6e3;margin-bottom:14px
+}
+.s-tag::before { content:'';width:20px;height:2px;background:#12d6e3 }
+.s-h2 {
+  font-size:clamp(2rem,3.2vw,2.8rem);font-weight:800;
+  line-height:1.15;color:#060a12;margin-bottom:14px;letter-spacing:-.02em
+}
+.s-h2 em { font-style:normal;color:#12d6e3 }
+.s-p { font-size:.97rem;color:#6b7280;line-height:1.75;max-width:500px }
+
+/* REVEAL */
+.rv { opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease }
+.rv.on { opacity:1;transform:none }
+.rv2 { opacity:0;transform:translateY(24px);transition:opacity .65s .12s ease,transform .65s .12s ease }
+.rv2.on { opacity:1;transform:none }
+.rv3 { opacity:0;transform:translateY(24px);transition:opacity .65s .24s ease,transform .65s .24s ease }
+.rv3.on { opacity:1;transform:none }
+
+/* DIFERENCIAIS */
+#dif { background:#fff }
+.dif-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
+.dif-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden
+}
+.dif-card {
+  background:#fff;padding:36px 30px;
+  transition:background .25s;cursor:default;position:relative;overflow:hidden
+}
+.dif-card::after {
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:#12d6e3;transform:scaleX(0);transform-origin:left;transition:transform .35s
+}
+.dif-card:hover { background:#f0fdff }
+.dif-card:hover::after { transform:scaleX(1) }
+.dif-n { font-size:2.6rem;font-weight:900;color:#e5e7eb;line-height:1;margin-bottom:16px;transition:color .3s }
+.dif-card:hover .dif-n { color:#12d6e3 }
+.dif-t { font-size:.95rem;font-weight:700;color:#060a12;margin-bottom:8px }
+.dif-d { font-size:.84rem;color:#6b7280;line-height:1.7 }
+
+/* SERVICES */
+#srv { background:#0c1117;padding:96px 80px }
+.srv-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px }
+.srv-hdr .s-tag { color:#12d6e3 }
+.srv-hdr .s-h2 { color:#fff }
+.srv-hdr-p { font-size:.97rem;color:rgba(255,255,255,.4);line-height:1.75 }
+.srv-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px }
+.sc {
+  position:relative;border-radius:14px;overflow:hidden;
+  background:#161b24;border:1px solid rgba(255,255,255,.07);
+  aspect-ratio:.9;transition:transform .35s,box-shadow .35s;cursor:default
+}
+.sc:hover {
+  transform:translateY(-6px);
+  box-shadow:0 0 0 1px rgba(18,214,227,.5),0 0 28px rgba(18,214,227,.18),0 20px 40px rgba(0,0,0,.5)
+}
+.sc::before {
+  content:'';position:absolute;inset:0;border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,214,227,.45) 0%,transparent 50%) border-box;
+  border:1px solid transparent;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:destination-out;mask-composite:exclude;
+  opacity:0;transition:opacity .35s
+}
+.sc:hover::before { opacity:1 }
+.sc-img { position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3) saturate(.5);transition:filter .4s,transform .4s }
+.sc:hover .sc-img { filter:brightness(.2) saturate(.3);transform:scale(1.04) }
+.sc-glow { position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(18,214,227,.1),transparent);opacity:0;transition:opacity .4s }
+.sc:hover .sc-glow { opacity:1 }
+.sc-body { position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px;z-index:2 }
+.sc-ico { width:40px;height:40px;border-radius:9px;background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .3s,border-color .3s }
+.sc:hover .sc-ico { background:rgba(18,214,227,.2);border-color:rgba(18,214,227,.4) }
+.sc-ico svg { width:18px;height:18px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
+.sc-t { font-size:.88rem;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3 }
+.sc-d { font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s,opacity .35s }
+.sc:hover .sc-d { max-height:80px;opacity:1 }
+.sc-feat { grid-column:span 2;aspect-ratio:auto;min-height:220px }
+.sc-feat .sc-body { flex-direction:row;align-items:flex-end;gap:24px }
+.sc-feat .sc-left { flex:1 }
+.sc-feat .sc-d { max-height:none;opacity:1;color:rgba(255,255,255,.5) }
+.sc-feat .sc-t { font-size:1.25rem;font-weight:800;margin-bottom:10px }
+.sc-feat-tags { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px }
+.sc-feat-tag { font-size:.68rem;font-weight:600;background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);color:#12d6e3;padding:5px 11px;border-radius:4px }
+
+/* REGIÃO — Onde atendemos */
+#reg { background:#fff }
+.reg-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
+.reg-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;
+  margin-bottom:40px
+}
+.reg-card {
+  background:#fff;padding:30px;display:flex;align-items:center;gap:16px;
+  transition:background .25s;cursor:default;position:relative;overflow:hidden
+}
+.reg-card::after {
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:#12d6e3;transform:scaleX(0);transform-origin:left;transition:transform .35s
+}
+.reg-card:hover { background:#f0fdff }
+.reg-card:hover::after { transform:scaleX(1) }
+.reg-ic {
+  width:44px;height:44px;border-radius:10px;flex-shrink:0;
+  background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);
+  display:flex;align-items:center;justify-content:center
+}
+.reg-ic svg { width:20px;height:20px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
+.reg-city { font-size:.95rem;font-weight:700;color:#060a12;margin-bottom:2px }
+.reg-note { font-size:.78rem;color:#6b7280 }
+.reg-cta {
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+  background:#0c1117;border-radius:16px;padding:38px 42px
+}
+.reg-cta-t { font-size:clamp(1.2rem,2vw,1.6rem);font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.3 }
+.reg-cta-t em { font-style:normal;color:#12d6e3 }
+.reg-cta-s { font-size:.85rem;color:rgba(255,255,255,.45);margin-top:6px }
+.reg-cta a {
+  display:inline-flex;align-items:center;gap:10px;flex-shrink:0;
+  background:#12d6e3;color:#fff;text-decoration:none;
+  font-weight:700;font-size:.95rem;padding:18px 32px;border-radius:12px;
+  transition:.3s ease
+}
+.reg-cta a:hover { transform:translateY(-2px);background:#00bcd4 }
+.reg-cta a svg { width:18px;height:18px;fill:#fff }
+
+/* CLIENTS SECTION */
+#cli { background:#f5f7f8 }
+.cli-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
+.clw { display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:60px }
+.clw-item { display:flex;align-items:center;justify-content:center;padding:36px 24px;min-height:100px;transition:transform .25s }
+.clw-item:hover { transform:scale(1.06);z-index:2 }
+.clw-item img { max-width:130px;max-height:48px;width:auto;height:auto;object-fit:contain;opacity:.85;filter:drop-shadow(0 2px 8px rgba(0,0,0,.07));transition:opacity .25s,filter .25s }
+.clw-item:hover img { opacity:1;filter:drop-shadow(0 4px 16px rgba(18,214,227,.2)) }
+.docs-lbl { font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9ca3af;display:flex;align-items:center;gap:14px;margin-bottom:28px }
+.docs-lbl::after { content:'';flex:1;height:1px;background:#e5e7eb }
+.docs-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+.doc { border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;background:#fff }
+.doc:hover { transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.09) }
+.doc-p { width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block }
+.doc-i { padding:16px 18px;border-top:1px solid #e5e7eb;background:#fff }
+.doc-n { font-size:.88rem;font-weight:700;color:#060a12;margin-bottom:3px }
+.doc-s { font-size:.74rem;font-weight:600;color:#12d6e3 }
+
+/* ABOUT */
+#about { background:#fff;padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:640px }
+.ab-photo { position:relative;overflow:hidden }
+.ab-photo img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:560px }
+.ab-acc { position:absolute;bottom:32px;left:32px;background:#12d6e3;color:#fff;padding:18px 24px;border-radius:10px;box-shadow:0 8px 32px rgba(18,214,227,.35) }
+.ab-acc-n { font-size:2.2rem;font-weight:800;line-height:1 }
+.ab-acc-l { font-size:.7rem;font-weight:600;letter-spacing:.06em;margin-top:2px }
+.ab-c { display:flex;flex-direction:column;justify-content:center;padding:80px 80px 80px 64px }
+.ab-name { font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:800;color:#060a12;line-height:1.1;margin-bottom:5px;letter-spacing:-.02em }
+.ab-role { font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#12d6e3;margin-bottom:26px }
+.ab-tx { font-size:.94rem;color:#4b5565;line-height:1.8;margin-bottom:13px }
+.ab-tx strong { font-weight:700;color:#060a12 }
+.ab-chips { display:flex;flex-wrap:wrap;gap:10px;margin-top:22px }
+.chip { font-size:.73rem;font-weight:600;color:#060a12;background:#f5f7f8;border:1px solid #e5e7eb;padding:7px 15px;border-radius:6px }
+
+/* CONTACT */
+#ctt { background:#f5f7f8;padding:96px 80px }
+.ctt-l { display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center }
+.ctt-h { font-size:clamp(2rem,3vw,2.8rem);font-weight:800;line-height:1.12;color:#060a12;margin-bottom:14px;letter-spacing:-.02em }
+.ctt-h em { font-style:normal;color:#12d6e3 }
+.ctt-p { font-size:.96rem;color:#6b7280;line-height:1.75;margin-bottom:32px }
+.ctt-rows { display:flex;flex-direction:column;gap:16px }
+.ctt-row { display:flex;align-items:center;gap:12px }
+.ctt-ic { width:40px;height:40px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;flex-shrink:0 }
+.ctt-ic svg { width:16px;height:16px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
+.ctt-lb { font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:1px }
+.ctt-vl { font-size:.87rem;font-weight:600;color:#060a12 }
+.fbox { background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:38px 34px }
+.fbox-t { font-size:1.1rem;font-weight:700;color:#060a12;margin-bottom:3px }
+.fbox-s { font-size:.81rem;color:#9ca3af;margin-bottom:22px }
+.fg { margin-bottom:12px }
+.fg label { display:block;font-size:.69rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9ca3af;margin-bottom:6px }
+.fg input,.fg select,.fg textarea { width:100%;padding:12px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:'Inter',sans-serif;font-size:.87rem;color:#060a12;background:#fff;outline:none;appearance:none;transition:border-color .2s,box-shadow .2s }
+.fg input:focus,.fg select:focus,.fg textarea:focus { border-color:#12d6e3;box-shadow:0 0 0 3px rgba(18,214,227,.1) }
+.fg textarea { resize:vertical;min-height:88px }
+.fgr { display:grid;grid-template-columns:1fr 1fr;gap:12px }
+.btn-send { width:100%;margin-top:8px;padding:14px;background:#060a12;color:#fff;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:.87rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s }
+.btn-send:hover { background:#12d6e3;transform:translateY(-1px) }
+
+/* OVERLAY */
+#ov { display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:999;align-items:center;justify-content:center }
+#ov.show { display:flex }
+.ov-b { background:#fff;border-radius:16px;padding:48px 40px;max-width:400px;width:90%;text-align:center;animation:pop .3s ease }
+.ov-ic { width:60px;height:60px;border-radius:50%;background:rgba(18,214,227,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px }
+.ov-ic svg { width:26px;height:26px;stroke:#12d6e3;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round }
+.ov-t { font-size:1.4rem;font-weight:800;color:#060a12;margin-bottom:10px }
+.ov-d { font-size:.87rem;color:#6b7280;line-height:1.7;margin-bottom:26px }
+.bwa { display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-weight:700;font-size:.87rem;padding:14px;border-radius:8px;text-decoration:none;width:100%;margin-bottom:12px;transition:background .2s,transform .2s }
+.bwa:hover { background:#1daf55;transform:translateY(-2px) }
+.bcl { font-size:.8rem;color:#9ca3af;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:8px;text-decoration:underline }
+
+/* FOOTER */
+footer { background:#0c1117;padding:56px 80px 24px }
+.ft { display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:22px }
+.ft-logo img { height:56px;margin-bottom:14px }
+.ft-tag { font-size:.82rem;color:rgba(255,255,255,.32);line-height:1.7;max-width:250px }
+.ftc h4 { font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px }
+.ftc ul { list-style:none;display:flex;flex-direction:column;gap:10px }
+.ftc a { font-size:.83rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s }
+.ftc a:hover { color:#fff }
+.ft-bot { display:flex;justify-content:space-between }
+.ft-cp { font-size:.72rem;color:rgba(255,255,255,.18) }
+
+/* KEYFRAMES */
+@keyframes fU { from{ opacity:0;transform:translateY(18px) } to{ opacity:1;transform:none } }
+@keyframes fD { from{ opacity:0;transform:translateY(-10px) } to{ opacity:1;transform:none } }
+@keyframes pop { from{ opacity:0;transform:scale(.9) } to{ opacity:1;transform:scale(1) } }
+@keyframes logoScroll { from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+@keyframes pulse { 0%,100%{ box-shadow:0 0 0 0 rgba(34,197,94,.4) } 70%{ box-shadow:0 0 0 8px rgba(34,197,94,0) } }
+
+/* RESPONSIVE */
+@media(max-width:1100px) {
+  .navbar { padding:28px 40px }
+  section { padding:80px 40px }
+  .hero-content { grid-template-columns:1fr }
+  .right-side { min-height:50vh }
+  .left-side { padding:60px 40px 40px }
+  .metrics { gap:28px }
+  .dif-hdr { grid-template-columns:1fr;gap:24px }
+  .srv-hdr { grid-template-columns:1fr;gap:24px }
+  .srv-grid { grid-template-columns:repeat(2,1fr) }
+  .sc-feat { grid-column:span 2 }
+  .reg-hdr { grid-template-columns:1fr;gap:24px }
+  .reg-grid { grid-template-columns:repeat(2,1fr) }
+  .reg-cta { flex-direction:column;align-items:flex-start }
+  .cli-hdr { grid-template-columns:1fr;gap:24px }
+  #about { grid-template-columns:1fr;min-height:auto }
+  .ab-c { padding:60px 40px }
+  .ctt-l { grid-template-columns:1fr;gap:48px }
+  .ft { grid-template-columns:1fr 1fr;gap:32px }
+  .clients-strip { padding:28px 40px }
+}
+@media(max-width:768px) {
+  .navbar { padding:20px 24px }
+  .menu { display:none }
+  section { padding:72px 24px }
+  .left-side { padding:60px 24px 40px }
+  .left-side p { max-width:100% }
+  .metrics { gap:20px;flex-wrap:wrap }
+  .hb-top,.hb-bot { display:none }
+  .dif-grid { grid-template-columns:1fr }
+  .srv-grid { grid-template-columns:1fr 1fr }
+  .sc-feat { grid-column:1/-1 }
+  .reg-grid { grid-template-columns:1fr }
+  .reg-cta { padding:30px 26px }
+  .clw { grid-template-columns:repeat(3,1fr) }
+  .docs-grid { grid-template-columns:1fr 1fr }
+  .fgr { grid-template-columns:1fr }
+  .ft { grid-template-columns:1fr }
+  .ft-bot { flex-direction:column;gap:8px }
+  .clients-strip { padding:24px }
+  .clients-logos { gap:24px }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="assets/img/evoluze-marketing.png" alt="Evoluze Marketing"/>
+    </div>
+    <nav class="menu">
+      <a href="#srv">Serviços</a>
+      <a href="#dif">Diferenciais</a>
+      <a href="#reg">Onde atendemos</a>
+      <a href="#about">Sobre</a>
+      <a href="#cli">Clientes</a>
+    </nav>
+    <a href="#ctt" class="header-cta">
+      Falar com especialista
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </header>
+
+  <div class="hero-content">
+
+    <div class="left-side">
+      <div class="tag">
+        <div class="tag-dot"></div>
+        AGÊNCIA DE MARKETING — BAIXADA SANTISTA
+      </div>
+      <h1>
+        A agência de<br>
+        marketing que<br>
+        <span>vai até a<br>sua empresa.</span>
+      </h1>
+      <p>
+        Tráfego pago, conteúdo, vídeo e estratégia para empresas de
+        <strong>Santos, São Vicente, Praia Grande e região</strong> —
+        com reunião presencial e acompanhamento de perto,
+        não relatório à distância.
+      </p>
+      <a href="#ctt" class="main-cta">Agendar diagnóstico gratuito</a>
+      <div class="metrics">
+        <div class="metric-item"><h4>+R$ 5M</h4><span>gerenciados em mídia</span></div>
+        <div class="metric-item"><h4>+100</h4><span>empresas atendidas</span></div>
+        <div class="metric-item"><h4>15 anos</h4><span>de experiência</span></div>
+        <div class="metric-item"><h4>Presencial</h4><span>atendimento na sua empresa</span></div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="fade-overlay"></div>
+      <div class="top-fade"></div>
+      <div class="bottom-fade"></div>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=90" alt="Dashboard analytics" class="dashboard-image"/>
+
+      <div class="hero-badge hb-top">
+        <div class="hb-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="hb-txt"><strong>Somos da Baixada Santista.</strong><span>A gente vai até você.</span></div>
+      </div>
+      <div class="hero-badge hb-bot">
+        <div class="hb-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="hb-txt"><strong>Estratégia, dados</strong><span>e execução.</span></div>
+        <div class="hb-dot"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIENTS STRIP -->
+<div class="clients-strip">
+  <div class="clients-strip-label">Empresas que confiam no nosso trabalho</div>
+  <div class="clients-logos">
+    <img src="assets/img/task.png" alt="Task"/>
+    <img src="assets/img/costa-atacadao.png" alt="Costa Atacadão"/>
+    <img src="assets/img/cedus.png" alt="CEDUS"/>
+    <img src="assets/img/ethera-labs.png" alt="Ethera Labs"/>
+    <img src="assets/img/solusono.png" alt="SoluSono"/>
+    <img src="assets/img/academie-marsaud.png" alt="Académie Marsaud"/>
+    <img src="assets/img/sr-imobiliaria.png" alt="SR Imobiliária"/>
+    <img src="assets/img/uai-shopping.png" alt="Uai Shopping"/>
+    <img src="assets/img/dermafast.png" alt="Dermafast"/>
+    <img src="assets/img/clinica-high-line.png" alt="Clínica High Line"/>
+  </div>
+</div>
+
+<!-- PLATFORMS CAROUSEL -->
+<div class="plat-car">
+  <div class="plat-car-label">Plataformas com as quais trabalhamos</div>
+  <div class="plat-wrap">
+    <div class="plat-track">
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="LinkedIn"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1200px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="YouTube"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" alt="WhatsApp"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Salesforce_Corporate_Logo_RGB.svg/1200px-Salesforce_Corporate_Logo_RGB.svg.png" alt="Salesforce"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="LinkedIn"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1200px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="YouTube"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" alt="WhatsApp"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Salesforce_Corporate_Logo_RGB.svg/1200px-Salesforce_Corporate_Logo_RGB.svg.png" alt="Salesforce"/></div>
+      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon"/></div>
+    </div>
+  </div>
+</div>
+
+<!-- DIFERENCIAIS -->
+<section id="dif">
+  <div class="dif-hdr">
+    <div class="rv"><div class="s-tag">Por que a Evoluze</div><h2 class="s-h2">O que nos faz <em>diferentes</em></h2></div>
+    <p class="s-p rv2">Não entregamos relatório de cliques. Entregamos crescimento estruturado — estratégia, dados e execução, com presença real dentro da sua empresa.</p>
+  </div>
+  <div class="dif-grid">
+    <div class="dif-card rv"><div class="dif-n">01</div><div class="dif-t">Atendimento presencial</div><div class="dif-d">A gente vai até você. Reunião na sua empresa, estratégia construída de dentro pra fora — não por videochamada.</div></div>
+    <div class="dif-card rv2"><div class="dif-n">02</div><div class="dif-t">Tráfego focado em vendas</div><div class="dif-d">Cada campanha estruturada para gerar clientes qualificados. Otimizamos para receita, não para cliques.</div></div>
+    <div class="dif-card rv3"><div class="dif-n">03</div><div class="dif-t">Conteúdo gravado na sua empresa</div><div class="dif-d">Vídeo, drone e social media produzidos aí, na sua operação — conteúdo real do seu negócio, não banco de imagem.</div></div>
+    <div class="dif-card rv"><div class="dif-n">04</div><div class="dif-t">Estratégia personalizada</div><div class="dif-d">Nenhum negócio é igual. Estratégias sob medida para seu mercado, ticket e momento de crescimento.</div></div>
+    <div class="dif-card rv2"><div class="dif-n">05</div><div class="dif-t">Parceiro, não fornecedor</div><div class="dif-d">Atendimento próximo, reuniões estratégicas e transparência total. Somos seu sócio de crescimento.</div></div>
+    <div class="dif-card rv3"><div class="dif-n">06</div><div class="dif-t">Visão comercial 360°</div><div class="dif-d">CRM, estruturação de equipe, automações — operação completa para escalar com previsibilidade.</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="srv">
+  <div class="srv-hdr">
+    <div class="rv"><div class="s-tag">O que fazemos</div><h2 class="s-h2">Uma assessoria <em>completa</em></h2></div>
+    <p class="srv-hdr-p rv2">Não somos uma agência de anúncios. Construímos a máquina de crescimento do seu negócio — do primeiro clique até o contrato assinado.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="sc sc-feat rv"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-left"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="sc-t">Gestão de Tráfego Pago</div><div class="sc-d">Google Ads, Meta Ads, LinkedIn Ads — campanhas que atraem o cliente certo no momento certo.</div><div class="sc-feat-tags"><span class="sc-feat-tag">Google Ads</span><span class="sc-feat-tag">Meta Ads</span><span class="sc-feat-tag">LinkedIn Ads</span><span class="sc-feat-tag">YouTube Ads</span></div></div></div></div>
+    <div class="sc rv2"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="sc-t">Estruturação Comercial & CRM</div><div class="sc-d">Processos e funis para transformar leads em clientes com previsibilidade.</div></div></div>
+    <div class="sc rv3"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sc-t">Sites & Páginas de Conversão</div><div class="sc-d">Desenvolvidos para converter visitantes em clientes.</div></div></div>
+    <div class="sc rv"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><div class="sc-t">Automação & Chatbots</div><div class="sc-d">Atendimento inteligente 24h integrado ao CRM.</div></div></div>
+    <div class="sc rv2"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></div><div class="sc-t">Social Media Estratégico</div><div class="sc-d">Conteúdo alinhado com vendas, não apenas curtidas.</div></div></div>
+    <div class="sc rv3"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="sc-t">Produção de Vídeo & Drone</div><div class="sc-d">Captação profissional na sua empresa, para campanhas e redes sociais.</div></div></div>
+  </div>
+</section>
+
+<!-- REGIÃO / ONDE ATENDEMOS -->
+<section id="reg">
+  <div class="reg-hdr">
+    <div class="rv"><div class="s-tag">Onde atendemos</div><h2 class="s-h2">Somos da região — e <em>vamos até você.</em></h2></div>
+    <p class="s-p rv2">Nada de agência distante que só aparece em videochamada. A primeira reunião é na sua empresa: conhecemos sua operação por dentro antes de montar qualquer estratégia.</p>
+  </div>
+  <div class="reg-grid">
+    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Santos</div><div class="reg-note">Base da nossa operação</div></div></div>
+    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">São Vicente</div><div class="reg-note">Atendimento presencial</div></div></div>
+    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Praia Grande</div><div class="reg-note">Atendimento presencial</div></div></div>
+    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Guarujá</div><div class="reg-note">Atendimento presencial</div></div></div>
+    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Cubatão</div><div class="reg-note">Atendimento presencial</div></div></div>
+    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="reg-city">Toda a Baixada Santista</div><div class="reg-note">É só chamar — a gente aparece</div></div></div>
+  </div>
+  <div class="reg-cta rv">
+    <div>
+      <div class="reg-cta-t">Sua empresa é da região? A primeira conversa é <em>presencial — e gratuita.</em></div>
+      <div class="reg-cta-s">Diagnóstico do seu marketing feito dentro da sua empresa, sem compromisso.</div>
+    </div>
+    <a href="https://wa.me/5513982287720?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Evoluze%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20presencial%20na%20minha%20empresa." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="cli">
+  <div class="cli-hdr">
+    <div class="rv"><div class="s-tag">Quem confia na Evoluze</div><h2 class="s-h2">Empresas que escolheram <em>crescer</em></h2></div>
+    <p class="s-p rv2">Clientes de nichos variados unidos pelo mesmo objetivo: crescimento real e previsível.</p>
+  </div>
+  <div class="clw rv">
+    <div class="clw-item"><img src="assets/img/task.png" alt="Task"/></div>
+    <div class="clw-item"><img src="assets/img/costa-atacadao.png" alt="Costa Atacadão"/></div>
+    <div class="clw-item"><img src="assets/img/cedus.png" alt="CEDUS"/></div>
+    <div class="clw-item"><img src="assets/img/ethera-labs.png" alt="Ethera Labs"/></div>
+    <div class="clw-item"><img src="assets/img/solusono.png" alt="SoluSono"/></div>
+    <div class="clw-item"><img src="assets/img/academie-marsaud.png" alt="Académie Marsaud"/></div>
+    <div class="clw-item"><img src="assets/img/sr-imobiliaria.png" alt="SR Imobiliária"/></div>
+    <div class="clw-item"><img src="assets/img/uai-shopping.png" alt="Uai Shopping"/></div>
+    <div class="clw-item"><img src="assets/img/dermafast.png" alt="Dermafast"/></div>
+    <div class="clw-item"><img src="assets/img/clinica-high-line.png" alt="Clínica High Line"/></div>
+  </div>
+  <div class="docs-lbl rv">Profissionais de saúde atendidos</div>
+  <div class="docs-grid">
+    <div class="doc rv"><img class="doc-p" src="assets/img/dr-martim-marcondes.png" alt="Dr. Martim Marcondes"/><div class="doc-i"><div class="doc-n">Dr. Martim Marcondes</div><div class="doc-s">Ortopedista</div></div></div>
+    <div class="doc rv2"><img class="doc-p" src="assets/img/dra-isis-minamo.png" alt="Dra. Ísis Minamo"/><div class="doc-i"><div class="doc-n">Dra. Ísis Minamo</div><div class="doc-s">Dermatologista</div></div></div>
+    <div class="doc rv3"><img class="doc-p" src="assets/img/dra-isis-minamo.png" alt="Dra. Nicole Vargas"/><div class="doc-i"><div class="doc-n">Dra. Nicole Vargas</div><div class="doc-s">Endocrinologista</div></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="ab-photo rv">
+    <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti"/>
+    <div class="ab-acc"><div class="ab-acc-n">15+</div><div class="ab-acc-l">Anos de mercado</div></div>
+  </div>
+  <div class="ab-c rv2">
+    <div class="s-tag">Quem está por trás</div>
+    <h2 class="ab-name">Gustavo Scaciotti</h2>
+    <div class="ab-role">Fundador &amp; Estrategista</div>
+    <p class="ab-tx">Com <strong>mais de 15 anos de experiência</strong>, formação em Comércio Exterior e Marketing e carreira construída dentro de multinacionais ao redor do mundo.</p>
+    <p class="ab-tx">Viveu as dificuldades de grandes corporações por dentro. Entende o que uma empresa precisa não apenas para aparecer, mas para <strong>crescer de forma estruturada e sustentável</strong>.</p>
+    <p class="ab-tx">Hoje, à frente da Evoluze, atende <strong>presencialmente empresas de toda a Baixada Santista</strong> — conectando marketing, comercial e tecnologia dentro da operação de cada cliente, não à distância.</p>
+    <div class="ab-chips">
+      <span class="chip">Baixada Santista</span>
+      <span class="chip">Comércio Exterior &amp; Marketing</span>
+      <span class="chip">Multinacionais</span>
+      <span class="chip">Tráfego Pago</span>
+      <span class="chip">CRM &amp; Automação</span>
+      <span class="chip">Visão 360°</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="ctt">
+  <div class="ctt-l">
+    <div class="rv">
+      <div class="s-tag">Vamos conversar</div>
+      <h2 class="ctt-h">Que tal um diagnóstico<br>feito <em>na sua empresa?</em></h2>
+      <p class="ctt-p">Preencha o formulário. A gente analisa seu negócio, marca uma visita e apresenta o caminho mais rápido para crescer aqui na região.</p>
+      <div class="ctt-rows">
+        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="ctt-lb">WhatsApp</div><div class="ctt-vl">(13) 98228-7720</div></div></div>
+        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ctt-lb">E-mail</div><div class="ctt-vl">guscaciotti@gmail.com</div></div></div>
+        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ctt-lb">Atendimento</div><div class="ctt-vl">Baixada Santista — presencial</div></div></div>
+      </div>
+    </div>
+    <div class="fbox rv2">
+      <div class="fbox-t">Diagnóstico gratuito e presencial</div>
+      <div class="fbox-s">Sem compromisso. Vamos até você, entendemos seu negócio e mostramos caminhos reais.</div>
+      <form id="form" action="https://formspree.io/f/SUBSTITUA_SEU_ID" method="POST">
+        <div class="fgr"><div class="fg"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required/></div><div class="fg"><label>Empresa</label><input type="text" name="empresa" placeholder="Sua empresa"/></div></div>
+        <div class="fgr"><div class="fg"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required/></div><div class="fg"><label>WhatsApp</label><input type="tel" name="telefone" placeholder="(13) 00000-0000" required/></div></div>
+        <div class="fgr">
+          <div class="fg"><label>Cidade</label><select name="cidade"><option value="">Selecione...</option><option>Santos</option><option>São Vicente</option><option>Praia Grande</option><option>Guarujá</option><option>Cubatão</option><option>Outra cidade da região</option><option>Fora da Baixada Santista</option></select></div>
+          <div class="fg"><label>Segmento</label><select name="segmento"><option value="">Selecione...</option><option>Clínica médica / Saúde</option><option>Imobiliária / Construtora</option><option>Comércio / Loja</option><option>E-commerce</option><option>Serviços premium</option><option>Varejo / Atacado</option><option>Indústria / B2B</option><option>Outro</option></select></div>
+        </div>
+        <div class="fg"><label>Mensagem</label><textarea name="mensagem" placeholder="Conte sobre seu negócio e o que busca..."></textarea></div>
+        <input type="hidden" name="_subject" value="Novo lead — Evoluze (Baixada Santista)"/>
+        <button type="submit" class="btn-send" id="sbtn">Solicitar diagnóstico →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- OVERLAY -->
+<div id="ov"><div class="ov-b"><div class="ov-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ov-t">Enviado!</div><div class="ov-d">Recebemos seu contato. Em breve nossa equipe entra em contato para agendar sua visita. Se preferir, fale agora pelo WhatsApp:</div><a href="https://wa.me/5513982287720?text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20da%20Evoluze.%20Quero%20agendar%20o%20diagn%C3%B3stico%20presencial." class="bwa" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continuar pelo WhatsApp</a><button class="bcl" onclick="closeOv()">Fechar</button></div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ft-logo"><img src="assets/img/evoluze-marketing-2.png" alt="Evoluze Marketing"/><p class="ft-tag">Agência de marketing da Baixada Santista. Do tráfego pago à estruturação comercial — crescimento com atendimento presencial, na sua empresa.</p></div>
+    <div class="ftc"><h4>Navegação</h4><ul><li><a href="#hero">Início</a></li><li><a href="#dif">Diferenciais</a></li><li><a href="#srv">Serviços</a></li><li><a href="#reg">Onde atendemos</a></li><li><a href="#cli">Clientes</a></li><li><a href="#about">Sobre</a></li><li><a href="#ctt">Contato</a></li></ul></div>
+    <div class="ftc"><h4>Contato</h4><ul><li><a href="https://wa.me/5513982287720" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:guscaciotti@gmail.com">E-mail</a></li><li><a href="#ctt">Diagnóstico gratuito</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span class="ft-cp">© 2026 Evoluze Marketing. Todos os direitos reservados.</span><span class="ft-cp">Do marketing à venda — Baixada Santista.</span></div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");obs.unobserve(e.target)}});},{threshold:.1});
+document.querySelectorAll(".rv,.rv2,.rv3").forEach(el=>obs.observe(el));
+document.getElementById("form").addEventListener("submit",async function(e){
+  e.preventDefault();const btn=document.getElementById("sbtn");btn.textContent="Enviando...";btn.disabled=true;
+  try{
+    const r=await fetch(this.action,{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}});
+    if(r.ok){this.reset();document.getElementById("ov").classList.add("show")}
+    else{btn.textContent="Erro. Tente novamente.";btn.disabled=false}
+  }catch{btn.textContent="Erro. Tente novamente.";btn.disabled=false}
+});
+function closeOv(){document.getElementById("ov").classList.remove("show");const b=document.getElementById("sbtn");b.textContent="Solicitar diagnóstico →";b.disabled=false}
+document.getElementById("ov").addEventListener("click",function(e){if(e.target===this)closeOv()});
+</script>
+</body>
+</html>
