@@ -34,11 +34,25 @@ Landing page da **Evoluze Marketing** com posicionamento local: *"A agência de 
 
 Hospedagem definitiva: **Hostinger**, com o domínio próprio `evoluzemarketing.com.br`.
 
-1. No hPanel da Hostinger: **Sites → Gerenciar → Gerenciador de Arquivos → `public_html`**.
-2. Envie o `evoluze-hostinger.zip` (ou o conteúdo da pasta `public/`) e extraia ali — o `index.html` precisa ficar direto em `public_html/`, não dentro de subpasta.
-3. Confira se o domínio `evoluzemarketing.com.br` está apontado pro plano (se foi comprado na própria Hostinger, já vem apontado) e ative o **SSL grátis (Let's Encrypt)** em Segurança → SSL.
+### Publicação automática (GitHub → Hostinger) — recomendado
 
-Há também um **preview no Netlify** (deploy da pasta `public/` deste repo) pra validar o site antes/depois de subir na Hostinger.
+O workflow `.github/workflows/deploy-hostinger.yml` envia a pasta `public/` para a `public_html` da Hostinger **sozinho, a cada alteração no site**. Configuração única (≈5 min):
+
+1. **Pegar os dados de FTP na Hostinger**: hPanel → **Arquivos → Contas FTP**. Anote o *host* (ex.: `ftp.evoluzemarketing.com.br` ou um IP) e o *usuário*; se não souber a senha, redefina ali mesmo.
+2. **Guardar como segredos no GitHub** (a senha nunca fica no código): [Settings → Secrets and variables → Actions](https://github.com/guscaciotti-hub/SITE-LOCAL/settings/secrets/actions) → *New repository secret* → criar os três:
+   - `FTP_HOST` · `FTP_USERNAME` · `FTP_PASSWORD`
+3. **Primeira publicação**: aba **Actions → Publicar na Hostinger → Run workflow**. Depois disso, todo push que mexer em `public/` publica sozinho.
+
+> Se a conta FTP já abrir dentro de `public_html`, troque `server-dir` para `./` no workflow. Se o FTPS falhar na conexão, troque `protocol: ftps` por `ftp`.
+
+### Publicação manual (alternativa)
+
+1. No hPanel: **Sites → Gerenciar → Gerenciador de Arquivos → `public_html`**.
+2. Envie o conteúdo da pasta `public/` (ou o `evoluze-hostinger.zip` extraído) — o `index.html` precisa ficar direto em `public_html/`, não dentro de subpasta.
+
+### Domínio e SSL
+
+Confira se o `evoluzemarketing.com.br` está apontado pro plano (comprado na própria Hostinger já vem apontado; de fora, use os nameservers que o hPanel mostrar) e ative o **SSL grátis (Let's Encrypt)** em Segurança → SSL, com "forçar HTTPS".
 
 ## Observações
 
