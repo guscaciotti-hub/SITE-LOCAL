@@ -27,16 +27,11 @@ for (const [name, viewport, deviceScaleFactor, isMobile] of [
   ['celular', { width: 390, height: 844 }, 2, true],
 ]) {
   const page = await browser.newPage({ viewport, deviceScaleFactor, isMobile, hasTouch: isMobile });
-  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('http://localhost:8777/', { waitUntil: 'networkidle', timeout: 90000 });
-  // rola até o fim e volta pra disparar animações de entrada/lazy-load
-  await page.evaluate(() => new Promise((done) => {
-    let y = 0;
-    const t = setInterval(() => {
-      y += 600; window.scrollTo(0, y);
-      if (y >= document.body.scrollHeight) { clearInterval(t); window.scrollTo(0, 0); setTimeout(done, 1000); }
-    }, 120);
-  }));
+  // desliga transições e força o estado final das animações de entrada (.rv/.rv2/.rv3 + .on)
+  await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}' });
+  await page.evaluate(() => document.querySelectorAll('.rv,.rv2,.rv3').forEach((el) => el.classList.add('on')));
+  await page.waitForTimeout(500);
   await page.screenshot({ path: `shots/${name}.jpg`, fullPage: true, type: 'jpeg', quality: 85 });
   await page.close();
   console.log(`ok: shots/${name}.jpg`);

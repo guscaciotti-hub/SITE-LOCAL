@@ -1,0 +1,25 @@
+name: Baixar imagens externas
+
+on:
+  workflow_dispatch: # uso pontual: internaliza imagens de CDNs externos
+
+permissions:
+  contents: write
+
+jobs:
+  baixar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar imagens (Wikimedia + Unsplash)
+        run: bash .github/scripts/baixar-imagens.sh
+
+      - name: Publicar no branch "validacao"
+        run: |
+          cd vendor
+          git init -b validacao
+          git add .
+          git -c user.name="validador" -c user.email="actions@users.noreply.github.com" \
+            commit -m "Imagens externas baixadas ($(date -u +%Y-%m-%d\ %H:%M) UTC)"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" validacao
