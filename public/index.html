@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Evoluze Marketing — Agência de Marketing na Baixada Santista | A gente vai até você</title>
-<meta name="description" content="Agência de marketing da Baixada Santista com atendimento presencial. Tráfego pago, conteúdo, vídeo e estratégia para empresas de Santos, São Vicente, Praia Grande e região."/>
+<title>Evoluze — Especialistas em Tráfego Pago | Google Ads & Meta Ads que vendem</title>
+<meta name="description" content="Gestão de tráfego pago focada em vendas. Google Ads e Meta Ads que transformam seu investimento em anúncios em clientes — com dados, otimização e foco em ROI. Atendemos empresas no Brasil inteiro."/>
 <link rel="icon" type="image/png" href="assets/img/evoluze-marketing.png"/>
 <!-- Open Graph -->
-<meta property="og:title" content="Evoluze Marketing — Agência de Marketing na Baixada Santista"/>
-<meta property="og:description" content="Tráfego pago, conteúdo, vídeo e estratégia com atendimento presencial. A gente vai até a sua empresa — Santos, São Vicente, Praia Grande e região."/>
+<meta property="og:title" content="Evoluze — Especialistas em Tráfego Pago | Google & Meta Ads"/>
+<meta property="og:description" content="Tráfego pago que vira venda, não só clique. Google Ads e Meta Ads otimizados para retorno — para empresas do Brasil inteiro."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="pt_BR"/>
 <!-- GTM: substitua GTM-XXXXXXX -->
@@ -20,17 +20,12 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Evoluze Marketing",
-  "description": "Agência de marketing da Baixada Santista com atendimento presencial. Tráfego pago, conteúdo, vídeo e estratégia para empresas da região.",
+  "description": "Especialistas em tráfego pago (Google Ads e Meta Ads). Gestão de campanhas focada em vendas e retorno sobre investimento, para empresas de todo o Brasil.",
   "telephone": "+55-13-98228-7720",
   "email": "guscaciotti@gmail.com",
   "priceRange": "$$",
-  "areaServed": [
-    {"@type":"City","name":"Santos"},
-    {"@type":"City","name":"São Vicente"},
-    {"@type":"City","name":"Praia Grande"},
-    {"@type":"City","name":"Guarujá"},
-    {"@type":"City","name":"Cubatão"}
-  ],
+  "areaServed": {"@type":"Country","name":"Brasil"},
+  "serviceType": "Gestão de Tráfego Pago (Google Ads e Meta Ads)",
   "founder": {"@type":"Person","name":"Gustavo Scaciotti"}
 }
 </script>
@@ -266,11 +261,13 @@ body { font-family:'Inter',sans-serif;background:#f5f7f8;overflow-x:hidden;-webk
   display:inline-flex;align-items:center;justify-content:center;
   padding:0 40px;flex-shrink:0;border-right:1px solid #f0f0f0
 }
-.plat-slide img {
-  max-height:34px;max-width:110px;width:auto;
-  object-fit:contain;opacity:.7;transition:opacity .2s
+.plat-pill {
+  font-size:1.05rem;font-weight:700;color:#0b1320;
+  opacity:.5;letter-spacing:-.01em;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:9px;transition:opacity .2s
 }
-.plat-slide img:hover { opacity:1 }
+.plat-pill::before { content:'';width:7px;height:7px;border-radius:50%;background:#12d6e3;flex-shrink:0 }
+.plat-pill:hover { opacity:1 }
 
 /* ══════════════════════════
    SECTION COMMONS
@@ -344,8 +341,8 @@ section { padding:96px 80px }
   opacity:0;transition:opacity .35s
 }
 .sc:hover::before { opacity:1 }
-.sc-img { position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3) saturate(.5);transition:filter .4s,transform .4s }
-.sc:hover .sc-img { filter:brightness(.2) saturate(.3);transform:scale(1.04) }
+.sc-img { position:absolute;inset:0;background-size:cover;background-position:center;transition:filter .4s,transform .4s }
+.sc:hover .sc-img { transform:scale(1.04) }
 .sc-glow { position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(18,214,227,.1),transparent);opacity:0;transition:opacity .4s }
 .sc:hover .sc-glow { opacity:1 }
 .sc-body { position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px;z-index:2 }
@@ -363,7 +360,7 @@ section { padding:96px 80px }
 .sc-feat-tags { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px }
 .sc-feat-tag { font-size:.68rem;font-weight:600;background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);color:#12d6e3;padding:5px 11px;border-radius:4px }
 
-/* REGIÃO — Onde atendemos */
+/* COMO FUNCIONA */
 #reg { background:#fff }
 .reg-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
 .reg-grid {
@@ -550,7 +547,7 @@ footer { background:#0c1117;padding:56px 80px 24px }
     <nav class="menu">
       <a href="#srv">Serviços</a>
       <a href="#dif">Diferenciais</a>
-      <a href="#reg">Onde atendemos</a>
+      <a href="#reg">Como funciona</a>
       <a href="#about">Sobre</a>
       <a href="#cli">Clientes</a>
     </nav>
@@ -565,25 +562,24 @@ footer { background:#0c1117;padding:56px 80px 24px }
     <div class="left-side">
       <div class="tag">
         <div class="tag-dot"></div>
-        AGÊNCIA DE MARKETING — BAIXADA SANTISTA
+        ESPECIALISTAS EM TRÁFEGO PAGO
       </div>
       <h1>
-        A agência de<br>
-        marketing que<br>
-        <span>vai até a<br>sua empresa.</span>
+        Mais vendas<br>
+        com tráfego<br>
+        <span>pago de<br>verdade.</span>
       </h1>
       <p>
-        Tráfego pago, conteúdo, vídeo e estratégia para empresas de
-        <strong>Santos, São Vicente, Praia Grande e região</strong> —
-        com reunião presencial e acompanhamento de perto,
-        não relatório à distância.
+        Gestão profissional de <strong>Google Ads e Meta Ads</strong> para atrair o
+        cliente certo e transformar seu investimento em anúncio em
+        <strong>vendas previsíveis</strong>. Atendemos empresas no Brasil inteiro, 100% online.
       </p>
       <a href="#ctt" class="main-cta">Agendar diagnóstico gratuito</a>
       <div class="metrics">
         <div class="metric-item"><h4>+R$ 5M</h4><span>gerenciados em mídia</span></div>
         <div class="metric-item"><h4>+100</h4><span>empresas atendidas</span></div>
         <div class="metric-item"><h4>15 anos</h4><span>de experiência</span></div>
-        <div class="metric-item"><h4>Presencial</h4><span>atendimento na sua empresa</span></div>
+        <div class="metric-item"><h4>Brasil</h4><span>atende todo o país</span></div>
       </div>
     </div>
 
@@ -591,15 +587,15 @@ footer { background:#0c1117;padding:56px 80px 24px }
       <div class="fade-overlay"></div>
       <div class="top-fade"></div>
       <div class="bottom-fade"></div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=90" alt="Dashboard analytics" class="dashboard-image"/>
+      <img src="assets/img/fotos/hero-dashboard.jpg" alt="Painel de resultados de campanhas de tráfego pago" class="dashboard-image"/>
 
       <div class="hero-badge hb-top">
-        <div class="hb-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div class="hb-txt"><strong>Somos da Baixada Santista.</strong><span>A gente vai até você.</span></div>
+        <div class="hb-ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div class="hb-txt"><strong>Especialistas em tráfego pago.</strong><span>Google Ads + Meta Ads.</span></div>
       </div>
       <div class="hero-badge hb-bot">
         <div class="hb-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="hb-txt"><strong>Estratégia, dados</strong><span>e execução.</span></div>
+        <div class="hb-txt"><strong>Foco total em ROI</strong><span>otimizado pra vender.</span></div>
         <div class="hb-dot"></div>
       </div>
     </div>
@@ -626,23 +622,25 @@ footer { background:#0c1117;padding:56px 80px 24px }
 
 <!-- PLATFORMS CAROUSEL -->
 <div class="plat-car">
-  <div class="plat-car-label">Plataformas com as quais trabalhamos</div>
+  <div class="plat-car-label">Onde anunciamos pra você vender</div>
   <div class="plat-wrap">
     <div class="plat-track">
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="LinkedIn"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1200px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="YouTube"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" alt="WhatsApp"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Salesforce_Corporate_Logo_RGB.svg/1200px-Salesforce_Corporate_Logo_RGB.svg.png" alt="Salesforce"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="LinkedIn"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1200px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="YouTube"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" alt="WhatsApp"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Salesforce_Corporate_Logo_RGB.svg/1200px-Salesforce_Corporate_Logo_RGB.svg.png" alt="Salesforce"/></div>
-      <div class="plat-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon"/></div>
+      <div class="plat-slide"><span class="plat-pill">Google Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Meta Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Instagram Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">YouTube Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">TikTok Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">LinkedIn Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Google Analytics</span></div>
+      <div class="plat-slide"><span class="plat-pill">Tag Manager</span></div>
+      <div class="plat-slide"><span class="plat-pill">Google Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Meta Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Instagram Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">YouTube Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">TikTok Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">LinkedIn Ads</span></div>
+      <div class="plat-slide"><span class="plat-pill">Google Analytics</span></div>
+      <div class="plat-slide"><span class="plat-pill">Tag Manager</span></div>
     </div>
   </div>
 </div>
@@ -651,54 +649,54 @@ footer { background:#0c1117;padding:56px 80px 24px }
 <section id="dif">
   <div class="dif-hdr">
     <div class="rv"><div class="s-tag">Por que a Evoluze</div><h2 class="s-h2">O que nos faz <em>diferentes</em></h2></div>
-    <p class="s-p rv2">Não entregamos relatório de cliques. Entregamos crescimento estruturado — estratégia, dados e execução, com presença real dentro da sua empresa.</p>
+    <p class="s-p rv2">Não entregamos relatório de cliques. Entregamos vendas — campanhas de tráfego pago estruturadas pra dar retorno, com dados e otimização constante.</p>
   </div>
   <div class="dif-grid">
-    <div class="dif-card rv"><div class="dif-n">01</div><div class="dif-t">Atendimento presencial</div><div class="dif-d">A gente vai até você. Reunião na sua empresa, estratégia construída de dentro pra fora — não por videochamada.</div></div>
-    <div class="dif-card rv2"><div class="dif-n">02</div><div class="dif-t">Tráfego focado em vendas</div><div class="dif-d">Cada campanha estruturada para gerar clientes qualificados. Otimizamos para receita, não para cliques.</div></div>
-    <div class="dif-card rv3"><div class="dif-n">03</div><div class="dif-t">Conteúdo gravado na sua empresa</div><div class="dif-d">Vídeo, drone e social media produzidos aí, na sua operação — conteúdo real do seu negócio, não banco de imagem.</div></div>
-    <div class="dif-card rv"><div class="dif-n">04</div><div class="dif-t">Estratégia personalizada</div><div class="dif-d">Nenhum negócio é igual. Estratégias sob medida para seu mercado, ticket e momento de crescimento.</div></div>
-    <div class="dif-card rv2"><div class="dif-n">05</div><div class="dif-t">Parceiro, não fornecedor</div><div class="dif-d">Atendimento próximo, reuniões estratégicas e transparência total. Somos seu sócio de crescimento.</div></div>
-    <div class="dif-card rv3"><div class="dif-n">06</div><div class="dif-t">Visão comercial 360°</div><div class="dif-d">CRM, estruturação de equipe, automações — operação completa para escalar com previsibilidade.</div></div>
+    <div class="dif-card rv"><div class="dif-n">01</div><div class="dif-t">Especialistas, não generalistas</div><div class="dif-d">Tráfego pago é o que fazemos o dia inteiro. Sem dividir foco em mil serviços — domínio total de Google e Meta Ads.</div></div>
+    <div class="dif-card rv2"><div class="dif-n">02</div><div class="dif-t">Foco em vendas, não em cliques</div><div class="dif-d">Cada campanha é otimizada pra gerar cliente e receita. A métrica que importa é faturamento, não curtida.</div></div>
+    <div class="dif-card rv3"><div class="dif-n">03</div><div class="dif-t">Otimização baseada em dados</div><div class="dif-d">Pixel, rastreamento e testes constantes. Cada real investido é acompanhado e ajustado pra render mais.</div></div>
+    <div class="dif-card rv"><div class="dif-n">04</div><div class="dif-t">Estratégia sob medida</div><div class="dif-d">Nenhum negócio é igual. Campanhas desenhadas pro seu ticket, sua margem e seu momento — não receita de bolo.</div></div>
+    <div class="dif-card rv2"><div class="dif-n">05</div><div class="dif-t">Parceiro, não fornecedor</div><div class="dif-d">Comunicação direta, transparência total no investimento e nos números. Somos seu sócio de crescimento.</div></div>
+    <div class="dif-card rv3"><div class="dif-n">06</div><div class="dif-t">Relatórios que você entende</div><div class="dif-d">Nada de planilha confusa. Você sabe quanto entrou, quanto saiu e qual o retorno — em linguagem clara.</div></div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="srv">
   <div class="srv-hdr">
-    <div class="rv"><div class="s-tag">O que fazemos</div><h2 class="s-h2">Uma assessoria <em>completa</em></h2></div>
-    <p class="srv-hdr-p rv2">Não somos uma agência de anúncios. Construímos a máquina de crescimento do seu negócio — do primeiro clique até o contrato assinado.</p>
+    <div class="rv"><div class="s-tag">O que fazemos</div><h2 class="s-h2">A máquina de <em>vendas</em> completa</h2></div>
+    <p class="srv-hdr-p rv2">Não vendemos só clique. Montamos a estrutura inteira que transforma anúncio em cliente — do criativo ao fechamento.</p>
   </div>
   <div class="srv-grid">
-    <div class="sc sc-feat rv"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-left"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="sc-t">Gestão de Tráfego Pago</div><div class="sc-d">Google Ads, Meta Ads, LinkedIn Ads — campanhas que atraem o cliente certo no momento certo.</div><div class="sc-feat-tags"><span class="sc-feat-tag">Google Ads</span><span class="sc-feat-tag">Meta Ads</span><span class="sc-feat-tag">LinkedIn Ads</span><span class="sc-feat-tag">YouTube Ads</span></div></div></div></div>
-    <div class="sc rv2"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="sc-t">Estruturação Comercial & CRM</div><div class="sc-d">Processos e funis para transformar leads em clientes com previsibilidade.</div></div></div>
-    <div class="sc rv3"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sc-t">Sites & Páginas de Conversão</div><div class="sc-d">Desenvolvidos para converter visitantes em clientes.</div></div></div>
-    <div class="sc rv"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><div class="sc-t">Automação & Chatbots</div><div class="sc-d">Atendimento inteligente 24h integrado ao CRM.</div></div></div>
-    <div class="sc rv2"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></div><div class="sc-t">Social Media Estratégico</div><div class="sc-d">Conteúdo alinhado com vendas, não apenas curtidas.</div></div></div>
-    <div class="sc rv3"><div class="sc-img" style="background-image:url('https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80')"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="sc-t">Produção de Vídeo & Drone</div><div class="sc-d">Captação profissional na sua empresa, para campanhas e redes sociais.</div></div></div>
+    <div class="sc sc-feat rv"><div class="sc-img" style="background:linear-gradient(135deg,#0c2b3f 0%,#0c1117 65%)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-left"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="sc-t">Gestão de Tráfego Pago</div><div class="sc-d">Google Ads, Meta Ads, YouTube e LinkedIn — campanhas que colocam sua oferta na frente de quem está pronto pra comprar.</div><div class="sc-feat-tags"><span class="sc-feat-tag">Google Ads</span><span class="sc-feat-tag">Meta Ads</span><span class="sc-feat-tag">YouTube Ads</span><span class="sc-feat-tag">LinkedIn Ads</span></div></div></div></div>
+    <div class="sc rv2"><div class="sc-img" style="background:linear-gradient(135deg,#10303a,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="sc-t">Criativos & Copy que Convertem</div><div class="sc-d">Anúncios em imagem e vídeo pensados pra parar o scroll e gerar clique qualificado.</div></div></div>
+    <div class="sc rv3"><div class="sc-img" style="background:linear-gradient(135deg,#15263a,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sc-t">Landing Pages & CRO</div><div class="sc-d">Páginas de conversão desenhadas pra transformar visitante em lead e lead em venda.</div></div></div>
+    <div class="sc rv"><div class="sc-img" style="background:linear-gradient(135deg,#0e2a38,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="sc-t">Rastreamento & Dados</div><div class="sc-d">Pixel, GA4 e Tag Manager configurados certo — pra otimizar de verdade e saber o que dá retorno.</div></div></div>
+    <div class="sc rv2"><div class="sc-img" style="background:linear-gradient(135deg,#1a2433,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><div class="sc-t">Automação & CRM</div><div class="sc-d">O lead que chega é atendido na hora e encaminhado pro fechamento, sem cair no esquecimento.</div></div></div>
+    <div class="sc rv3"><div class="sc-img" style="background:linear-gradient(135deg,#0d2e34,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="sc-t">Relatórios & Otimização</div><div class="sc-d">Acompanhamento contínuo: o que funciona a gente escala, o que não funciona é cortado. Foco em ROI.</div></div></div>
   </div>
 </section>
 
-<!-- REGIÃO / ONDE ATENDEMOS -->
+<!-- COMO FUNCIONA -->
 <section id="reg">
   <div class="reg-hdr">
-    <div class="rv"><div class="s-tag">Onde atendemos</div><h2 class="s-h2">Somos da região — e <em>vamos até você.</em></h2></div>
-    <p class="s-p rv2">Nada de agência distante que só aparece em videochamada. A primeira reunião é na sua empresa: conhecemos sua operação por dentro antes de montar qualquer estratégia.</p>
+    <div class="rv"><div class="s-tag">Como funciona</div><h2 class="s-h2">Do primeiro clique à <em>venda.</em></h2></div>
+    <p class="s-p rv2">Um processo simples e transparente. Você sabe exatamente o que está acontecendo com o seu investimento em cada etapa.</p>
   </div>
   <div class="reg-grid">
-    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Santos</div><div class="reg-note">Base da nossa operação</div></div></div>
-    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">São Vicente</div><div class="reg-note">Atendimento presencial</div></div></div>
-    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Praia Grande</div><div class="reg-note">Atendimento presencial</div></div></div>
-    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Guarujá</div><div class="reg-note">Atendimento presencial</div></div></div>
-    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="reg-city">Cubatão</div><div class="reg-note">Atendimento presencial</div></div></div>
-    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="reg-city">Toda a Baixada Santista</div><div class="reg-note">É só chamar — a gente aparece</div></div></div>
+    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><div class="reg-city">1. Diagnóstico gratuito</div><div class="reg-note">Entendemos seu negócio, oferta e concorrência.</div></div></div>
+    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="reg-city">2. Estratégia sob medida</div><div class="reg-note">Plano de campanha pro seu objetivo e orçamento.</div></div></div>
+    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div><div class="reg-city">3. Criativos & páginas</div><div class="reg-note">Anúncios e landing pages feitos pra converter.</div></div></div>
+    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div><div class="reg-city">4. Tráfego no ar</div><div class="reg-note">Subimos as campanhas e atraímos cliente qualificado.</div></div></div>
+    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="reg-city">5. Otimização com dados</div><div class="reg-note">Pixel e relatórios guiando o ajuste, dia após dia.</div></div></div>
+    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><div class="reg-city">6. Escala com previsibilidade</div><div class="reg-note">O que vende a gente escala. Foco total em ROI.</div></div></div>
   </div>
   <div class="reg-cta rv">
     <div>
-      <div class="reg-cta-t">Sua empresa é da região? A primeira conversa é <em>presencial — e gratuita.</em></div>
-      <div class="reg-cta-s">Diagnóstico do seu marketing feito dentro da sua empresa, sem compromisso.</div>
+      <div class="reg-cta-t">Quer saber quanto seu negócio pode vender com tráfego bem feito? O <em>diagnóstico é gratuito.</em></div>
+      <div class="reg-cta-s">Análise do seu cenário e do potencial de retorno, sem compromisso.</div>
     </div>
-    <a href="https://wa.me/5513982287720?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Evoluze%20e%20quero%20agendar%20um%20diagn%C3%B3stico%20presencial%20na%20minha%20empresa." target="_blank" rel="noopener">
+    <a href="https://wa.me/5513982287720?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Evoluze%20e%20quero%20um%20diagn%C3%B3stico%20gratuito%20de%20tr%C3%A1fego%20pago." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Chamar no WhatsApp
     </a>
@@ -709,7 +707,7 @@ footer { background:#0c1117;padding:56px 80px 24px }
 <section id="cli">
   <div class="cli-hdr">
     <div class="rv"><div class="s-tag">Quem confia na Evoluze</div><h2 class="s-h2">Empresas que escolheram <em>crescer</em></h2></div>
-    <p class="s-p rv2">Clientes de nichos variados unidos pelo mesmo objetivo: crescimento real e previsível.</p>
+    <p class="s-p rv2">Clientes de nichos variados, no Brasil inteiro, unidos pelo mesmo objetivo: crescimento real e previsível com tráfego pago.</p>
   </div>
   <div class="clw rv">
     <div class="clw-item"><img src="assets/img/task.png" alt="Task"/></div>
@@ -740,17 +738,17 @@ footer { background:#0c1117;padding:56px 80px 24px }
   <div class="ab-c rv2">
     <div class="s-tag">Quem está por trás</div>
     <h2 class="ab-name">Gustavo Scaciotti</h2>
-    <div class="ab-role">Fundador &amp; Estrategista</div>
+    <div class="ab-role">Fundador &amp; Especialista em Tráfego</div>
     <p class="ab-tx">Com <strong>mais de 15 anos de experiência</strong>, formação em Comércio Exterior e Marketing e carreira construída dentro de multinacionais ao redor do mundo.</p>
-    <p class="ab-tx">Viveu as dificuldades de grandes corporações por dentro. Entende o que uma empresa precisa não apenas para aparecer, mas para <strong>crescer de forma estruturada e sustentável</strong>.</p>
-    <p class="ab-tx">Hoje, à frente da Evoluze, atende <strong>presencialmente empresas de toda a Baixada Santista</strong> — conectando marketing, comercial e tecnologia dentro da operação de cada cliente, não à distância.</p>
+    <p class="ab-tx">Viveu por dentro o que faz uma empresa crescer de verdade. Entende que anúncio bom não é o que aparece — é o que <strong>traz cliente e dá retorno</strong>.</p>
+    <p class="ab-tx">Hoje, à frente da Evoluze, ajuda empresas do <strong>Brasil inteiro a venderem mais com tráfego pago</strong> — unindo estratégia, dados e otimização constante pra cada real investido virar resultado.</p>
     <div class="ab-chips">
-      <span class="chip">Baixada Santista</span>
-      <span class="chip">Comércio Exterior &amp; Marketing</span>
-      <span class="chip">Multinacionais</span>
       <span class="chip">Tráfego Pago</span>
+      <span class="chip">Google Ads</span>
+      <span class="chip">Meta Ads</span>
+      <span class="chip">CRO &amp; Conversão</span>
       <span class="chip">CRM &amp; Automação</span>
-      <span class="chip">Visão 360°</span>
+      <span class="chip">+R$ 5M em mídia</span>
     </div>
   </div>
 </section>
@@ -760,26 +758,26 @@ footer { background:#0c1117;padding:56px 80px 24px }
   <div class="ctt-l">
     <div class="rv">
       <div class="s-tag">Vamos conversar</div>
-      <h2 class="ctt-h">Que tal um diagnóstico<br>feito <em>na sua empresa?</em></h2>
-      <p class="ctt-p">Preencha o formulário. A gente analisa seu negócio, marca uma visita e apresenta o caminho mais rápido para crescer aqui na região.</p>
+      <h2 class="ctt-h">Que tal um diagnóstico<br><em>gratuito</em> do seu tráfego?</h2>
+      <p class="ctt-p">Preenche o formulário. A gente analisa seu negócio e mostra o caminho mais rápido pra vender mais com tráfego pago — sem enrolação.</p>
       <div class="ctt-rows">
         <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="ctt-lb">WhatsApp</div><div class="ctt-vl">(13) 98228-7720</div></div></div>
         <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ctt-lb">E-mail</div><div class="ctt-vl">guscaciotti@gmail.com</div></div></div>
-        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ctt-lb">Atendimento</div><div class="ctt-vl">Baixada Santista — presencial</div></div></div>
+        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="ctt-lb">Atendimento</div><div class="ctt-vl">Brasil todo — 100% online</div></div></div>
       </div>
     </div>
     <div class="fbox rv2">
-      <div class="fbox-t">Diagnóstico gratuito e presencial</div>
-      <div class="fbox-s">Sem compromisso. Vamos até você, entendemos seu negócio e mostramos caminhos reais.</div>
+      <div class="fbox-t">Diagnóstico gratuito</div>
+      <div class="fbox-s">Sem compromisso. A gente analisa seu negócio e mostra onde está a oportunidade de vender mais.</div>
       <form id="form" action="https://formspree.io/f/SUBSTITUA_SEU_ID" method="POST">
         <div class="fgr"><div class="fg"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required/></div><div class="fg"><label>Empresa</label><input type="text" name="empresa" placeholder="Sua empresa"/></div></div>
-        <div class="fgr"><div class="fg"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required/></div><div class="fg"><label>WhatsApp</label><input type="tel" name="telefone" placeholder="(13) 00000-0000" required/></div></div>
+        <div class="fgr"><div class="fg"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required/></div><div class="fg"><label>WhatsApp</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" required/></div></div>
         <div class="fgr">
-          <div class="fg"><label>Cidade</label><select name="cidade"><option value="">Selecione...</option><option>Santos</option><option>São Vicente</option><option>Praia Grande</option><option>Guarujá</option><option>Cubatão</option><option>Outra cidade da região</option><option>Fora da Baixada Santista</option></select></div>
-          <div class="fg"><label>Segmento</label><select name="segmento"><option value="">Selecione...</option><option>Clínica médica / Saúde</option><option>Imobiliária / Construtora</option><option>Comércio / Loja</option><option>E-commerce</option><option>Serviços premium</option><option>Varejo / Atacado</option><option>Indústria / B2B</option><option>Outro</option></select></div>
+          <div class="fg"><label>Investimento mensal</label><select name="investimento"><option value="">Selecione...</option><option>Ainda não invisto</option><option>Até R$ 1.000/mês</option><option>R$ 1.000 a R$ 3.000/mês</option><option>R$ 3.000 a R$ 10.000/mês</option><option>Acima de R$ 10.000/mês</option></select></div>
+          <div class="fg"><label>Segmento</label><select name="segmento"><option value="">Selecione...</option><option>Clínica médica / Saúde</option><option>Imobiliária / Construtora</option><option>Comércio / Loja</option><option>E-commerce</option><option>Serviços premium</option><option>Infoproduto / Educação</option><option>Indústria / B2B</option><option>Outro</option></select></div>
         </div>
         <div class="fg"><label>Mensagem</label><textarea name="mensagem" placeholder="Conte sobre seu negócio e o que busca..."></textarea></div>
-        <input type="hidden" name="_subject" value="Novo lead — Evoluze (Baixada Santista)"/>
+        <input type="hidden" name="_subject" value="Novo lead — Evoluze (Tráfego Pago)"/>
         <button type="submit" class="btn-send" id="sbtn">Solicitar diagnóstico →</button>
       </form>
     </div>
@@ -787,16 +785,16 @@ footer { background:#0c1117;padding:56px 80px 24px }
 </section>
 
 <!-- OVERLAY -->
-<div id="ov"><div class="ov-b"><div class="ov-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ov-t">Enviado!</div><div class="ov-d">Recebemos seu contato. Em breve nossa equipe entra em contato para agendar sua visita. Se preferir, fale agora pelo WhatsApp:</div><a href="https://wa.me/5513982287720?text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20da%20Evoluze.%20Quero%20agendar%20o%20diagn%C3%B3stico%20presencial." class="bwa" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continuar pelo WhatsApp</a><button class="bcl" onclick="closeOv()">Fechar</button></div></div>
+<div id="ov"><div class="ov-b"><div class="ov-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ov-t">Enviado!</div><div class="ov-d">Recebemos seu contato. Em breve entramos em contato pra apresentar seu diagnóstico. Se preferir, fale agora pelo WhatsApp:</div><a href="https://wa.me/5513982287720?text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20da%20Evoluze.%20Quero%20o%20diagn%C3%B3stico%20gratuito%20de%20tr%C3%A1fego%20pago." class="bwa" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continuar pelo WhatsApp</a><button class="bcl" onclick="closeOv()">Fechar</button></div></div>
 
 <!-- FOOTER -->
 <footer>
   <div class="ft">
-    <div class="ft-logo"><img src="assets/img/evoluze-marketing-2.png" alt="Evoluze Marketing"/><p class="ft-tag">Agência de marketing da Baixada Santista. Do tráfego pago à estruturação comercial — crescimento com atendimento presencial, na sua empresa.</p></div>
-    <div class="ftc"><h4>Navegação</h4><ul><li><a href="#hero">Início</a></li><li><a href="#dif">Diferenciais</a></li><li><a href="#srv">Serviços</a></li><li><a href="#reg">Onde atendemos</a></li><li><a href="#cli">Clientes</a></li><li><a href="#about">Sobre</a></li><li><a href="#ctt">Contato</a></li></ul></div>
+    <div class="ft-logo"><img src="assets/img/evoluze-marketing-2.png" alt="Evoluze Marketing"/><p class="ft-tag">Especialistas em tráfego pago. Google Ads e Meta Ads que transformam investimento em vendas — para empresas do Brasil inteiro.</p></div>
+    <div class="ftc"><h4>Navegação</h4><ul><li><a href="#hero">Início</a></li><li><a href="#dif">Diferenciais</a></li><li><a href="#srv">Serviços</a></li><li><a href="#reg">Como funciona</a></li><li><a href="#cli">Clientes</a></li><li><a href="#about">Sobre</a></li><li><a href="#ctt">Contato</a></li></ul></div>
     <div class="ftc"><h4>Contato</h4><ul><li><a href="https://wa.me/5513982287720" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:guscaciotti@gmail.com">E-mail</a></li><li><a href="#ctt">Diagnóstico gratuito</a></li></ul></div>
   </div>
-  <div class="ft-bot"><span class="ft-cp">© 2026 Evoluze Marketing. Todos os direitos reservados.</span><span class="ft-cp">Do marketing à venda — Baixada Santista.</span></div>
+  <div class="ft-bot"><span class="ft-cp">© 2026 Evoluze Marketing. Todos os direitos reservados.</span><span class="ft-cp">Do clique à venda — tráfego pago.</span></div>
 </footer>
 
 <script>
