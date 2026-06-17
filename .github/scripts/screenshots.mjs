@@ -29,7 +29,8 @@ for (const [name, viewport, deviceScaleFactor, isMobile] of [
   const page = await browser.newPage({ viewport, deviceScaleFactor, isMobile, hasTouch: isMobile });
   await page.goto('http://localhost:8777/', { waitUntil: 'networkidle', timeout: 90000 });
   // desliga transições e força o estado final das animações de entrada (.rv/.rv2/.rv3 + .on)
-  await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}' });
+  // animações de entrada "completam" instantaneamente (forwards => estado final visível)
+  await page.addStyleTag({ content: '*,*::before,*::after{animation-duration:0s!important;animation-delay:0s!important;transition:none!important;scroll-behavior:auto!important}' });
   await page.evaluate(() => document.querySelectorAll('.rv,.rv2,.rv3').forEach((el) => el.classList.add('on')));
   await page.waitForTimeout(500);
   await page.screenshot({ path: `shots/${name}.jpg`, fullPage: true, type: 'jpeg', quality: 85 });
