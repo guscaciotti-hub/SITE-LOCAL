@@ -1,9 +1,10 @@
 name: Preview do site (GitHub Pages)
 
+# Opcional: só roda quando acionado à mão. Para virar um link fixo que
+# atualiza sozinho, basta habilitar o Pages uma vez em
+# Settings > Pages > Source: "GitHub Actions" e então disparar este workflow.
 on:
   workflow_dispatch:
-  push:
-    branches: [claude/exciting-maxwell-dlctrc]
 
 permissions:
   contents: read
@@ -22,17 +23,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Configurar Pages (habilita se preciso)
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Empacotar a pasta public/
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: public
-
-      - name: Publicar no Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
