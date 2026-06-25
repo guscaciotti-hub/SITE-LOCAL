@@ -3,807 +3,700 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Evoluze — Especialistas em Tráfego Pago | Google Ads & Meta Ads que vendem</title>
-<meta name="description" content="Gestão de tráfego pago focada em vendas. Google Ads e Meta Ads que transformam seu investimento em anúncios em clientes — com dados, otimização e foco em ROI. Atendemos empresas no Brasil inteiro."/>
+<title>Evoluze — Agenda previsível de pacientes particulares para a sua clínica</title>
+<meta name="description" content="Assessoria de tráfego pago para clínicas de alto padrão. Um fluxo constante e previsível de pacientes particulares — sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
 <link rel="icon" type="image/png" href="assets/img/evoluze-marketing.png"/>
 <!-- Open Graph -->
-<meta property="og:title" content="Evoluze — Especialistas em Tráfego Pago | Google & Meta Ads"/>
-<meta property="og:description" content="Tráfego pago que vira venda, não só clique. Google Ads e Meta Ads otimizados para retorno — para empresas do Brasil inteiro."/>
+<meta property="og:title" content="Evoluze — Pacientes particulares previsíveis para a sua clínica"/>
+<meta property="og:description" content="Um fluxo constante do paciente certo, sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="pt_BR"/>
-<!-- GTM: substitua GTM-XXXXXXX -->
+
+<!-- ════════════════════════════════════════════════════════════
+     RASTREAMENTO — cole os IDs e descomente quando tiver
+     ════════════════════════════════════════════════════════════ -->
+<!-- Google Tag Manager: troque GTM-XXXXXXX -->
 <!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>-->
-<!-- Meta Pixel: substitua SEU_PIXEL_ID -->
+<!-- Meta Pixel: troque SEU_PIXEL_ID -->
 <!--<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','SEU_PIXEL_ID');fbq('track','PageView');</script>-->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Evoluze Marketing",
-  "description": "Especialistas em tráfego pago (Google Ads e Meta Ads). Gestão de campanhas focada em vendas e retorno sobre investimento, para empresas de todo o Brasil.",
-  "telephone": "+55-13-98228-7720",
-  "email": "guscaciotti@gmail.com",
-  "priceRange": "$$",
-  "areaServed": {"@type":"Country","name":"Brasil"},
-  "serviceType": "Gestão de Tráfego Pago (Google Ads e Meta Ads)",
-  "founder": {"@type":"Person","name":"Gustavo Scaciotti"}
-}
-</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin:0;padding:0;box-sizing:border-box }
-html { scroll-behavior:smooth }
-body { font-family:'Inter',sans-serif;background:#f5f7f8;overflow-x:hidden;-webkit-font-smoothing:antialiased }
+/* ════════════════ TOKENS (derivar tudo daqui) ════════════════ */
+:root{
+  --branco:#FFFFFF;
+  --off-white:#F6FAFA;
+  --teal:#00D4C6;
+  --teal-fundo:#053B37;
+  --teal-escuro:#04736B;
+  --tinta:#0B1F1D;
+  --cinza:#5B6B68;
+  --radius:14px;
+  --shadow:0 10px 40px rgba(5,59,55,.08);
+  --shadow-md:0 16px 50px rgba(5,59,55,.14);
+  --container:1140px;
+  --ease:cubic-bezier(.16,.84,.44,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--branco);color:var(--tinta);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+:focus-visible{outline:2.5px solid var(--teal-escuro);outline-offset:3px;border-radius:4px}
 
-/* ══════════════════════════
-   HERO SECTION
-══════════════════════════ */
-.hero {
-  min-height:100vh;
-  background:#f5f7f8;
-  position:relative
-}
+/* ════════════════ PRIMITIVOS ════════════════ */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+.section{padding:104px 0}
+.eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--teal-escuro);margin-bottom:18px;display:block}
+.dark .eyebrow{color:var(--teal)}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.08}
+h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px}
+.lead{font-size:clamp(1rem,1.4vw,1.12rem);color:var(--cinza);max-width:620px}
+.dark{background:var(--teal-fundo);color:#fff}
+.dark .lead{color:rgba(255,255,255,.62)}
+.alt{background:var(--off-white)}
 
-/* NAVBAR */
-.navbar {
-  width:100%;max-width:1500px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:36px 80px;
-  position:relative;z-index:10
+/* CTA */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--teal);color:var(--tinta);font-weight:700;font-size:1rem;
+  padding:18px 32px;border-radius:var(--radius);border:none;cursor:pointer;
+  font-family:inherit;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+  box-shadow:0 8px 24px rgba(0,212,198,.28)
 }
-.logo-area {
-  display:flex;align-items:center;gap:14px
-}
-.logo-area img {
-  height:72px;width:auto;object-fit:contain;display:block
-}
-.menu {
-  display:flex;gap:48px
-}
-.menu a {
-  text-decoration:none;color:#111827;font-size:16px;font-weight:500;
-  transition:color .2s
-}
-.menu a:hover { color:#12d6e3 }
-.header-cta {
-  background:#12d6e3;color:#fff;
-  padding:18px 34px;border-radius:14px;
-  text-decoration:none;font-weight:600;font-size:15px;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:.3s ease
-}
-.header-cta:hover { transform:translateY(-2px);background:#00bcd4 }
-.header-cta svg { width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round }
+.btn:hover{transform:translateY(-2px);background:#16e0d2;box-shadow:0 12px 30px rgba(0,212,198,.4)}
+.btn svg{width:16px;height:16px;stroke:var(--tinta);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn-lg{padding:21px 40px;font-size:1.06rem}
 
-/* HERO CONTENT */
-.hero-content {
-  display:grid;
-  grid-template-columns:50% 50%;
-  min-height:calc(100vh - 120px);
-  position:relative
-}
+/* Reveal no scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
 
-/* LEFT SIDE */
-.left-side {
-  padding-left:80px;
-  padding-top:70px;
-  position:relative;z-index:5
-}
-.tag {
-  display:inline-flex;align-items:center;gap:12px;
-  background:rgba(18,214,227,0.08);
-  border:1px solid rgba(18,214,227,0.15);
-  color:#0aaec0;
-  padding:14px 22px;border-radius:999px;
-  font-size:14px;font-weight:600;
-  margin-bottom:42px;
-  opacity:0;animation:fU .5s .1s ease forwards
-}
-.tag-dot {
-  width:8px;height:8px;background:#12d6e3;border-radius:50%
-}
-.left-side h1 {
-  font-size:clamp(52px,5.5vw,88px);
-  line-height:.95;letter-spacing:-4px;font-weight:800;
-  color:#060a12;margin-bottom:34px;
-  opacity:0;animation:fU .7s .2s ease forwards
-}
-.left-side h1 span { color:#12d6e3 }
-.left-side p {
-  max-width:580px;
-  font-size:clamp(16px,1.5vw,22px);line-height:1.7;
-  color:#4b5565;margin-bottom:42px;
-  opacity:0;animation:fU .7s .35s ease forwards
-}
-.left-side p strong { color:#0b1320 }
-.main-cta {
-  display:inline-flex;align-items:center;justify-content:center;
-  background:#12d6e3;color:#fff;
-  padding:22px 42px;border-radius:14px;
-  text-decoration:none;font-size:18px;font-weight:600;
-  margin-bottom:70px;
-  transition:.3s ease;
-  opacity:0;animation:fU .7s .5s ease forwards
-}
-.main-cta:hover { transform:translateY(-2px);background:#00bcd4 }
-.metrics {
-  display:flex;gap:52px;
-  opacity:0;animation:fU .7s .65s ease forwards
-}
-.metric-item h4 {
-  font-size:clamp(20px,2vw,28px);color:#0b1320;font-weight:800;margin-bottom:8px
-}
-.metric-item span { color:#7d8796;font-size:15px }
+/* ════════════════ HEADER (só logo, sem links) ════════════════ */
+.header{position:absolute;top:0;left:0;width:100%;z-index:20;padding:28px 0}
+.logo{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:#fff;display:inline-flex;align-items:baseline}
+.logo .dot{color:var(--teal)}
+.logo--dark{color:var(--tinta)}
 
-/* RIGHT SIDE — exact from reference */
-.right-side {
-  position:relative;
-  background:#050816;
-  overflow:hidden
+/* ════════════════ HERO ════════════════ */
+.hero{position:relative;background:var(--teal-fundo);color:#fff;padding:160px 0 110px;overflow:hidden}
+.hero-line{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4rem);margin-bottom:24px}
+.hero h1 .hl{color:var(--teal)}
+.hero-sub{font-size:clamp(1.05rem,1.7vw,1.28rem);color:rgba(255,255,255,.72);max-width:560px;margin-bottom:38px;font-weight:400}
+.hero-cta-row{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.hero-microtrust{font-size:.82rem;color:rgba(255,255,255,.45)}
+/* cartão glass de prova */
+.glass{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;padding:32px 30px;backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.25)
 }
-.dashboard-image {
-  width:100%;height:100%;
-  object-fit:cover;
-  filter:blur(0.3px);
-  opacity:.95;
-  transform:scale(1.03);
-  display:block
-}
-.fade-overlay {
-  position:absolute;
-  left:-2%;top:0;
-  width:42%;height:100%;
-  z-index:3;
-  background:linear-gradient(
-    90deg,
-    #f5f7f8 0%,
-    rgba(245,247,248,.98) 10%,
-    rgba(245,247,248,.92) 22%,
-    rgba(245,247,248,.75) 38%,
-    rgba(245,247,248,.45) 52%,
-    rgba(245,247,248,.12) 72%,
-    rgba(245,247,248,0) 100%
-  );
-  backdrop-filter:blur(6px)
-}
-.top-fade {
-  position:absolute;top:0;left:0;
-  width:100%;height:160px;z-index:4;
-  background:linear-gradient(
-    180deg,
-    rgba(5,8,22,.55) 0%,
-    rgba(5,8,22,.15) 55%,
-    rgba(5,8,22,0) 100%
-  )
-}
-.bottom-fade {
-  position:absolute;bottom:0;left:0;
-  width:100%;height:180px;z-index:4;
-  background:linear-gradient(
-    0deg,
-    rgba(5,8,22,.75) 0%,
-    rgba(5,8,22,.22) 55%,
-    rgba(5,8,22,0) 100%
-  )
-}
+.glass-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.glass-label::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(0,212,198,.5);animation:pulse 2.4s infinite}
+.glass-from{font-size:1.05rem;color:rgba(255,255,255,.6);font-weight:500}
+.glass-arrow{margin:8px 0;color:var(--teal);font-size:1.3rem}
+.glass-to{font-size:1.7rem;font-weight:800;line-height:1.2;letter-spacing:-.02em}
+.glass-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:rgba(255,255,255,.5)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,198,.5)}70%{box-shadow:0 0 0 9px rgba(0,212,198,0)}}
 
-/* Floating badges on right side */
-.hero-badge {
-  position:absolute;z-index:5;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(10px);
-  border-radius:12px;padding:14px 18px;
-  box-shadow:0 8px 32px rgba(0,0,0,.22);
-  display:flex;align-items:center;gap:12px;
-  min-width:220px
-}
-.hb-top { top:14%;left:10%;opacity:0;animation:fD .6s .9s ease forwards }
-.hb-bot { bottom:10%;right:6%;opacity:0;animation:fD .6s 1.1s ease forwards }
-.hb-ic {
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(18,214,227,.12);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0
-}
-.hb-ic svg { width:20px;height:20px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
-.hb-txt strong { display:block;font-size:.84rem;font-weight:700;color:#111;line-height:1.3 }
-.hb-txt span { font-size:.71rem;color:#666 }
-.hb-dot { width:8px;height:8px;background:#22c55e;border-radius:50%;margin-left:auto;flex-shrink:0;animation:pulse 2s infinite }
+/* divisória "linha de previsibilidade" */
+.divider{line-height:0}
+.divider svg{width:100%;height:54px;display:block}
 
-/* ══════════════════════════
-   CLIENTS STRIP — logo abaixo da hero
-══════════════════════════ */
-.clients-strip {
-  background:#fff;
-  padding:32px 80px;
-  border-top:1px solid #ebebeb;
-  border-bottom:1px solid #ebebeb
+/* ════════════════ VSL ════════════════ */
+.vsl-head{text-align:center;max-width:720px;margin:0 auto 40px}
+.vsl-head .title{margin:0 auto 0}
+.vsl-frame{
+  position:relative;max-width:880px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;overflow:hidden;
+  background:linear-gradient(150deg,#0a2e2b,#053b37 60%,#021f1c);box-shadow:var(--shadow-md);
+  border:1px solid rgba(5,59,55,.12);cursor:pointer
 }
-.clients-strip-label {
-  font-size:.7rem;font-weight:600;color:#9ca3af;
-  letter-spacing:.14em;text-transform:uppercase;
-  margin-bottom:24px
-}
-.clients-logos {
-  display:flex;align-items:center;gap:48px;flex-wrap:wrap
-}
-.clients-logos img {
-  max-height:38px;max-width:120px;width:auto;
-  object-fit:contain;opacity:.7;
-  mix-blend-mode:multiply;
-  transition:opacity .2s,transform .2s
-}
-.clients-logos img:hover { opacity:1;transform:scale(1.05) }
+.vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vsl-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.vsl-play-btn{width:84px;height:84px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,212,198,.45);transition:transform .3s var(--ease)}
+.vsl-frame:hover .vsl-play-btn{transform:scale(1.08)}
+.vsl-play-btn svg{width:30px;height:30px;margin-left:5px;fill:var(--tinta)}
+.vsl-play span{color:rgba(255,255,255,.78);font-size:.9rem;font-weight:500}
+.vsl-cta{text-align:center;margin-top:40px}
 
-/* ══════════════════════════
-   PLATFORMS CAROUSEL
-══════════════════════════ */
-.plat-car {
-  background:#fff;padding:28px 0;
-  border-bottom:1px solid #ebebeb;overflow:hidden
-}
-.plat-car-label {
-  text-align:center;font-size:.7rem;font-weight:600;
-  color:#9ca3af;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px
-}
-.plat-wrap { overflow:hidden;position:relative }
-.plat-wrap::before,.plat-wrap::after {
-  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none
-}
-.plat-wrap::before { left:0;background:linear-gradient(to right,#fff,transparent) }
-.plat-wrap::after { right:0;background:linear-gradient(to left,#fff,transparent) }
-.plat-track {
-  display:inline-flex;align-items:center;
-  white-space:nowrap;animation:logoScroll 30s linear infinite
-}
-.plat-slide {
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:0 40px;flex-shrink:0;border-right:1px solid #f0f0f0
-}
-.plat-pill {
-  font-size:1.05rem;font-weight:700;color:#0b1320;
-  opacity:.5;letter-spacing:-.01em;white-space:nowrap;
-  display:inline-flex;align-items:center;gap:9px;transition:opacity .2s
-}
-.plat-pill::before { content:'';width:7px;height:7px;border-radius:50%;background:#12d6e3;flex-shrink:0 }
-.plat-pill:hover { opacity:1 }
+/* ════════════════ 3 DORES ════════════════ */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.card{background:var(--branco);border:1px solid rgba(5,59,55,.09);border-radius:var(--radius);padding:38px 32px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card-ic{width:52px;height:52px;border-radius:13px;background:rgba(0,212,198,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.card-ic svg{width:25px;height:25px;stroke:var(--teal-escuro);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.18rem;font-weight:700;margin-bottom:11px}
+.card p{font-size:.94rem;color:var(--cinza)}
 
-/* ══════════════════════════
-   SECTION COMMONS
-══════════════════════════ */
-section { padding:96px 80px }
-.s-tag {
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:#12d6e3;margin-bottom:14px
-}
-.s-tag::before { content:'';width:20px;height:2px;background:#12d6e3 }
-.s-h2 {
-  font-size:clamp(2rem,3.2vw,2.8rem);font-weight:800;
-  line-height:1.15;color:#060a12;margin-bottom:14px;letter-spacing:-.02em
-}
-.s-h2 em { font-style:normal;color:#12d6e3 }
-.s-p { font-size:.97rem;color:#6b7280;line-height:1.75;max-width:500px }
+/* ════════════════ MÉTODO / 4 PILARES ════════════════ */
+.metodo-intro{max-width:680px;margin:0 0 8px;font-size:1.02rem;color:var(--cinza)}
+.pilares{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px}
+.pilar-line{position:absolute;top:34px;left:6%;right:6%;height:2px;z-index:0}
+.pilar{position:relative;z-index:1;background:var(--branco)}
+.pilar-n{width:68px;height:68px;border-radius:50%;background:var(--teal-fundo);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;margin-bottom:22px;border:5px solid var(--branco);box-shadow:0 6px 22px rgba(5,59,55,.16)}
+.pilar h3{font-size:1.1rem;font-weight:700;margin-bottom:9px}
+.pilar p{font-size:.9rem;color:var(--cinza)}
 
-/* REVEAL */
-.rv { opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease }
-.rv.on { opacity:1;transform:none }
-.rv2 { opacity:0;transform:translateY(24px);transition:opacity .65s .12s ease,transform .65s .12s ease }
-.rv2.on { opacity:1;transform:none }
-.rv3 { opacity:0;transform:translateY(24px);transition:opacity .65s .24s ease,transform .65s .24s ease }
-.rv3.on { opacity:1;transform:none }
+/* ════════════════ PROVA / CARROSSEL ÁUDIOS ════════════════ */
+.car-wrap{position:relative;margin-top:46px}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 18px;-ms-overflow-style:none;scrollbar-width:none}
+.car-track::-webkit-scrollbar{display:none}
+.audio-card{scroll-snap-align:start;flex:0 0 340px;max-width:88vw;background:var(--branco);border:1px solid rgba(5,59,55,.1);border-radius:16px;padding:26px 26px 22px;box-shadow:var(--shadow)}
+.audio-top{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(140deg,var(--teal-escuro),var(--teal-fundo));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.05rem;flex-shrink:0}
+.audio-who strong{display:block;font-size:.95rem;font-weight:700}
+.audio-who span{font-size:.8rem;color:var(--cinza)}
+/* player placeholder (trocar por <audio> quando tiver os arquivos) */
+.player{display:flex;align-items:center;gap:13px;background:var(--off-white);border-radius:11px;padding:12px 15px}
+.player-btn{width:38px;height:38px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.player-btn svg{width:14px;height:14px;margin-left:2px;fill:var(--tinta)}
+.wave{display:flex;align-items:center;gap:3px;height:26px;flex:1}
+.wave i{flex:1;background:rgba(4,115,107,.32);border-radius:2px}
+.player-time{font-size:.74rem;color:var(--cinza);font-variant-numeric:tabular-nums}
+.car-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.car-btn{width:46px;height:46px;border-radius:50%;background:var(--branco);border:1px solid rgba(5,59,55,.16);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.car-btn:hover{border-color:var(--teal-escuro);background:var(--off-white)}
+.car-btn svg{width:18px;height:18px;stroke:var(--teal-escuro);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.car-note{font-size:.78rem;color:var(--cinza);margin-top:14px;font-style:italic}
 
-/* DIFERENCIAIS */
-#dif { background:#fff }
-.dif-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
-.dif-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden
-}
-.dif-card {
-  background:#fff;padding:36px 30px;
-  transition:background .25s;cursor:default;position:relative;overflow:hidden
-}
-.dif-card::after {
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:#12d6e3;transform:scaleX(0);transform-origin:left;transition:transform .35s
-}
-.dif-card:hover { background:#f0fdff }
-.dif-card:hover::after { transform:scaleX(1) }
-.dif-n { font-size:2.6rem;font-weight:900;color:#e5e7eb;line-height:1;margin-bottom:16px;transition:color .3s }
-.dif-card:hover .dif-n { color:#12d6e3 }
-.dif-t { font-size:.95rem;font-weight:700;color:#060a12;margin-bottom:8px }
-.dif-d { font-size:.84rem;color:#6b7280;line-height:1.7 }
+/* ════════════════ RESULTADO DESTAQUE ════════════════ */
+.result{text-align:center;max-width:840px;margin:0 auto}
+.result-1{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:600;color:var(--cinza)}
+.result-2{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:800;color:var(--teal-escuro);letter-spacing:-.02em;line-height:1.12;margin:12px 0 20px}
+.result-3{font-size:1.02rem;color:var(--cinza);max-width:620px;margin:0 auto}
 
-/* SERVICES */
-#srv { background:#0c1117;padding:96px 80px }
-.srv-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px }
-.srv-hdr .s-tag { color:#12d6e3 }
-.srv-hdr .s-h2 { color:#fff }
-.srv-hdr-p { font-size:.97rem;color:rgba(255,255,255,.4);line-height:1.75 }
-.srv-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px }
-.sc {
-  position:relative;border-radius:14px;overflow:hidden;
-  background:#161b24;border:1px solid rgba(255,255,255,.07);
-  aspect-ratio:.9;transition:transform .35s,box-shadow .35s;cursor:default
-}
-.sc:hover {
-  transform:translateY(-6px);
-  box-shadow:0 0 0 1px rgba(18,214,227,.5),0 0 28px rgba(18,214,227,.18),0 20px 40px rgba(0,0,0,.5)
-}
-.sc::before {
-  content:'';position:absolute;inset:0;border-radius:14px;
-  background:linear-gradient(135deg,rgba(18,214,227,.45) 0%,transparent 50%) border-box;
-  border:1px solid transparent;
-  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:destination-out;mask-composite:exclude;
-  opacity:0;transition:opacity .35s
-}
-.sc:hover::before { opacity:1 }
-.sc-img { position:absolute;inset:0;background-size:cover;background-position:center;transition:filter .4s,transform .4s }
-.sc:hover .sc-img { transform:scale(1.04) }
-.sc-glow { position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(18,214,227,.1),transparent);opacity:0;transition:opacity .4s }
-.sc:hover .sc-glow { opacity:1 }
-.sc-body { position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px;z-index:2 }
-.sc-ico { width:40px;height:40px;border-radius:9px;background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .3s,border-color .3s }
-.sc:hover .sc-ico { background:rgba(18,214,227,.2);border-color:rgba(18,214,227,.4) }
-.sc-ico svg { width:18px;height:18px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
-.sc-t { font-size:.88rem;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3 }
-.sc-d { font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s,opacity .35s }
-.sc:hover .sc-d { max-height:80px;opacity:1 }
-.sc-feat { grid-column:span 2;aspect-ratio:auto;min-height:220px }
-.sc-feat .sc-body { flex-direction:row;align-items:flex-end;gap:24px }
-.sc-feat .sc-left { flex:1 }
-.sc-feat .sc-d { max-height:none;opacity:1;color:rgba(255,255,255,.5) }
-.sc-feat .sc-t { font-size:1.25rem;font-weight:800;margin-bottom:10px }
-.sc-feat-tags { display:flex;gap:8px;flex-wrap:wrap;margin-top:14px }
-.sc-feat-tag { font-size:.68rem;font-weight:600;background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);color:#12d6e3;padding:5px 11px;border-radius:4px }
+/* ════════════════ GUSTAVO ════════════════ */
+.gus-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.gus-photo{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md);background:linear-gradient(140deg,#0a2e2b,#053b37)}
+.gus-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;aspect-ratio:4/5}
+.gus-ph-fallback{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:3rem;font-weight:800}
+.gus-text h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:4px}
+.gus-role{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-escuro);margin-bottom:24px}
+.gus-text p{font-size:1.04rem;color:var(--cinza);max-width:560px}
 
-/* COMO FUNCIONA */
-#reg { background:#fff }
-.reg-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
-.reg-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;
-  margin-bottom:40px
-}
-.reg-card {
-  background:#fff;padding:30px;display:flex;align-items:center;gap:16px;
-  transition:background .25s;cursor:default;position:relative;overflow:hidden
-}
-.reg-card::after {
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:#12d6e3;transform:scaleX(0);transform-origin:left;transition:transform .35s
-}
-.reg-card:hover { background:#f0fdff }
-.reg-card:hover::after { transform:scaleX(1) }
-.reg-ic {
-  width:44px;height:44px;border-radius:10px;flex-shrink:0;
-  background:rgba(18,214,227,.1);border:1px solid rgba(18,214,227,.2);
-  display:flex;align-items:center;justify-content:center
-}
-.reg-ic svg { width:20px;height:20px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
-.reg-city { font-size:.95rem;font-weight:700;color:#060a12;margin-bottom:2px }
-.reg-note { font-size:.78rem;color:#6b7280 }
-.reg-cta {
-  display:flex;align-items:center;justify-content:space-between;gap:32px;
-  background:#0c1117;border-radius:16px;padding:38px 42px
-}
-.reg-cta-t { font-size:clamp(1.2rem,2vw,1.6rem);font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.3 }
-.reg-cta-t em { font-style:normal;color:#12d6e3 }
-.reg-cta-s { font-size:.85rem;color:rgba(255,255,255,.45);margin-top:6px }
-.reg-cta a {
-  display:inline-flex;align-items:center;gap:10px;flex-shrink:0;
-  background:#12d6e3;color:#fff;text-decoration:none;
-  font-weight:700;font-size:.95rem;padding:18px 32px;border-radius:12px;
-  transition:.3s ease
-}
-.reg-cta a:hover { transform:translateY(-2px);background:#00bcd4 }
-.reg-cta a svg { width:18px;height:18px;fill:#fff }
+/* ════════════════ DIFERENCIAL (checks) ════════════════ */
+.checks{display:flex;flex-direction:column;gap:18px;margin-top:42px;max-width:760px}
+.check{display:flex;gap:16px;align-items:flex-start}
+.check-ic{width:30px;height:30px;border-radius:50%;background:rgba(0,212,198,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-ic svg{width:16px;height:16px;stroke:var(--teal-escuro);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.check p{font-size:1.05rem;color:var(--tinta);font-weight:500}
 
-/* CLIENTS SECTION */
-#cli { background:#f5f7f8 }
-.cli-hdr { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px }
-.clw { display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:60px }
-.clw-item { display:flex;align-items:center;justify-content:center;padding:36px 24px;min-height:100px;transition:transform .25s }
-.clw-item:hover { transform:scale(1.06);z-index:2 }
-.clw-item img { max-width:130px;max-height:48px;width:auto;height:auto;object-fit:contain;opacity:.85;filter:drop-shadow(0 2px 8px rgba(0,0,0,.07));transition:opacity .25s,filter .25s }
-.clw-item:hover img { opacity:1;filter:drop-shadow(0 4px 16px rgba(18,214,227,.2)) }
-.docs-lbl { font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9ca3af;display:flex;align-items:center;gap:14px;margin-bottom:28px }
-.docs-lbl::after { content:'';flex:1;height:1px;background:#e5e7eb }
-.docs-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
-.doc { border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;background:#fff }
-.doc:hover { transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.09) }
-.doc-p { width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block }
-.doc-i { padding:16px 18px;border-top:1px solid #e5e7eb;background:#fff }
-.doc-n { font-size:.88rem;font-weight:700;color:#060a12;margin-bottom:3px }
-.doc-s { font-size:.74rem;font-weight:600;color:#12d6e3 }
+/* ════════════════ CFM ════════════════ */
+.cfm{max-width:720px}
+.cfm .title{font-size:clamp(1.5rem,2.6vw,2rem)}
+.cfm p{font-size:1.04rem;color:var(--cinza)}
 
-/* ABOUT */
-#about { background:#fff;padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:640px }
-.ab-photo { position:relative;overflow:hidden }
-.ab-photo img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:560px }
-.ab-acc { position:absolute;bottom:32px;left:32px;background:#12d6e3;color:#fff;padding:18px 24px;border-radius:10px;box-shadow:0 8px 32px rgba(18,214,227,.35) }
-.ab-acc-n { font-size:2.2rem;font-weight:800;line-height:1 }
-.ab-acc-l { font-size:.7rem;font-weight:600;letter-spacing:.06em;margin-top:2px }
-.ab-c { display:flex;flex-direction:column;justify-content:center;padding:80px 80px 80px 64px }
-.ab-name { font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:800;color:#060a12;line-height:1.1;margin-bottom:5px;letter-spacing:-.02em }
-.ab-role { font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#12d6e3;margin-bottom:26px }
-.ab-tx { font-size:.94rem;color:#4b5565;line-height:1.8;margin-bottom:13px }
-.ab-tx strong { font-weight:700;color:#060a12 }
-.ab-chips { display:flex;flex-wrap:wrap;gap:10px;margin-top:22px }
-.chip { font-size:.73rem;font-weight:600;color:#060a12;background:#f5f7f8;border:1px solid #e5e7eb;padding:7px 15px;border-radius:6px }
+/* ════════════════ CTA FINAL ════════════════ */
+.cta-final{text-align:center}
+.cta-final .container{position:relative;z-index:2}
+.cta-final h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px;max-width:780px;margin-inline:auto}
+.cta-final .lead{margin:0 auto 36px;color:rgba(255,255,255,.7)}
+.cta-scarcity{margin-top:22px;font-size:.86rem;color:rgba(255,255,255,.5)}
 
-/* CONTACT */
-#ctt { background:#f5f7f8;padding:96px 80px }
-.ctt-l { display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center }
-.ctt-h { font-size:clamp(2rem,3vw,2.8rem);font-weight:800;line-height:1.12;color:#060a12;margin-bottom:14px;letter-spacing:-.02em }
-.ctt-h em { font-style:normal;color:#12d6e3 }
-.ctt-p { font-size:.96rem;color:#6b7280;line-height:1.75;margin-bottom:32px }
-.ctt-rows { display:flex;flex-direction:column;gap:16px }
-.ctt-row { display:flex;align-items:center;gap:12px }
-.ctt-ic { width:40px;height:40px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;flex-shrink:0 }
-.ctt-ic svg { width:16px;height:16px;stroke:#12d6e3;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round }
-.ctt-lb { font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:1px }
-.ctt-vl { font-size:.87rem;font-weight:600;color:#060a12 }
-.fbox { background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:38px 34px }
-.fbox-t { font-size:1.1rem;font-weight:700;color:#060a12;margin-bottom:3px }
-.fbox-s { font-size:.81rem;color:#9ca3af;margin-bottom:22px }
-.fg { margin-bottom:12px }
-.fg label { display:block;font-size:.69rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9ca3af;margin-bottom:6px }
-.fg input,.fg select,.fg textarea { width:100%;padding:12px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:'Inter',sans-serif;font-size:.87rem;color:#060a12;background:#fff;outline:none;appearance:none;transition:border-color .2s,box-shadow .2s }
-.fg input:focus,.fg select:focus,.fg textarea:focus { border-color:#12d6e3;box-shadow:0 0 0 3px rgba(18,214,227,.1) }
-.fg textarea { resize:vertical;min-height:88px }
-.fgr { display:grid;grid-template-columns:1fr 1fr;gap:12px }
-.btn-send { width:100%;margin-top:8px;padding:14px;background:#060a12;color:#fff;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:.87rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s }
-.btn-send:hover { background:#12d6e3;transform:translateY(-1px) }
+/* ════════════════ FOOTER ════════════════ */
+.footer{background:var(--tinta);color:rgba(255,255,255,.55);padding:48px 0;text-align:center}
+.footer .logo{color:#fff;font-size:1.3rem;margin-bottom:12px}
+.footer p{font-size:.84rem;max-width:520px;margin:0 auto 6px}
+.footer .copy{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:14px}
 
-/* OVERLAY */
-#ov { display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:999;align-items:center;justify-content:center }
-#ov.show { display:flex }
-.ov-b { background:#fff;border-radius:16px;padding:48px 40px;max-width:400px;width:90%;text-align:center;animation:pop .3s ease }
-.ov-ic { width:60px;height:60px;border-radius:50%;background:rgba(18,214,227,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px }
-.ov-ic svg { width:26px;height:26px;stroke:#12d6e3;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round }
-.ov-t { font-size:1.4rem;font-weight:800;color:#060a12;margin-bottom:10px }
-.ov-d { font-size:.87rem;color:#6b7280;line-height:1.7;margin-bottom:26px }
-.bwa { display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-weight:700;font-size:.87rem;padding:14px;border-radius:8px;text-decoration:none;width:100%;margin-bottom:12px;transition:background .2s,transform .2s }
-.bwa:hover { background:#1daf55;transform:translateY(-2px) }
-.bcl { font-size:.8rem;color:#9ca3af;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:8px;text-decoration:underline }
+/* ════════════════ STICKY CTA (mobile) ════════════════ */
+.sticky-cta{position:fixed;left:0;bottom:0;width:100%;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid rgba(5,59,55,.1);display:none}
+.sticky-cta .btn{width:100%}
 
-/* FOOTER */
-footer { background:#0c1117;padding:56px 80px 24px }
-.ft { display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:22px }
-.ft-logo img { height:56px;margin-bottom:14px }
-.ft-tag { font-size:.82rem;color:rgba(255,255,255,.32);line-height:1.7;max-width:250px }
-.ftc h4 { font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px }
-.ftc ul { list-style:none;display:flex;flex-direction:column;gap:10px }
-.ftc a { font-size:.83rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s }
-.ftc a:hover { color:#fff }
-.ft-bot { display:flex;justify-content:space-between }
-.ft-cp { font-size:.72rem;color:rgba(255,255,255,.18) }
+/* ════════════════ MODAL FORM ════════════════ */
+.modal{position:fixed;inset:0;z-index:100;display:none;background:rgba(2,20,18,.55);backdrop-filter:blur(8px);padding:20px;overflow-y:auto}
+.modal.open{display:flex;align-items:flex-start;justify-content:center}
+.modal-inner{background:var(--branco);width:100%;max-width:600px;margin:auto;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.4);position:relative;overflow:hidden;animation:rise .4s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:none;background:var(--off-white);cursor:pointer;font-size:1.3rem;color:var(--cinza);z-index:3;display:flex;align-items:center;justify-content:center;transition:.2s}
+.modal-close:hover{background:#e9f2f1;color:var(--tinta)}
+.modal-progress{height:4px;background:var(--off-white)}
+.modal-progress-bar{height:100%;width:0;background:var(--teal);transition:width .4s var(--ease)}
+.stage{padding:54px 44px 46px;min-height:340px;display:flex;flex-direction:column;justify-content:center}
+.step{animation:fade .35s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.step-back{background:none;border:none;color:var(--cinza);font-family:inherit;font-size:.84rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;padding:0}
+.step-back svg{width:14px;height:14px;stroke:var(--cinza);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.step-eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-escuro);margin-bottom:14px}
+.step h3{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;line-height:1.18;margin-bottom:26px}
+.step h3 small{display:block;font-size:.92rem;font-weight:400;color:var(--cinza);margin-top:10px;letter-spacing:0}
+.field{width:100%;padding:16px 18px;border:1.6px solid rgba(5,59,55,.16);border-radius:12px;font-family:inherit;font-size:1.02rem;color:var(--tinta);transition:border-color .2s,box-shadow .2s;background:var(--branco)}
+.field:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(0,212,198,.13)}
+.opts{display:flex;flex-direction:column;gap:11px}
+.opt{text-align:left;width:100%;padding:17px 20px;border:1.6px solid rgba(5,59,55,.16);border-radius:12px;background:var(--branco);font-family:inherit;font-size:1rem;font-weight:500;color:var(--tinta);cursor:pointer;transition:.2s;display:flex;align-items:center;gap:13px}
+.opt:hover{border-color:var(--teal);background:rgba(0,212,198,.05);transform:translateX(3px)}
+.opt-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(5,59,55,.25);flex-shrink:0;transition:.2s}
+.opt:hover .opt-dot{border-color:var(--teal);box-shadow:inset 0 0 0 4px var(--teal)}
+.step-err{color:#c0392b;font-size:.84rem;margin-top:10px;min-height:1.1em}
+.step-actions{margin-top:26px}
+.step-actions .btn{width:100%}
+.intro-pill{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-escuro);background:rgba(0,212,198,.1);padding:7px 14px;border-radius:999px;margin-bottom:20px}
+/* tela final */
+.done{text-align:center;padding:20px 6px}
+.done-ic{width:72px;height:72px;border-radius:50%;background:rgba(0,212,198,.13);display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+.done-ic svg{width:34px;height:34px;stroke:var(--teal-escuro);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-size:1.5rem;font-weight:800;margin-bottom:12px}
+.done p{color:var(--cinza);font-size:1rem;max-width:400px;margin:0 auto}
 
-/* KEYFRAMES */
-@keyframes fU { from{ opacity:0;transform:translateY(18px) } to{ opacity:1;transform:none } }
-@keyframes fD { from{ opacity:0;transform:translateY(-10px) } to{ opacity:1;transform:none } }
-@keyframes pop { from{ opacity:0;transform:scale(.9) } to{ opacity:1;transform:scale(1) } }
-@keyframes logoScroll { from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
-@keyframes pulse { 0%,100%{ box-shadow:0 0 0 0 rgba(34,197,94,.4) } 70%{ box-shadow:0 0 0 8px rgba(34,197,94,0) } }
-
-/* RESPONSIVE */
-@media(max-width:1100px) {
-  .navbar { padding:28px 40px }
-  section { padding:80px 40px }
-  .hero-content { grid-template-columns:1fr }
-  .right-side { min-height:50vh }
-  .left-side { padding:60px 40px 40px }
-  .metrics { gap:28px }
-  .dif-hdr { grid-template-columns:1fr;gap:24px }
-  .srv-hdr { grid-template-columns:1fr;gap:24px }
-  .srv-grid { grid-template-columns:repeat(2,1fr) }
-  .sc-feat { grid-column:span 2 }
-  .reg-hdr { grid-template-columns:1fr;gap:24px }
-  .reg-grid { grid-template-columns:repeat(2,1fr) }
-  .reg-cta { flex-direction:column;align-items:flex-start }
-  .cli-hdr { grid-template-columns:1fr;gap:24px }
-  #about { grid-template-columns:1fr;min-height:auto }
-  .ab-c { padding:60px 40px }
-  .ctt-l { grid-template-columns:1fr;gap:48px }
-  .ft { grid-template-columns:1fr 1fr;gap:32px }
-  .clients-strip { padding:28px 40px }
+/* ════════════════ RESPONSIVO ════════════════ */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .glass{max-width:440px}
+  .gus-grid{grid-template-columns:1fr;gap:36px}
+  .gus-photo{max-width:360px}
+  .pilares{grid-template-columns:repeat(2,1fr);gap:34px 22px}
+  .pilar-line{display:none}
+  .cards3{grid-template-columns:1fr;gap:18px}
 }
-@media(max-width:768px) {
-  .navbar { padding:20px 24px }
-  .menu { display:none }
-  section { padding:72px 24px }
-  .left-side { padding:60px 24px 40px }
-  .left-side p { max-width:100% }
-  .metrics { gap:20px;flex-wrap:wrap }
-  .hb-top,.hb-bot { display:none }
-  .dif-grid { grid-template-columns:1fr }
-  .srv-grid { grid-template-columns:1fr 1fr }
-  .sc-feat { grid-column:1/-1 }
-  .reg-grid { grid-template-columns:1fr }
-  .reg-cta { padding:30px 26px }
-  .clw { grid-template-columns:repeat(3,1fr) }
-  .docs-grid { grid-template-columns:1fr 1fr }
-  .fgr { grid-template-columns:1fr }
-  .ft { grid-template-columns:1fr }
-  .ft-bot { flex-direction:column;gap:8px }
-  .clients-strip { padding:24px }
-  .clients-logos { gap:24px }
+@media(max-width:560px){
+  .section{padding:72px 0}
+  .hero{padding:128px 0 80px}
+  .stage{padding:46px 26px 38px}
+  .sticky-cta{display:block}
+  .footer{padding-bottom:90px}
+  .btn{width:100%}
+  .hero-cta-row{align-items:stretch}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-
-  <header class="navbar">
-    <div class="logo-area">
-      <img src="assets/img/evoluze-marketing.png" alt="Evoluze Marketing"/>
-    </div>
-    <nav class="menu">
-      <a href="#srv">Serviços</a>
-      <a href="#dif">Diferenciais</a>
-      <a href="#reg">Como funciona</a>
-      <a href="#about">Sobre</a>
-      <a href="#cli">Clientes</a>
-    </nav>
-    <a href="#ctt" class="header-cta">
-      Falar com especialista
-      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </header>
-
-  <div class="hero-content">
-
-    <div class="left-side">
-      <div class="tag">
-        <div class="tag-dot"></div>
-        ESPECIALISTAS EM TRÁFEGO PAGO
-      </div>
-      <h1>
-        Mais vendas<br>
-        com tráfego<br>
-        <span>pago de<br>verdade.</span>
-      </h1>
-      <p>
-        Gestão profissional de <strong>Google Ads e Meta Ads</strong> para atrair o
-        cliente certo e transformar seu investimento em anúncio em
-        <strong>vendas previsíveis</strong>. Atendemos empresas no Brasil inteiro, 100% online.
-      </p>
-      <a href="#ctt" class="main-cta">Agendar diagnóstico gratuito</a>
-      <div class="metrics">
-        <div class="metric-item"><h4>+R$ 5M</h4><span>gerenciados em mídia</span></div>
-        <div class="metric-item"><h4>+100</h4><span>empresas atendidas</span></div>
-        <div class="metric-item"><h4>15 anos</h4><span>de experiência</span></div>
-        <div class="metric-item"><h4>Brasil</h4><span>atende todo o país</span></div>
-      </div>
-    </div>
-
-    <div class="right-side">
-      <div class="fade-overlay"></div>
-      <div class="top-fade"></div>
-      <div class="bottom-fade"></div>
-      <img src="assets/img/fotos/hero-dashboard.jpg" alt="Painel de resultados de campanhas de tráfego pago" class="dashboard-image"/>
-
-      <div class="hero-badge hb-top">
-        <div class="hb-ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div class="hb-txt"><strong>Especialistas em tráfego pago.</strong><span>Google Ads + Meta Ads.</span></div>
-      </div>
-      <div class="hero-badge hb-bot">
-        <div class="hb-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="hb-txt"><strong>Foco total em ROI</strong><span>otimizado pra vender.</span></div>
-        <div class="hb-dot"></div>
-      </div>
-    </div>
-
+<!-- ════════ HEADER ════════ -->
+<header class="header">
+  <div class="container">
+    <span class="logo">evoluze<span class="dot">.</span></span>
   </div>
-</section>
+</header>
 
-<!-- CLIENTS STRIP -->
-<div class="clients-strip">
-  <div class="clients-strip-label">Empresas que confiam no nosso trabalho</div>
-  <div class="clients-logos">
-    <img src="assets/img/task.png" alt="Task"/>
-    <img src="assets/img/costa-atacadao.png" alt="Costa Atacadão"/>
-    <img src="assets/img/cedus.png" alt="CEDUS"/>
-    <img src="assets/img/ethera-labs.png" alt="Ethera Labs"/>
-    <img src="assets/img/solusono.png" alt="SoluSono"/>
-    <img src="assets/img/academie-marsaud.png" alt="Académie Marsaud"/>
-    <img src="assets/img/sr-imobiliaria.png" alt="SR Imobiliária"/>
-    <img src="assets/img/uai-shopping.png" alt="Uai Shopping"/>
-    <img src="assets/img/dermafast.png" alt="Dermafast"/>
-    <img src="assets/img/clinica-high-line.png" alt="Clínica High Line"/>
-  </div>
-</div>
-
-<!-- PLATFORMS CAROUSEL -->
-<div class="plat-car">
-  <div class="plat-car-label">Onde anunciamos pra você vender</div>
-  <div class="plat-wrap">
-    <div class="plat-track">
-      <div class="plat-slide"><span class="plat-pill">Google Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Meta Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Instagram Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">YouTube Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">TikTok Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">LinkedIn Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Google Analytics</span></div>
-      <div class="plat-slide"><span class="plat-pill">Tag Manager</span></div>
-      <div class="plat-slide"><span class="plat-pill">Google Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Meta Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Instagram Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">YouTube Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">TikTok Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">LinkedIn Ads</span></div>
-      <div class="plat-slide"><span class="plat-pill">Google Analytics</span></div>
-      <div class="plat-slide"><span class="plat-pill">Tag Manager</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- DIFERENCIAIS -->
-<section id="dif">
-  <div class="dif-hdr">
-    <div class="rv"><div class="s-tag">Por que a Evoluze</div><h2 class="s-h2">O que nos faz <em>diferentes</em></h2></div>
-    <p class="s-p rv2">Não entregamos relatório de cliques. Entregamos vendas — campanhas de tráfego pago estruturadas pra dar retorno, com dados e otimização constante.</p>
-  </div>
-  <div class="dif-grid">
-    <div class="dif-card rv"><div class="dif-n">01</div><div class="dif-t">Especialistas, não generalistas</div><div class="dif-d">Tráfego pago é o que fazemos o dia inteiro. Sem dividir foco em mil serviços — domínio total de Google e Meta Ads.</div></div>
-    <div class="dif-card rv2"><div class="dif-n">02</div><div class="dif-t">Foco em vendas, não em cliques</div><div class="dif-d">Cada campanha é otimizada pra gerar cliente e receita. A métrica que importa é faturamento, não curtida.</div></div>
-    <div class="dif-card rv3"><div class="dif-n">03</div><div class="dif-t">Otimização baseada em dados</div><div class="dif-d">Pixel, rastreamento e testes constantes. Cada real investido é acompanhado e ajustado pra render mais.</div></div>
-    <div class="dif-card rv"><div class="dif-n">04</div><div class="dif-t">Estratégia sob medida</div><div class="dif-d">Nenhum negócio é igual. Campanhas desenhadas pro seu ticket, sua margem e seu momento — não receita de bolo.</div></div>
-    <div class="dif-card rv2"><div class="dif-n">05</div><div class="dif-t">Parceiro, não fornecedor</div><div class="dif-d">Comunicação direta, transparência total no investimento e nos números. Somos seu sócio de crescimento.</div></div>
-    <div class="dif-card rv3"><div class="dif-n">06</div><div class="dif-t">Relatórios que você entende</div><div class="dif-d">Nada de planilha confusa. Você sabe quanto entrou, quanto saiu e qual o retorno — em linguagem clara.</div></div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="srv">
-  <div class="srv-hdr">
-    <div class="rv"><div class="s-tag">O que fazemos</div><h2 class="s-h2">A máquina de <em>vendas</em> completa</h2></div>
-    <p class="srv-hdr-p rv2">Não vendemos só clique. Montamos a estrutura inteira que transforma anúncio em cliente — do criativo ao fechamento.</p>
-  </div>
-  <div class="srv-grid">
-    <div class="sc sc-feat rv"><div class="sc-img" style="background:linear-gradient(135deg,#0c2b3f 0%,#0c1117 65%)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-left"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="sc-t">Gestão de Tráfego Pago</div><div class="sc-d">Google Ads, Meta Ads, YouTube e LinkedIn — campanhas que colocam sua oferta na frente de quem está pronto pra comprar.</div><div class="sc-feat-tags"><span class="sc-feat-tag">Google Ads</span><span class="sc-feat-tag">Meta Ads</span><span class="sc-feat-tag">YouTube Ads</span><span class="sc-feat-tag">LinkedIn Ads</span></div></div></div></div>
-    <div class="sc rv2"><div class="sc-img" style="background:linear-gradient(135deg,#10303a,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="sc-t">Criativos & Copy que Convertem</div><div class="sc-d">Anúncios em imagem e vídeo pensados pra parar o scroll e gerar clique qualificado.</div></div></div>
-    <div class="sc rv3"><div class="sc-img" style="background:linear-gradient(135deg,#15263a,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sc-t">Landing Pages & CRO</div><div class="sc-d">Páginas de conversão desenhadas pra transformar visitante em lead e lead em venda.</div></div></div>
-    <div class="sc rv"><div class="sc-img" style="background:linear-gradient(135deg,#0e2a38,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="sc-t">Rastreamento & Dados</div><div class="sc-d">Pixel, GA4 e Tag Manager configurados certo — pra otimizar de verdade e saber o que dá retorno.</div></div></div>
-    <div class="sc rv2"><div class="sc-img" style="background:linear-gradient(135deg,#1a2433,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><div class="sc-t">Automação & CRM</div><div class="sc-d">O lead que chega é atendido na hora e encaminhado pro fechamento, sem cair no esquecimento.</div></div></div>
-    <div class="sc rv3"><div class="sc-img" style="background:linear-gradient(135deg,#0d2e34,#0c1117)"></div><div class="sc-glow"></div><div class="sc-body"><div class="sc-ico"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="sc-t">Relatórios & Otimização</div><div class="sc-d">Acompanhamento contínuo: o que funciona a gente escala, o que não funciona é cortado. Foco em ROI.</div></div></div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section id="reg">
-  <div class="reg-hdr">
-    <div class="rv"><div class="s-tag">Como funciona</div><h2 class="s-h2">Do primeiro clique à <em>venda.</em></h2></div>
-    <p class="s-p rv2">Um processo simples e transparente. Você sabe exatamente o que está acontecendo com o seu investimento em cada etapa.</p>
-  </div>
-  <div class="reg-grid">
-    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><div class="reg-city">1. Diagnóstico gratuito</div><div class="reg-note">Entendemos seu negócio, oferta e concorrência.</div></div></div>
-    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="reg-city">2. Estratégia sob medida</div><div class="reg-note">Plano de campanha pro seu objetivo e orçamento.</div></div></div>
-    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div><div class="reg-city">3. Criativos & páginas</div><div class="reg-note">Anúncios e landing pages feitos pra converter.</div></div></div>
-    <div class="reg-card rv"><div class="reg-ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div><div class="reg-city">4. Tráfego no ar</div><div class="reg-note">Subimos as campanhas e atraímos cliente qualificado.</div></div></div>
-    <div class="reg-card rv2"><div class="reg-ic"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="reg-city">5. Otimização com dados</div><div class="reg-note">Pixel e relatórios guiando o ajuste, dia após dia.</div></div></div>
-    <div class="reg-card rv3"><div class="reg-ic"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><div class="reg-city">6. Escala com previsibilidade</div><div class="reg-note">O que vende a gente escala. Foco total em ROI.</div></div></div>
-  </div>
-  <div class="reg-cta rv">
-    <div>
-      <div class="reg-cta-t">Quer saber quanto seu negócio pode vender com tráfego bem feito? O <em>diagnóstico é gratuito.</em></div>
-      <div class="reg-cta-s">Análise do seu cenário e do potencial de retorno, sem compromisso.</div>
-    </div>
-    <a href="https://wa.me/5513982287720?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Evoluze%20e%20quero%20um%20diagn%C3%B3stico%20gratuito%20de%20tr%C3%A1fego%20pago." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Chamar no WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section id="cli">
-  <div class="cli-hdr">
-    <div class="rv"><div class="s-tag">Quem confia na Evoluze</div><h2 class="s-h2">Empresas que escolheram <em>crescer</em></h2></div>
-    <p class="s-p rv2">Clientes de nichos variados, no Brasil inteiro, unidos pelo mesmo objetivo: crescimento real e previsível com tráfego pago.</p>
-  </div>
-  <div class="clw rv">
-    <div class="clw-item"><img src="assets/img/task.png" alt="Task"/></div>
-    <div class="clw-item"><img src="assets/img/costa-atacadao.png" alt="Costa Atacadão"/></div>
-    <div class="clw-item"><img src="assets/img/cedus.png" alt="CEDUS"/></div>
-    <div class="clw-item"><img src="assets/img/ethera-labs.png" alt="Ethera Labs"/></div>
-    <div class="clw-item"><img src="assets/img/solusono.png" alt="SoluSono"/></div>
-    <div class="clw-item"><img src="assets/img/academie-marsaud.png" alt="Académie Marsaud"/></div>
-    <div class="clw-item"><img src="assets/img/sr-imobiliaria.png" alt="SR Imobiliária"/></div>
-    <div class="clw-item"><img src="assets/img/uai-shopping.png" alt="Uai Shopping"/></div>
-    <div class="clw-item"><img src="assets/img/dermafast.png" alt="Dermafast"/></div>
-    <div class="clw-item"><img src="assets/img/clinica-high-line.png" alt="Clínica High Line"/></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="ab-photo rv">
-    <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti"/>
-    <div class="ab-acc"><div class="ab-acc-n">15+</div><div class="ab-acc-l">Anos de mercado</div></div>
-  </div>
-  <div class="ab-c rv2">
-    <div class="s-tag">Quem está por trás</div>
-    <h2 class="ab-name">Gustavo Scaciotti</h2>
-    <div class="ab-role">Fundador &amp; Especialista em Tráfego</div>
-    <p class="ab-tx">Com <strong>mais de 15 anos de experiência</strong>, formação em Comércio Exterior e Marketing e carreira construída dentro de multinacionais ao redor do mundo.</p>
-    <p class="ab-tx">Viveu por dentro o que faz uma empresa crescer de verdade. Entende que anúncio bom não é o que aparece — é o que <strong>traz cliente e dá retorno</strong>.</p>
-    <p class="ab-tx">Hoje, à frente da Evoluze, ajuda empresas do <strong>Brasil inteiro a venderem mais com tráfego pago</strong> — unindo estratégia, dados e otimização constante pra cada real investido virar resultado.</p>
-    <div class="ab-chips">
-      <span class="chip">Tráfego Pago</span>
-      <span class="chip">Google Ads</span>
-      <span class="chip">Meta Ads</span>
-      <span class="chip">CRO &amp; Conversão</span>
-      <span class="chip">CRM &amp; Automação</span>
-      <span class="chip">+R$ 5M em mídia</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="ctt">
-  <div class="ctt-l">
-    <div class="rv">
-      <div class="s-tag">Vamos conversar</div>
-      <h2 class="ctt-h">Que tal um diagnóstico<br><em>gratuito</em> do seu tráfego?</h2>
-      <p class="ctt-p">Preenche o formulário. A gente analisa seu negócio e mostra o caminho mais rápido pra vender mais com tráfego pago — sem enrolação.</p>
-      <div class="ctt-rows">
-        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><div class="ctt-lb">WhatsApp</div><div class="ctt-vl">(13) 98228-7720</div></div></div>
-        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ctt-lb">E-mail</div><div class="ctt-vl">guscaciotti@gmail.com</div></div></div>
-        <div class="ctt-row"><div class="ctt-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="ctt-lb">Atendimento</div><div class="ctt-vl">Brasil todo — 100% online</div></div></div>
-      </div>
-    </div>
-    <div class="fbox rv2">
-      <div class="fbox-t">Diagnóstico gratuito</div>
-      <div class="fbox-s">Sem compromisso. A gente analisa seu negócio e mostra onde está a oportunidade de vender mais.</div>
-      <form id="form" action="https://formspree.io/f/SUBSTITUA_SEU_ID" method="POST">
-        <div class="fgr"><div class="fg"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required/></div><div class="fg"><label>Empresa</label><input type="text" name="empresa" placeholder="Sua empresa"/></div></div>
-        <div class="fgr"><div class="fg"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required/></div><div class="fg"><label>WhatsApp</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" required/></div></div>
-        <div class="fgr">
-          <div class="fg"><label>Investimento mensal</label><select name="investimento"><option value="">Selecione...</option><option>Ainda não invisto</option><option>Até R$ 1.000/mês</option><option>R$ 1.000 a R$ 3.000/mês</option><option>R$ 3.000 a R$ 10.000/mês</option><option>Acima de R$ 10.000/mês</option></select></div>
-          <div class="fg"><label>Segmento</label><select name="segmento"><option value="">Selecione...</option><option>Clínica médica / Saúde</option><option>Imobiliária / Construtora</option><option>Comércio / Loja</option><option>E-commerce</option><option>Serviços premium</option><option>Infoproduto / Educação</option><option>Indústria / B2B</option><option>Outro</option></select></div>
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <!-- linha de previsibilidade (fundo) -->
+  <svg class="hero-line" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#00D4C6" stop-opacity="0"/>
+        <stop offset="1" stop-color="#00D4C6" stop-opacity=".55"/>
+      </linearGradient>
+    </defs>
+    <path d="M-20,520 C200,500 280,430 420,400 C560,370 640,310 780,270 C920,230 1040,150 1240,90"
+          fill="none" stroke="url(#lg)" stroke-width="2.5"/>
+    <path d="M-20,560 C220,548 300,500 440,475 C600,447 700,405 840,372 C980,339 1080,280 1240,235"
+          fill="none" stroke="#00D4C6" stroke-opacity=".12" stroke-width="1.5"/>
+  </svg>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow">Assessoria de tráfego para clínicas de alto padrão</span>
+        <h1>Uma agenda <span class="hl">previsível</span> de pacientes particulares para a sua clínica.</h1>
+        <p class="hero-sub">Sem depender de indicação. Sem depender de convênio. Um fluxo constante do paciente certo — operado com rigor, do anúncio à cadeira.</p>
+        <div class="hero-cta-row">
+          <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <span class="hero-microtrust">Análise gratuita · cada conta é operada pessoalmente</span>
         </div>
-        <div class="fg"><label>Mensagem</label><textarea name="mensagem" placeholder="Conte sobre seu negócio e o que busca..."></textarea></div>
-        <input type="hidden" name="_subject" value="Novo lead — Evoluze (Tráfego Pago)"/>
-        <button type="submit" class="btn-send" id="sbtn">Solicitar diagnóstico →</button>
-      </form>
+      </div>
+      <div class="reveal in d1">
+        <div class="glass">
+          <div class="glass-label">Resultado real de cliente</div>
+          <div class="glass-from">R$ 1.400 / mês em anúncio</div>
+          <div class="glass-arrow">↓</div>
+          <div class="glass-to">R$ 60 a 70 mil / mês em procedimentos particulares</div>
+          <div class="glass-foot">Mês após mês — não por sorte, por sistema.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- OVERLAY -->
-<div id="ov"><div class="ov-b"><div class="ov-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ov-t">Enviado!</div><div class="ov-d">Recebemos seu contato. Em breve entramos em contato pra apresentar seu diagnóstico. Se preferir, fale agora pelo WhatsApp:</div><a href="https://wa.me/5513982287720?text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20da%20Evoluze.%20Quero%20o%20diagn%C3%B3stico%20gratuito%20de%20tr%C3%A1fego%20pago." class="bwa" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continuar pelo WhatsApp</a><button class="bcl" onclick="closeOv()">Fechar</button></div></div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="ft">
-    <div class="ft-logo"><img src="assets/img/evoluze-marketing-2.png" alt="Evoluze Marketing"/><p class="ft-tag">Especialistas em tráfego pago. Google Ads e Meta Ads que transformam investimento em vendas — para empresas do Brasil inteiro.</p></div>
-    <div class="ftc"><h4>Navegação</h4><ul><li><a href="#hero">Início</a></li><li><a href="#dif">Diferenciais</a></li><li><a href="#srv">Serviços</a></li><li><a href="#reg">Como funciona</a></li><li><a href="#cli">Clientes</a></li><li><a href="#about">Sobre</a></li><li><a href="#ctt">Contato</a></li></ul></div>
-    <div class="ftc"><h4>Contato</h4><ul><li><a href="https://wa.me/5513982287720" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:guscaciotti@gmail.com">E-mail</a></li><li><a href="#ctt">Diagnóstico gratuito</a></li></ul></div>
+<!-- ════════ VSL ════════ -->
+<section class="section" id="vsl">
+  <div class="container">
+    <div class="vsl-head reveal">
+      <span class="eyebrow">Assista antes de qualquer coisa</span>
+      <h2 class="title">Como construir um fluxo previsível de pacientes particulares na sua clínica</h2>
+    </div>
+    <!-- [VSL] Troque este placeholder pelo embed (YouTube/Vimeo). Ex.: defina data-embed
+         com a URL do player; ao clicar, o vídeo carrega (lazy-load). -->
+    <div class="vsl-frame reveal" id="vslFrame" data-embed="">
+      <div class="vsl-play">
+        <div class="vsl-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <span>Vídeo em breve</span>
+      </div>
+    </div>
+    <div class="vsl-cta reveal">
+      <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button>
+    </div>
   </div>
-  <div class="ft-bot"><span class="ft-cp">© 2026 Evoluze Marketing. Todos os direitos reservados.</span><span class="ft-cp">Do clique à venda — tráfego pago.</span></div>
+</section>
+
+<!-- linha divisória -->
+<div class="divider alt" aria-hidden="true"><svg viewBox="0 0 1200 54" preserveAspectRatio="none"><path d="M0,44 C300,40 500,28 700,22 C900,16 1050,12 1200,8" fill="none" stroke="#00D4C6" stroke-opacity=".35" stroke-width="2"/></svg></div>
+
+<!-- ════════ 3 DORES ════════ -->
+<section class="section alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">O que muda na sua clínica</span>
+      <h2 class="title">Três coisas que acontecem quando a sua clínica para de depender da sorte</h2>
+    </div>
+    <div class="cards3">
+      <div class="card reveal">
+        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M3 18 L9 12 L13 15 L21 6"/><path d="M21 6h-5M21 6v5"/></svg></div>
+        <h3>Previsibilidade</h3>
+        <p>Pare de depender de indicação e de convênio. Tenha um fluxo constante de pacientes particulares que você consegue prever e planejar mês a mês.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
+        <h3>O paciente certo</h3>
+        <p>Não é sobre mais gente. É sobre o paciente que valoriza o seu trabalho e está pronto para pagar o valor cheio pelo seu procedimento — não o que pechincha.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16l4-5 3 3 5-7"/></svg></div>
+        <h3>Um novo patamar</h3>
+        <p>Deixe de brigar por volume. A sua clínica cresce com margem, com a agenda cheia do tipo de paciente que faz o negócio realmente lucrar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MÉTODO / PROTOCOLO ════════ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">O método</span>
+      <h2 class="title"><strong>Protocolo Paciente Particular</strong>: do anúncio à cadeira, sem nada se perder no caminho</h2>
+      <p class="metodo-intro">A maioria das clínicas trata tráfego como ligar um anúncio e esperar. O resultado é lead barato que não vira paciente. O Protocolo Paciente Particular é o oposto: um sistema operado de ponta a ponta, com rigor diário, para transformar investimento em procedimento realizado — de forma previsível.</p>
+    </div>
+    <div class="pilares">
+      <div class="pilar-line" aria-hidden="true">
+        <svg viewBox="0 0 1000 8" preserveAspectRatio="none" style="width:100%;height:8px"><path d="M0,7 C250,6 400,4 560,3 C740,2 860,2 1000,1" fill="none" stroke="#00D4C6" stroke-opacity=".4" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="pilar reveal"><div class="pilar-n">01</div><h3>Captação</h3><p>Tráfego pago operado com rigor (Meta e Google), atraindo o paciente particular certo — não volume, não curioso.</p></div>
+      <div class="pilar reveal d1"><div class="pilar-n">02</div><h3>Conversão</h3><p>O paciente não se perde depois do clique: atendimento ágil (IA ou treinamento da equipe) e processo comercial que transforma interesse em agendamento.</p></div>
+      <div class="pilar reveal d2"><div class="pilar-n">03</div><h3>Acompanhamento</h3><p>Cada real rastreado até virar procedimento. CRM, métricas e análise de ROI — você sabe exatamente o que entra e o que volta.</p></div>
+      <div class="pilar reveal d3"><div class="pilar-n">04</div><h3>Escala</h3><p>Com a máquina medida e funcionando, um plano de crescimento para elevar a clínica a um novo patamar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROVA / ÁUDIOS ════════ -->
+<section class="section alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Resultados reais</span>
+      <h2 class="title">O que dizem as clínicas que já têm previsibilidade</h2>
+    </div>
+    <div class="car-wrap reveal">
+      <div class="car-track" id="carTrack">
+        <!-- [AUDIOS] Cada card recebe um <audio> real depois. Por enquanto, players placeholder. -->
+        <div class="audio-card">
+          <div class="audio-top"><div class="avatar">G</div><div class="audio-who"><strong>Gestora</strong><span>Clínica de estética avançada</span></div></div>
+          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:55%"></i></div><span class="player-time">0:00</span></div>
+        </div>
+        <div class="audio-card">
+          <div class="audio-top"><div class="avatar">M</div><div class="audio-who"><strong>Médico-dono</strong><span>Dermatologia</span></div></div>
+          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:40%"></i><i style="height:70%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:45%"></i></div><span class="player-time">0:00</span></div>
+        </div>
+        <div class="audio-card">
+          <div class="audio-top"><div class="avatar">S</div><div class="audio-who"><strong>Sócia-administradora</strong><span>Cirurgia plástica</span></div></div>
+          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:55%"></i><i style="height:35%"></i><i style="height:75%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:45%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:80%"></i><i style="height:50%"></i></div><span class="player-time">0:00</span></div>
+        </div>
+        <div class="audio-card">
+          <div class="audio-top"><div class="avatar">D</div><div class="audio-who"><strong>Diretor clínico</strong><span>Clínica multiespecialidade</span></div></div>
+          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:75%"></i></div><span class="player-time">0:00</span></div>
+        </div>
+      </div>
+      <div class="car-nav">
+        <button class="car-btn" id="carPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="car-btn" id="carNext" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <p class="car-note">Depoimentos em áudio dos clientes — disponíveis em breve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ RESULTADO DESTAQUE ════════ -->
+<section class="section">
+  <div class="container">
+    <div class="result reveal">
+      <span class="eyebrow" style="display:block;text-align:center">Estudo de caso</span>
+      <p class="result-1">R$ 1.400 por mês em anúncio.</p>
+      <p class="result-2">R$ 60 a R$ 70 mil por mês em procedimentos particulares.</p>
+      <p class="result-3">Mês após mês. Não por mágica de anúncio — por um sistema operado com rigor, em que nada se perde entre o clique e a cadeira.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ QUEM É GUSTAVO ════════ -->
+<section class="section alt">
+  <div class="container">
+    <div class="gus-grid">
+      <div class="gus-photo reveal">
+        <!-- [FOTO_GUSTAVO] troque por uma foto profissional quando tiver -->
+        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em tráfego para clínicas" loading="lazy"/>
+      </div>
+      <div class="gus-text reveal d1">
+        <span class="eyebrow">Quem conduz</span>
+        <h2>Gustavo Scaciotti</h2>
+        <div class="gus-role">Especialista em tráfego e crescimento para clínicas</div>
+        <p>Eu não ligo um anúncio e sumo. Sou obcecado pela parte operacional — a que faz o investimento virar paciente de verdade na cadeira, e não número bonito em relatório. Trabalho pessoalmente em cada conta, com um número limitado de clínicas, porque resultado de alto padrão exige atenção de alto padrão. Não trabalho com volume: trabalho com resultado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ DIFERENCIAL ════════ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">A diferença</span>
+      <h2 class="title">A maioria entrega lead. Eu entrego paciente na cadeira.</h2>
+    </div>
+    <div class="checks">
+      <div class="check reveal"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Operação pessoal do início ao fim — você não cai na mão de um estagiário.</p></div>
+      <div class="check reveal d1"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Foco em paciente particular de alto valor, não em volume de lead barato.</p></div>
+      <div class="check reveal d2"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Cada real rastreado até o procedimento. Você sempre sabe o retorno.</p></div>
+      <div class="check reveal d3"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Cuido do caminho inteiro: do anúncio ao agendamento, não só do anúncio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CFM ════════ -->
+<section class="section alt">
+  <div class="container">
+    <div class="cfm reveal">
+      <span class="eyebrow">Ética e conformidade</span>
+      <h2 class="title">Marketing dentro das regras do seu conselho</h2>
+      <p>Toda a comunicação é feita com responsabilidade e dentro das diretrizes de publicidade da área da saúde (CFM e conselhos relacionados). Crescimento sem expor a sua reputação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA FINAL ════════ -->
+<section class="section dark cta-final">
+  <div class="container">
+    <span class="eyebrow reveal" style="display:block">Sua próxima paciente já está procurando</span>
+    <h2 class="reveal">A sua agenda pode parar de depender da sorte.</h2>
+    <p class="lead reveal d1">Faça uma análise gratuita da sua clínica. Se fizer sentido para os dois lados, a gente conversa.</p>
+    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button></div>
+    <p class="cta-scarcity reveal d2">Vagas limitadas — cada conta é operada pessoalmente.</p>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="container">
+    <span class="logo">evoluze<span class="dot">.</span></span>
+    <p>Evoluze — Assessoria de Tráfego para Clínicas de Alto Padrão.</p>
+    <p class="copy">© <span id="ano">2026</span> Evoluze. Todos os direitos reservados.</p>
+  </div>
 </footer>
 
+<!-- ════════ STICKY CTA (mobile) ════════ -->
+<div class="sticky-cta"><button class="btn" data-open-form>Quero uma análise da minha clínica</button></div>
+
+<!-- ════════ MODAL FORMULÁRIO ════════ -->
+<div class="modal" id="formModal" role="dialog" aria-modal="true" aria-label="Análise da minha clínica">
+  <div class="modal-inner">
+    <button class="modal-close" id="formClose" aria-label="Fechar formulário">&times;</button>
+    <div class="modal-progress"><div class="modal-progress-bar" id="progressBar"></div></div>
+    <div class="stage" id="formStage"></div>
+  </div>
+</div>
+
 <script>
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");obs.unobserve(e.target)}});},{threshold:.1});
-document.querySelectorAll(".rv,.rv2,.rv3").forEach(el=>obs.observe(el));
-document.getElementById("form").addEventListener("submit",async function(e){
-  e.preventDefault();const btn=document.getElementById("sbtn");btn.textContent="Enviando...";btn.disabled=true;
-  try{
-    const r=await fetch(this.action,{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}});
-    if(r.ok){this.reset();document.getElementById("ov").classList.add("show")}
-    else{btn.textContent="Erro. Tente novamente.";btn.disabled=false}
-  }catch{btn.textContent="Erro. Tente novamente.";btn.disabled=false}
+/* ════════════════════════════════════════════════════════════
+   CONFIGURAÇÃO — edite tudo por aqui (variáveis isoladas no topo)
+   ════════════════════════════════════════════════════════════ */
+const CONFIG = {
+  whatsapp:          "[WHATSAPP]",          // ex.: "5513999999999" (só dígitos, com 55)
+  formspreeId:       "[FORMSPREE_ID]",      // ex.: "xabcdwef"  →  https://formspree.io/f/xabcdwef
+  emailLeads:        "[EMAIL_LEADS]",       // referência; o destino real é configurado na conta do Formspree
+  faixaInvestimento: "[FAIXA_INVESTIMENTO]",// ex.: "a partir de R$ 2.500/mês de honorário + verba de anúncio a partir de R$ 1.500/mês"
+  formEndpoint:      ""                      // FASE 2 (WhatsApp ativo via VPS) — deixe vazio por enquanto
+};
+
+/* dispara conversão no Pixel/GTM se estiverem configurados */
+function fireConversion(){
+  try{ if(typeof fbq==='function') fbq('track','Lead'); }catch(e){}
+  try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_form_submit'}); }catch(e){}
+}
+
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+/* ════════════ REVEAL no scroll ════════════ */
+(function(){
+  const els=document.querySelectorAll('.reveal:not(.in)');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io=new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  els.forEach(e=>io.observe(e));
+})();
+
+/* ════════════ VSL lazy embed ════════════ */
+document.getElementById('vslFrame').addEventListener('click',function(){
+  const url=this.getAttribute('data-embed');
+  if(!url) return; // ainda sem vídeo
+  this.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
 });
-function closeOv(){document.getElementById("ov").classList.remove("show");const b=document.getElementById("sbtn");b.textContent="Solicitar diagnóstico →";b.disabled=false}
-document.getElementById("ov").addEventListener("click",function(e){if(e.target===this)closeOv()});
+
+/* ════════════ Carrossel de áudios ════════════ */
+(function(){
+  const track=document.getElementById('carTrack');
+  const card=track.querySelector('.audio-card');
+  const step=()=> (card?card.offsetWidth:320)+20;
+  document.getElementById('carNext').onclick=()=>track.scrollBy({left:step(),behavior:'smooth'});
+  document.getElementById('carPrev').onclick=()=>track.scrollBy({left:-step(),behavior:'smooth'});
+})();
+
+/* ════════════════════════════════════════════════════════════
+   FORMULÁRIO MULTI-STEP
+   ════════════════════════════════════════════════════════════ */
+const STEPS=[
+  {type:'intro', eyebrow:'Análise da sua clínica',
+   q:'Você quer uma agenda previsível de pacientes particulares — sem depender de indicação ou convênio?',
+   cta:'Sim. É disso que preciso.'},
+  {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
+  {type:'text', key:'clinica', q:'Qual o nome e a cidade da sua clínica?', placeholder:'Ex.: Clínica X — São Paulo/SP'},
+  {type:'text', key:'area', q:'Qual a sua área de atuação?', placeholder:'Ex.: estética avançada, dermatologia, cirurgia plástica, ortopedia...'},
+  {type:'choice', key:'faturamento', q:'Quanto a sua clínica fatura por mês, aproximadamente?',
+   options:['Até R$ 30 mil','R$ 30 mil a R$ 80 mil','R$ 80 mil a R$ 200 mil','Acima de R$ 200 mil']},
+  {type:'choice', key:'investe', q:'Vocês já investem em anúncio hoje?',
+   options:['Não, nunca investimos','Já investimos, mas sem resultado claro','Sim, investimos e queremos escalar']},
+  {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
+   options:['Agenda imprevisível / depende de indicação','Dependência de convênio (queremos mais particular)','Já vamos bem, queremos escalar','Atraímos paciente errado / que pechincha']},
+  {type:'choice', key:'budget', q:'O investimento faz sentido?',
+   sub:'Um trabalho sério de aquisição para uma clínica do seu porte envolve um investimento mensal '+CONFIG.faixaInvestimento+'. Faz sentido para o momento da sua clínica?',
+   options:['Sim, faz sentido','Ainda não tenho certeza']},
+  {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
+];
+
+const state={};
+let idx=0;
+const modal=document.getElementById('formModal');
+const stage=document.getElementById('formStage');
+const bar=document.getElementById('progressBar');
+let lastFocus=null;
+
+function openForm(){lastFocus=document.activeElement;modal.classList.add('open');document.body.style.overflow='hidden';idx=0;render();}
+function closeForm(){modal.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+document.querySelectorAll('[data-open-form]').forEach(b=>b.addEventListener('click',openForm));
+document.getElementById('formClose').addEventListener('click',closeForm);
+modal.addEventListener('click',e=>{if(e.target===modal)closeForm();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeForm();});
+
+function setProgress(){bar.style.width=(idx/(STEPS.length))*100+'%';}
+
+function render(){
+  const s=STEPS[idx];setProgress();
+  let html='<div class="step">';
+  if(idx>0) html+='<button class="step-back" id="back"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Voltar</button>';
+
+  if(s.type==='intro'){
+    html+='<span class="intro-pill">'+s.eyebrow+'</span><h3>'+s.q+'</h3>';
+    html+='<div class="step-actions"><button class="btn" id="next">'+s.cta+'</button></div>';
+  } else {
+    if(s.eyebrow) html+='<div class="step-eyebrow">'+s.eyebrow+'</div>';
+    html+='<h3>'+s.q+(s.sub?'<small>'+s.sub+'</small>':'')+'</h3>';
+    if(s.type==='choice'){
+      html+='<div class="opts">';
+      s.options.forEach((o,i)=>{html+='<button class="opt" data-val="'+o.replace(/"/g,'&quot;')+'"><span class="opt-dot"></span>'+o+'</button>';});
+      html+='</div>';
+    } else {
+      const it = s.type==='tel'?'tel':'text';
+      const val = state[s.key]?(' value="'+state[s.key].replace(/"/g,'&quot;')+'"'):'';
+      html+='<input class="field" id="inp" type="'+it+'" placeholder="'+(s.placeholder||'')+'"'+val+' autocomplete="off"/>';
+      html+='<div class="step-err" id="err"></div>';
+      html+='<div class="step-actions"><button class="btn" id="next">Continuar</button></div>';
+    }
+  }
+  html+='</div>';
+  stage.innerHTML=html;
+
+  if(idx>0) document.getElementById('back').onclick=()=>{idx--;render();};
+
+  if(s.type==='intro'){
+    document.getElementById('next').onclick=()=>{idx++;render();};
+  } else if(s.type==='choice'){
+    stage.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{state[s.key]=b.getAttribute('data-val');advance();});
+  } else {
+    const inp=document.getElementById('inp');
+    inp.focus();
+    const go=()=>{
+      const v=inp.value.trim();
+      if(!v){err('Por favor, preencha este campo.');return;}
+      if(s.type==='tel'&&v.replace(/\D/g,'').length<10){err('Informe um WhatsApp válido com DDD.');return;}
+      state[s.key]=v;advance();
+    };
+    document.getElementById('next').onclick=go;
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+  }
+}
+function err(m){const e=document.getElementById('err');if(e)e.textContent=m;}
+
+function advance(){
+  if(idx<STEPS.length-1){idx++;render();}
+  else finish();
+}
+
+function finish(){
+  setProgress();bar.style.width='100%';
+  // lógica de corte (descarte educado)
+  const descarte = state.faturamento==='Até R$ 30 mil' && state.investe==='Não, nunca investimos';
+  if(descarte){
+    stage.innerHTML=doneHTML('Obrigado por responder!',
+      'No momento, o nosso trabalho é desenhado para clínicas num outro estágio de investimento. Assim que fizer sentido para o momento da sua clínica, a porta está aberta.');
+    return;
+  }
+  // envio qualificado
+  submitLead();
+}
+
+function doneHTML(t,p){
+  return '<div class="done"><div class="done-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><h3>'+t+'</h3><p>'+p+'</p></div>';
+}
+
+async function submitLead(){
+  stage.innerHTML='<div class="done"><h3>Enviando...</h3><p>Só um instante.</p></div>';
+  const payload={
+    nome:state.nome||'', clinica:state.clinica||'', area:state.area||'',
+    faturamento:state.faturamento||'', investe:state.investe||'', desafio:state.desafio||'',
+    budget:state.budget||'', whatsapp:state.whatsapp||'',
+    _subject:'Novo lead — Evoluze (Análise de clínica)'
+  };
+  let ok=false;
+  try{
+    if(CONFIG.formspreeId && CONFIG.formspreeId.indexOf('[')===-1){
+      const r=await fetch('https://formspree.io/f/'+CONFIG.formspreeId,{
+        method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify(payload)
+      });
+      ok=r.ok;
+    } else { ok=true; /* sem Formspree configurado ainda: não bloqueia o lead na demonstração */ }
+  }catch(e){ ok=false; }
+
+  // FASE 2 — WhatsApp ativo (descomente quando tiver o endpoint no VPS):
+  // if(CONFIG.formEndpoint){ try{ fetch(CONFIG.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }catch(e){} }
+
+  if(ok){
+    fireConversion();
+    stage.innerHTML=doneHTML('Recebemos suas respostas!','Em breve entramos em contato pelo seu WhatsApp para apresentar a análise e os próximos passos.');
+  } else {
+    stage.innerHTML='<div class="done"><h3>Ops, algo falhou no envio.</h3><p>Tente novamente em instantes.</p><div class="step-actions"><button class="btn" id="retry">Tentar de novo</button></div></div>';
+    document.getElementById('retry').onclick=submitLead;
+  }
+}
 </script>
 </body>
 </html>
