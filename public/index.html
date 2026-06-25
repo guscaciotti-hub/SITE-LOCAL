@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Evoluze — Agenda previsível de pacientes particulares para a sua clínica</title>
-<meta name="description" content="Assessoria de tráfego pago para clínicas de alto padrão. Um fluxo constante e previsível de pacientes particulares — sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
+<title>Evoluze — Marketing Médico para Clínicas e Consultórios | Pacientes Particulares Previsíveis</title>
+<meta name="description" content="Assessoria especializada em marketing médico para clínicas e consultórios. Um fluxo previsível de pacientes particulares — tráfego operado com rigor, do anúncio à cadeira, sem depender de indicação ou convênio."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23053B37'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%2300D4C6'/%3E%3C/svg%3E"/>
 <!-- Open Graph -->
-<meta property="og:title" content="Evoluze — Pacientes particulares previsíveis para a sua clínica"/>
+<meta property="og:title" content="Evoluze — Marketing Médico para Clínicas e Consultórios"/>
 <meta property="og:description" content="Um fluxo constante do paciente certo, sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -96,11 +96,13 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .hero-sub{font-size:clamp(1.05rem,1.7vw,1.3rem);color:rgba(255,255,255,.74);max-width:620px;margin:0 auto 40px;font-weight:400}
 .hero-cta{display:flex;justify-content:center;width:100%}
 .hero-microtrust{font-size:.84rem;color:rgba(255,255,255,.46);margin-top:18px}
+.hero-creds{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.cred{font-size:.74rem;font-weight:600;color:rgba(255,255,255,.72);border:1px solid rgba(0,212,198,.32);border-radius:999px;padding:7px 15px;white-space:nowrap}
 .hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--teal);opacity:.7;animation:bob 2.1s ease-in-out infinite}
 .hero-scroll svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 .hero-rv{opacity:0;transform:translateY(20px);animation:heroIn .75s var(--ease) forwards}
-.hero-rv.s2{animation-delay:.14s}.hero-rv.s3{animation-delay:.28s}.hero-rv.s4{animation-delay:.42s}.hero-rv.s5{animation-delay:.54s}
+.hero-rv.s2{animation-delay:.14s}.hero-rv.s3{animation-delay:.28s}.hero-rv.s4{animation-delay:.42s}.hero-rv.s5{animation-delay:.54s}.hero-rv.s6{animation-delay:.66s}
 @keyframes heroIn{to{opacity:1;transform:none}}
 
 /* divisória "linha de previsibilidade" */
@@ -190,6 +192,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .cfm{max-width:720px}
 .cfm .title{font-size:clamp(1.5rem,2.6vw,2rem)}
 .cfm p{font-size:1.04rem;color:var(--cinza)}
+.objection{max-width:820px;margin:0 auto;text-align:center}
+.objection p{font-size:1.1rem;color:var(--cinza);margin-top:16px}
 
 /* ════════════════ CTA FINAL ════════════════ */
 .cta-final{text-align:center}
@@ -298,15 +302,21 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   </div>
   <div class="container">
     <div class="hero-inner">
-      <span class="eyebrow hero-rv">Assessoria de tráfego para clínicas de alto padrão</span>
+      <span class="eyebrow hero-rv">Assessoria especializada em marketing médico</span>
       <h1 class="hero-rv s2">Uma agenda <span class="hl">previsível</span> de pacientes particulares para a sua clínica.</h1>
       <p class="hero-sub hero-rv s3">Sem depender de indicação. Sem depender de convênio. Um fluxo constante do paciente certo — operado com rigor, do anúncio à cadeira.</p>
       <div class="hero-cta hero-rv s4">
-        <button class="btn btn-lg" data-open-form>Fazer Orçamento Automático
+        <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
       <span class="hero-microtrust hero-rv s5">Análise gratuita · cada conta é operada pessoalmente</span>
+      <div class="hero-creds hero-rv s6" aria-label="Credenciais">
+        <span class="cred">Google Ads Certified</span>
+        <span class="cred">Meta Ads</span>
+        <span class="cred" id="credClinicas">+15 clínicas atendidas</span>
+        <span class="cred">Operação 100% pessoal</span>
+      </div>
     </div>
   </div>
   <a class="hero-scroll" href="#vsl" aria-label="Rolar para o vídeo"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -328,7 +338,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       </div>
     </div>
     <div class="vsl-cta reveal">
-      <button class="btn btn-lg" data-open-form>Fazer Orçamento Automático</button>
+      <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button>
     </div>
   </div>
 </section>
@@ -425,8 +435,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <div class="gus-text reveal d1">
         <span class="eyebrow">Quem conduz</span>
         <h2>Gustavo Scaciotti</h2>
-        <div class="gus-role">Especialista em tráfego e crescimento para clínicas</div>
-        <p>Eu não ligo um anúncio e sumo. Sou obcecado pela parte operacional — a que faz o investimento virar paciente de verdade na cadeira, e não número bonito em relatório. Trabalho pessoalmente em cada conta, com um número limitado de clínicas, porque resultado de alto padrão exige atenção de alto padrão. Não trabalho com volume: trabalho com resultado.</p>
+        <div class="gus-role">Especialista em Marketing Médico</div>
+        <p>Sou o Gustavo, responsável pela Evoluze. Eu opero pessoalmente o tráfego de cada clínica que atendo — do anúncio ao paciente na cadeira. Não trabalho com volume nem com marketing de vaidade: trabalho com previsibilidade e retorno mensurável. Atendo um número limitado de clínicas justamente porque resultado de alto padrão exige atenção de alto padrão.</p>
       </div>
     </div>
   </div>
@@ -459,14 +469,26 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   </div>
 </section>
 
+<!-- ════════ OBJEÇÃO ════════ -->
+<section class="section">
+  <div class="container">
+    <div class="objection reveal">
+      <h2 class="title" style="margin-left:auto;margin-right:auto">Você cuida dos pacientes. Da máquina de aquisição, cuido eu.</h2>
+      <p>Você não precisa virar especialista em tráfego, nem montar equipe de marketing, nem aprender ferramenta nenhuma. Você precisa de uma agenda previsível de pacientes particulares e de alguém que opere isso com rigor, todo dia. Essa parte é comigo.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ════════ CTA FINAL ════════ -->
 <section class="section dark cta-final">
   <div class="container">
-    <span class="eyebrow reveal" style="display:block">Sua próxima paciente já está procurando</span>
-    <h2 class="reveal">A sua agenda pode parar de depender da sorte.</h2>
-    <p class="lead reveal d1">Faça uma análise gratuita da sua clínica. Se fizer sentido para os dois lados, a gente conversa.</p>
-    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Fazer Orçamento Automático</button></div>
-    <p class="cta-scarcity reveal d2">Vagas limitadas — cada conta é operada pessoalmente.</p>
+    <span class="eyebrow reveal" style="display:block">O próximo passo</span>
+    <h2 class="reveal">Este é o momento de tirar a sua agenda da dependência da sorte.</h2>
+    <p class="lead reveal d1">Eu não faço marketing de vaidade. Faço paciente particular chegar, de forma previsível e mensurável. Se a sua clínica está pronta para isso, faça a análise gratuita.</p>
+    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button></div>
+    <p class="cta-scarcity reveal d2">Atendo um número limitado de clínicas por vez.</p>
   </div>
 </section>
 
@@ -481,7 +503,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 </footer>
 
 <!-- ════════ STICKY CTA (mobile) ════════ -->
-<div class="sticky-cta"><button class="btn" data-open-form>Fazer Orçamento Automático</button></div>
+<div class="sticky-cta"><button class="btn" data-open-form>Quero uma análise da minha clínica</button></div>
 
 <!-- ════════ MODAL FORMULÁRIO ════════ -->
 <div class="modal" id="formModal" role="dialog" aria-modal="true" aria-label="Análise da minha clínica">
@@ -501,6 +523,7 @@ const CONFIG = {
   formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
   faixaInvestimento: "a partir de R$ 2.500/mês de honorário, mais a verba de anúncio", // Gustavo confirma
+  clinicasAtendidas: "+15 clínicas atendidas", // selo de autoridade no hero — Gustavo ajusta
   vslEmbed:          "",                       // URL do player do vídeo (YouTube/Vimeo)
   depoimentos:       [],                       // preencher quando tiver áudios reais
   formEndpoint:      ""                        // FASE 2: WhatsApp ativo via VPS
@@ -513,6 +536,7 @@ function fireConversion(){
 }
 
 document.getElementById('ano').textContent = new Date().getFullYear();
+(function(){var c=document.getElementById('credClinicas'); if(c && CONFIG.clinicasAtendidas) c.textContent=CONFIG.clinicasAtendidas;})();
 
 /* ════════════ REVEAL no scroll ════════════ */
 (function(){
