@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Evoluze — Agenda previsível de pacientes particulares para a sua clínica</title>
 <meta name="description" content="Assessoria de tráfego pago para clínicas de alto padrão. Um fluxo constante e previsível de pacientes particulares — sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
-<link rel="icon" type="image/png" href="assets/img/evoluze-marketing.png"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23053B37'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%2300D4C6'/%3E%3C/svg%3E"/>
 <!-- Open Graph -->
 <meta property="og:title" content="Evoluze — Pacientes particulares previsíveis para a sua clínica"/>
 <meta property="og:description" content="Um fluxo constante do paciente certo, sem depender de indicação ou convênio. Operado com rigor, do anúncio à cadeira."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="pt_BR"/>
+<meta property="og:image" content="assets/img/og-evoluze.png"/>
 
 <!-- ════════════════════════════════════════════════════════════
      RASTREAMENTO — cole os IDs e descomente quando tiver
@@ -163,6 +164,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .car-btn:hover{border-color:var(--teal-escuro);background:var(--off-white)}
 .car-btn svg{width:18px;height:18px;stroke:var(--teal-escuro);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .car-note{font-size:.78rem;color:var(--cinza);margin-top:14px;font-style:italic}
+.audio-real{width:100%;margin-top:4px}
 
 /* ════════════════ RESULTADO DESTAQUE ════════════════ */
 .result{text-align:center;max-width:840px;margin:0 auto}
@@ -299,7 +301,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
         <h1>Uma agenda <span class="hl">previsível</span> de pacientes particulares para a sua clínica.</h1>
         <p class="hero-sub">Sem depender de indicação. Sem depender de convênio. Um fluxo constante do paciente certo — operado com rigor, do anúncio à cadeira.</p>
         <div class="hero-cta-row">
-          <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
+          <button class="btn btn-lg" data-open-form>Fazer Orçamento Automático
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
           <span class="hero-microtrust">Análise gratuita · cada conta é operada pessoalmente</span>
@@ -334,7 +336,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       </div>
     </div>
     <div class="vsl-cta reveal">
-      <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button>
+      <button class="btn btn-lg" data-open-form>Fazer Orçamento Automático</button>
     </div>
   </div>
 </section>
@@ -390,7 +392,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 </section>
 
 <!-- ════════ PROVA / ÁUDIOS ════════ -->
-<section class="section alt">
+<section class="section alt" id="prova">
   <div class="container">
     <div class="reveal">
       <span class="eyebrow">Resultados reais</span>
@@ -398,29 +400,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     </div>
     <div class="car-wrap reveal">
       <div class="car-track" id="carTrack">
-        <!-- [AUDIOS] Cada card recebe um <audio> real depois. Por enquanto, players placeholder. -->
-        <div class="audio-card">
-          <div class="audio-top"><div class="avatar">G</div><div class="audio-who"><strong>Gestora</strong><span>Clínica de estética avançada</span></div></div>
-          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:55%"></i></div><span class="player-time">0:00</span></div>
-        </div>
-        <div class="audio-card">
-          <div class="audio-top"><div class="avatar">M</div><div class="audio-who"><strong>Médico-dono</strong><span>Dermatologia</span></div></div>
-          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:40%"></i><i style="height:70%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:45%"></i></div><span class="player-time">0:00</span></div>
-        </div>
-        <div class="audio-card">
-          <div class="audio-top"><div class="avatar">S</div><div class="audio-who"><strong>Sócia-administradora</strong><span>Cirurgia plástica</span></div></div>
-          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:55%"></i><i style="height:35%"></i><i style="height:75%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:45%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:80%"></i><i style="height:50%"></i></div><span class="player-time">0:00</span></div>
-        </div>
-        <div class="audio-card">
-          <div class="audio-top"><div class="avatar">D</div><div class="audio-who"><strong>Diretor clínico</strong><span>Clínica multiespecialidade</span></div></div>
-          <div class="player"><div class="player-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="wave"><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:75%"></i></div><span class="player-time">0:00</span></div>
-        </div>
+        <!-- [AUDIOS] Cards gerados a partir de CONFIG.depoimentos (JS). Se vazio, a seção é escondida. -->
       </div>
       <div class="car-nav">
         <button class="car-btn" id="carPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
         <button class="car-btn" id="carNext" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
       </div>
-      <p class="car-note">Depoimentos em áudio dos clientes — disponíveis em breve.</p>
     </div>
   </div>
 </section>
@@ -443,7 +428,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <div class="gus-grid">
       <div class="gus-photo reveal">
         <!-- [FOTO_GUSTAVO] troque por uma foto profissional quando tiver -->
-        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em tráfego para clínicas" loading="lazy"/>
+        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em tráfego para clínicas" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=\'gus-ph-fallback\'>GS</div>')"/>
       </div>
       <div class="gus-text reveal d1">
         <span class="eyebrow">Quem conduz</span>
@@ -488,7 +473,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <span class="eyebrow reveal" style="display:block">Sua próxima paciente já está procurando</span>
     <h2 class="reveal">A sua agenda pode parar de depender da sorte.</h2>
     <p class="lead reveal d1">Faça uma análise gratuita da sua clínica. Se fizer sentido para os dois lados, a gente conversa.</p>
-    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button></div>
+    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Fazer Orçamento Automático</button></div>
     <p class="cta-scarcity reveal d2">Vagas limitadas — cada conta é operada pessoalmente.</p>
   </div>
 </section>
@@ -499,11 +484,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <span class="logo">evoluze<span class="dot">.</span></span>
     <p>Evoluze — Assessoria de Tráfego para Clínicas de Alto Padrão.</p>
     <p class="copy">© <span id="ano">2026</span> Evoluze. Todos os direitos reservados.</p>
+    <p class="copy"><a href="privacidade.html" style="color:rgba(255,255,255,.55);text-decoration:underline">Política de Privacidade</a></p>
   </div>
 </footer>
 
 <!-- ════════ STICKY CTA (mobile) ════════ -->
-<div class="sticky-cta"><button class="btn" data-open-form>Quero uma análise da minha clínica</button></div>
+<div class="sticky-cta"><button class="btn" data-open-form>Fazer Orçamento Automático</button></div>
 
 <!-- ════════ MODAL FORMULÁRIO ════════ -->
 <div class="modal" id="formModal" role="dialog" aria-modal="true" aria-label="Análise da minha clínica">
@@ -519,11 +505,13 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
    CONFIGURAÇÃO — edite tudo por aqui (variáveis isoladas no topo)
    ════════════════════════════════════════════════════════════ */
 const CONFIG = {
-  whatsapp:          "[WHATSAPP]",          // ex.: "5513999999999" (só dígitos, com 55)
-  formspreeId:       "[FORMSPREE_ID]",      // ex.: "xabcdwef"  →  https://formspree.io/f/xabcdwef
-  emailLeads:        "[EMAIL_LEADS]",       // referência; o destino real é configurado na conta do Formspree
-  faixaInvestimento: "[FAIXA_INVESTIMENTO]",// ex.: "a partir de R$ 2.500/mês de honorário + verba de anúncio a partir de R$ 1.500/mês"
-  formEndpoint:      ""                      // FASE 2 (WhatsApp ativo via VPS) — deixe vazio por enquanto
+  whatsapp:          "[WHATSAPP]",            // só dígitos com 55, ex: 5513999999999
+  formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
+  emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
+  faixaInvestimento: "a partir de R$ 2.500/mês de honorário, mais a verba de anúncio", // Gustavo confirma
+  vslEmbed:          "",                       // URL do player do vídeo (YouTube/Vimeo)
+  depoimentos:       [],                       // preencher quando tiver áudios reais
+  formEndpoint:      ""                        // FASE 2: WhatsApp ativo via VPS
 };
 
 /* dispara conversão no Pixel/GTM se estiverem configurados */
@@ -545,28 +533,35 @@ document.getElementById('ano').textContent = new Date().getFullYear();
 })();
 
 /* ════════════ VSL lazy embed ════════════ */
+if(CONFIG.vslEmbed){ document.getElementById('vslFrame').setAttribute('data-embed', CONFIG.vslEmbed); }
 document.getElementById('vslFrame').addEventListener('click',function(){
   const url=this.getAttribute('data-embed');
   if(!url) return; // ainda sem vídeo
   this.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
 });
 
-/* ════════════ Carrossel de áudios ════════════ */
+/* ════════════ Carrossel de áudios (a partir de CONFIG.depoimentos) ════════════ */
 (function(){
+  const sec=document.getElementById('prova');
   const track=document.getElementById('carTrack');
+  const list=CONFIG.depoimentos||[];
+  if(!list.length){ if(sec) sec.style.display='none'; return; }
+  track.innerHTML=list.map(function(d){
+    return '<div class="audio-card"><div class="audio-top"><div class="avatar">'+(d.inicial||'•')+'</div>'
+      +'<div class="audio-who"><strong>'+(d.nome||'')+'</strong><span>'+(d.cargo||'')+'</span></div></div>'
+      +'<audio class="audio-real" controls preload="none" src="'+(d.audio||'')+'"></audio></div>';
+  }).join('');
   const card=track.querySelector('.audio-card');
-  const step=()=> (card?card.offsetWidth:320)+20;
-  document.getElementById('carNext').onclick=()=>track.scrollBy({left:step(),behavior:'smooth'});
-  document.getElementById('carPrev').onclick=()=>track.scrollBy({left:-step(),behavior:'smooth'});
+  const step=function(){return (card?card.offsetWidth:320)+20;};
+  document.getElementById('carNext').onclick=function(){track.scrollBy({left:step(),behavior:'smooth'});};
+  document.getElementById('carPrev').onclick=function(){track.scrollBy({left:-step(),behavior:'smooth'});};
 })();
 
 /* ════════════════════════════════════════════════════════════
    FORMULÁRIO MULTI-STEP
    ════════════════════════════════════════════════════════════ */
+const _faixa = (CONFIG.faixaInvestimento && CONFIG.faixaInvestimento.indexOf('[')===-1) ? CONFIG.faixaInvestimento : 'compatível com esse objetivo';
 const STEPS=[
-  {type:'intro', eyebrow:'Análise da sua clínica',
-   q:'Você quer uma agenda previsível de pacientes particulares — sem depender de indicação ou convênio?',
-   cta:'Sim. É disso que preciso.'},
   {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
   {type:'text', key:'clinica', q:'Qual o nome e a cidade da sua clínica?', placeholder:'Ex.: Clínica X — São Paulo/SP'},
   {type:'text', key:'area', q:'Qual a sua área de atuação?', placeholder:'Ex.: estética avançada, dermatologia, cirurgia plástica, ortopedia...'},
@@ -577,7 +572,7 @@ const STEPS=[
   {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
    options:['Agenda imprevisível / depende de indicação','Dependência de convênio (queremos mais particular)','Já vamos bem, queremos escalar','Atraímos paciente errado / que pechincha']},
   {type:'choice', key:'budget', q:'O investimento faz sentido?',
-   sub:'Um trabalho sério de aquisição para uma clínica do seu porte envolve um investimento mensal '+CONFIG.faixaInvestimento+'. Faz sentido para o momento da sua clínica?',
+   sub:'Um trabalho sério de aquisição para uma clínica do seu porte envolve um investimento mensal '+_faixa+'. Faz sentido para o momento da sua clínica?',
    options:['Sim, faz sentido','Ainda não tenho certeza']},
   {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
 ];
@@ -676,15 +671,18 @@ async function submitLead(){
     _subject:'Novo lead — Evoluze (Análise de clínica)'
   };
   let ok=false;
-  try{
-    if(CONFIG.formspreeId && CONFIG.formspreeId.indexOf('[')===-1){
+  const configurado = CONFIG.formspreeId && CONFIG.formspreeId.indexOf('[')===-1;
+  if(!configurado){
+    console.warn("Formspree não configurado — lead não enviado.");
+  } else {
+    try{
       const r=await fetch('https://formspree.io/f/'+CONFIG.formspreeId,{
         method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
         body:JSON.stringify(payload)
       });
-      ok=r.ok;
-    } else { ok=true; /* sem Formspree configurado ainda: não bloqueia o lead na demonstração */ }
-  }catch(e){ ok=false; }
+      ok=(r.ok===true);
+    }catch(e){ ok=false; }
+  }
 
   // FASE 2 — WhatsApp ativo (descomente quando tiver o endpoint no VPS):
   // if(CONFIG.formEndpoint){ try{ fetch(CONFIG.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }catch(e){} }
