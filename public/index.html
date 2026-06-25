@@ -79,6 +79,9 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .header{position:absolute;top:0;left:0;width:100%;z-index:20;padding:28px 0}
 .logo{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:#fff;display:inline-flex;align-items:baseline}
 .logo .dot{color:var(--teal)}
+.header-inner{display:flex;justify-content:center}
+.logo-img{height:68px;width:auto;display:block}
+.footer-logo-img{height:74px;width:auto;margin:0 auto 14px}
 .logo--dark{color:var(--tinta)}
 
 /* ════════════════ HERO ════════════════ */
@@ -136,6 +139,20 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 
 /* ════════════════ MÉTODO / 4 PILARES ════════════════ */
 .metodo-intro{max-width:680px;margin:0 0 8px;font-size:1.02rem;color:var(--cinza)}
+/* arte de abertura "Convênio Zero" (seção escura) */
+.metodo-art{text-align:center;max-width:920px;margin:0 auto;position:relative}
+.metodo-art::before{content:'';position:absolute;top:46%;left:50%;width:560px;max-width:88%;height:300px;transform:translate(-50%,-55%);background:radial-gradient(ellipse at center,rgba(0,212,198,.14),transparent 66%);filter:blur(12px);z-index:0;pointer-events:none}
+.metodo-art>*{position:relative;z-index:1}
+.metodo-kicker{display:block;font-size:.8rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.metodo-name{font-size:clamp(2.2rem,8.5vw,6rem);font-weight:800;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;color:#fff;margin-bottom:22px}
+.metodo-name .hl{color:var(--teal)}
+.metodo-support{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#fff;font-weight:500;max-width:640px;margin:0 auto 16px}
+#metodo .metodo-intro{color:rgba(255,255,255,.55);max-width:660px;margin:0 auto;text-align:center}
+#metodo .pilares{margin-top:62px}
+#metodo .pilar{background:var(--teal-fundo)}
+#metodo .pilar-n{background:rgba(0,212,198,.12);border-color:var(--teal-fundo);box-shadow:none}
+#metodo .pilar h3{color:#fff}
+#metodo .pilar p{color:rgba(255,255,255,.5)}
 .pilares{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px}
 .pilar-line{position:absolute;top:34px;left:6%;right:6%;height:2px;z-index:0}
 .pilar{position:relative;z-index:1;background:var(--branco)}
@@ -263,6 +280,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   .sticky-cta{display:block}
   .footer{padding-bottom:90px}
   .btn{width:100%}
+  .logo-img{height:56px}
+  .footer-logo-img{height:64px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001s!important;transition:none!important;scroll-behavior:auto!important}
@@ -275,8 +294,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 
 <!-- ════════ HEADER ════════ -->
 <header class="header">
-  <div class="container">
-    <span class="logo">evoluze<span class="dot">.</span></span>
+  <div class="container header-inner">
+    <img src="assets/img/evoluze-logo.png" alt="Evoluze Marketing" class="logo-img"/>
   </div>
 </header>
 
@@ -373,13 +392,14 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   </div>
 </section>
 
-<!-- ════════ MÉTODO / PROTOCOLO ════════ -->
-<section class="section">
+<!-- ════════ MÉTODO — arte de abertura ════════ -->
+<section class="section dark" id="metodo">
   <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">O método</span>
-      <h2 class="title"><strong>Protocolo Paciente Particular</strong>: do anúncio à cadeira, sem nada se perder no caminho</h2>
-      <p class="metodo-intro">A maioria das clínicas trata tráfego como ligar um anúncio e esperar. O resultado é lead barato que não vira paciente. O Protocolo Paciente Particular é o oposto: um sistema operado de ponta a ponta, com rigor diário, para transformar investimento em procedimento realizado — de forma previsível.</p>
+    <div class="metodo-art reveal">
+      <span class="metodo-kicker" id="metodoKicker">Método</span>
+      <h2 class="metodo-name" id="metodoName">Convênio <span class="hl">Zero</span></h2>
+      <p class="metodo-support">Sistema de captação, conversão e escala de pacientes particulares.</p>
+      <p class="metodo-intro">A maioria das clínicas trata tráfego como ligar um anúncio e esperar. O resultado é lead barato que não vira paciente. O <span data-metodo>Método Convênio Zero</span> é o oposto: um sistema operado de ponta a ponta, com rigor diário, para transformar investimento em procedimento realizado — de forma previsível.</p>
     </div>
     <div class="pilares">
       <div class="pilar-line" aria-hidden="true">
@@ -495,8 +515,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 <!-- ════════ FOOTER ════════ -->
 <footer class="footer">
   <div class="container">
-    <span class="logo">evoluze<span class="dot">.</span></span>
-    <p>Evoluze — Assessoria de Tráfego para Clínicas de Alto Padrão.</p>
+    <img src="assets/img/evoluze-logo.png" alt="Evoluze Marketing" class="logo-img footer-logo-img"/>
+    <p>Evoluze — Assessoria especializada em marketing médico para clínicas e consultórios.</p>
     <p class="copy">© <span id="ano">2026</span> Evoluze. Todos os direitos reservados.</p>
     <p class="copy"><a href="privacidade.html" style="color:rgba(255,255,255,.55);text-decoration:underline">Política de Privacidade</a></p>
   </div>
@@ -537,6 +557,25 @@ function fireConversion(){
 
 document.getElementById('ano').textContent = new Date().getFullYear();
 (function(){var c=document.getElementById('credClinicas'); if(c && CONFIG.clinicasAtendidas) c.textContent=CONFIG.clinicasAtendidas;})();
+
+/* ════════════ NOME DO MÉTODO — troque aqui em 1 lugar só ════════════ */
+const NOME_METODO = "Método Convênio Zero";
+(function(){
+  // ocorrências em texto corrido
+  document.querySelectorAll('[data-metodo]').forEach(function(e){ e.textContent = NOME_METODO; });
+  // arte tipográfica: 1ª palavra vira o "kicker"; o resto é o nome, com a última palavra em teal
+  var parts = NOME_METODO.trim().split(/\s+/);
+  var kick = document.getElementById('metodoKicker');
+  var name = document.getElementById('metodoName');
+  if(name && parts.length){
+    var kicker = parts.shift();
+    if(kick) kick.textContent = kicker;
+    if(parts.length){
+      var last = parts.pop();
+      name.innerHTML = (parts.length ? parts.join(' ') + ' ' : '') + '<span class="hl">' + last + '</span>';
+    } else { name.textContent = kicker; }
+  }
+})();
 
 /* ════════════ REVEAL no scroll ════════════ */
 (function(){
