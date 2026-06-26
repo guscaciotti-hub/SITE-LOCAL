@@ -5,6 +5,9 @@ name: Preview do site (GitHub Pages)
 # Settings > Pages > Source: "GitHub Actions" e então disparar este workflow.
 on:
   workflow_dispatch:
+  push:
+    branches: [claude/exciting-maxwell-dlctrc]
+    paths: ['public/**', '.github/workflows/pages.yml']
 
 permissions:
   contents: read
