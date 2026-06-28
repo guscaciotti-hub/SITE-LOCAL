@@ -128,6 +128,9 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .vsl-play-btn svg{width:30px;height:30px;margin-left:5px;fill:var(--tinta)}
 .vsl-play span{color:rgba(255,255,255,.78);font-size:.9rem;font-weight:500}
 .vsl-cta{text-align:center;margin-top:40px}
+.vsl-unmute{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(2,18,16,.45);border:none;cursor:pointer;color:#fff;font-family:inherit;font-weight:700;font-size:clamp(.92rem,1.8vw,1.12rem);text-align:center;padding:20px}
+.vsl-unmute-ic{width:62px;height:62px;border-radius:50%;background:var(--teal);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 30px rgba(0,212,198,.5)}
+.vsl-unmute-tx{max-width:340px}
 
 /* ════════════════ 3 DORES ════════════════ */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
@@ -591,26 +594,33 @@ const NOME_METODO = "Método Convênio Zero";
   els.forEach(e=>io.observe(e));
 })();
 
-/* ════════════ VSL lazy embed ════════════ */
-if(CONFIG.vslEmbed){
-  var _vf=document.getElementById('vslFrame');
-  _vf.setAttribute('data-embed', CONFIG.vslEmbed);
-  var _lbl=_vf.querySelector('.vsl-play span');
-  if(_lbl) _lbl.textContent='Assistir agora';   // sai do "Vídeo em breve"
-  // capa do vídeo (thumbnail do YouTube a partir do ID), com fallback
-  var _m=CONFIG.vslEmbed.match(/embed\/([^?&\/]+)/);
-  var _poster=document.getElementById('vslPoster');
-  if(_m && _poster){
-    var _id=_m[1];
-    _poster.onerror=function(){ this.onerror=null; this.src='https://i.ytimg.com/vi/'+_id+'/hqdefault.jpg'; };
-    _poster.src='https://i.ytimg.com/vi/'+_id+'/maxresdefault.jpg';
+/* ════════════ VSL — autoplay mudo ao entrar + clique para ativar o som ════════════ */
+(function(){
+  var vf=document.getElementById('vslFrame');
+  if(!vf || !CONFIG.vslEmbed) return; // sem vídeo: mantém "Vídeo em breve"
+  var id=(CONFIG.vslEmbed.match(/embed\/([^?&\/]+)/)||[])[1];
+  // capa enquanto o player carrega
+  var poster=document.getElementById('vslPoster');
+  if(id && poster){
+    poster.onerror=function(){ this.onerror=null; this.src='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg'; };
+    poster.src='https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg';
   }
-}
-document.getElementById('vslFrame').addEventListener('click',function(){
-  const url=this.getAttribute('data-embed');
-  if(!url) return; // ainda sem vídeo
-  this.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
-});
+  var play=vf.querySelector('.vsl-play'); if(play) play.remove();
+  function src(mute){ return 'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute='+(mute?1:0)+'&rel=0&modestbranding=1&playsinline=1'; }
+  // autoplay MUDO ao entrar (navegador só permite mudo sem clique)
+  var ifr=document.createElement('iframe');
+  ifr.src=src(true);
+  ifr.setAttribute('allow','autoplay; fullscreen; picture-in-picture; encrypted-media');
+  ifr.setAttribute('allowfullscreen','');
+  vf.appendChild(ifr);
+  // overlay para ativar o som (recarrega com áudio, do início)
+  var un=document.createElement('button');
+  un.type='button'; un.className='vsl-unmute';
+  un.innerHTML='<span class="vsl-unmute-ic">🔊</span><span class="vsl-unmute-tx">Seu vídeo já começou — clique para ativar o som</span>';
+  vf.appendChild(un);
+  un.addEventListener('click',function(){ ifr.src=src(false); un.remove(); });
+  vf.style.cursor='default';
+})();
 
 /* ════════════ Carrossel de áudios (a partir de CONFIG.depoimentos) ════════════ */
 (function(){
