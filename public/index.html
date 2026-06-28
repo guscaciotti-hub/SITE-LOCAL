@@ -121,7 +121,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   border:1px solid rgba(5,59,55,.12);cursor:pointer
 }
 .vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vsl-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.vsl-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vsl-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:1;background:rgba(2,18,16,.4)}
 .vsl-play-btn{width:84px;height:84px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,212,198,.45);transition:transform .3s var(--ease)}
 .vsl-frame:hover .vsl-play-btn{transform:scale(1.08)}
 .vsl-play-btn svg{width:30px;height:30px;margin-left:5px;fill:var(--tinta)}
@@ -351,6 +352,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <!-- [VSL] Troque este placeholder pelo embed (YouTube/Vimeo). Ex.: defina data-embed
          com a URL do player; ao clicar, o vídeo carrega (lazy-load). -->
     <div class="vsl-frame reveal" id="vslFrame" data-embed="">
+      <img class="vsl-poster" id="vslPoster" alt="" loading="lazy"/>
       <div class="vsl-play">
         <div class="vsl-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <span>Vídeo em breve</span>
@@ -595,6 +597,14 @@ if(CONFIG.vslEmbed){
   _vf.setAttribute('data-embed', CONFIG.vslEmbed);
   var _lbl=_vf.querySelector('.vsl-play span');
   if(_lbl) _lbl.textContent='Assistir agora';   // sai do "Vídeo em breve"
+  // capa do vídeo (thumbnail do YouTube a partir do ID), com fallback
+  var _m=CONFIG.vslEmbed.match(/embed\/([^?&\/]+)/);
+  var _poster=document.getElementById('vslPoster');
+  if(_m && _poster){
+    var _id=_m[1];
+    _poster.onerror=function(){ this.onerror=null; this.src='https://i.ytimg.com/vi/'+_id+'/hqdefault.jpg'; };
+    _poster.src='https://i.ytimg.com/vi/'+_id+'/maxresdefault.jpg';
+  }
 }
 document.getElementById('vslFrame').addEventListener('click',function(){
   const url=this.getAttribute('data-embed');
