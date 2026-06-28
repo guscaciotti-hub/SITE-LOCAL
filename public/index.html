@@ -544,7 +544,7 @@ const CONFIG = {
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
   faixaInvestimento: "a partir de R$ 2.500/mês de honorário, mais a verba de anúncio", // Gustavo confirma
   clinicasAtendidas: "+15 clínicas atendidas", // selo de autoridade no hero — Gustavo ajusta
-  vslEmbed:          "",                       // URL do player do vídeo (YouTube/Vimeo)
+  vslEmbed:          "https://www.youtube-nocookie.com/embed/aAWsZDoQw0U?autoplay=1&rel=0&modestbranding=1&playsinline=1", // VSL no YouTube (não listado)
   depoimentos:       [],                       // preencher quando tiver áudios reais
   formEndpoint:      "",                       // FASE 2: WhatsApp ativo via VPS
   chatWebhookUrl:    "https://evoluzechat.com.br/webhook/lead",          // Evoluze Chat — endpoint do chatbot
@@ -590,7 +590,12 @@ const NOME_METODO = "Método Convênio Zero";
 })();
 
 /* ════════════ VSL lazy embed ════════════ */
-if(CONFIG.vslEmbed){ document.getElementById('vslFrame').setAttribute('data-embed', CONFIG.vslEmbed); }
+if(CONFIG.vslEmbed){
+  var _vf=document.getElementById('vslFrame');
+  _vf.setAttribute('data-embed', CONFIG.vslEmbed);
+  var _lbl=_vf.querySelector('.vsl-play span');
+  if(_lbl) _lbl.textContent='Assistir agora';   // sai do "Vídeo em breve"
+}
 document.getElementById('vslFrame').addEventListener('click',function(){
   const url=this.getAttribute('data-embed');
   if(!url) return; // ainda sem vídeo
