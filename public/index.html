@@ -211,7 +211,9 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .check p{font-size:1.05rem;color:var(--tinta);font-weight:500}
 
 /* ════════════════ CFM ════════════════ */
-.cfm{max-width:720px}
+.cfm{max-width:980px;display:flex;align-items:center;gap:56px}
+.cfm-text{flex:1;min-width:0}
+.cfm-logo{width:230px;max-width:34%;height:auto;flex-shrink:0;opacity:.92}
 .cfm .title{font-size:clamp(1.5rem,2.6vw,2rem)}
 .cfm p{font-size:1.04rem;color:var(--cinza)}
 .objection{max-width:820px;margin:0 auto;text-align:center}
@@ -289,6 +291,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   .pilar-line{display:none}
   .cards3{grid-template-columns:1fr;gap:18px}
   .servicos-grid{grid-template-columns:repeat(2,1fr)}
+  .cfm{flex-direction:column;align-items:flex-start;gap:30px}
+  .cfm-logo{width:220px;max-width:60%}
 }
 @media(max-width:560px){
   .section{padding:72px 0}
@@ -566,9 +570,12 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 <section class="section alt">
   <div class="container">
     <div class="cfm reveal">
-      <span class="eyebrow">Ética e conformidade</span>
-      <h2 class="title">Marketing dentro das regras do seu conselho</h2>
-      <p>Toda a comunicação é feita com responsabilidade e dentro das diretrizes de publicidade da área da saúde (CFM e conselhos relacionados). Crescimento sem expor a sua reputação.</p>
+      <div class="cfm-text">
+        <span class="eyebrow">Ética e conformidade</span>
+        <h2 class="title">Marketing dentro das regras do seu conselho</h2>
+        <p>Toda a comunicação é feita com responsabilidade e dentro das diretrizes de publicidade da área da saúde (CFM e conselhos relacionados). Crescimento sem expor a sua reputação.</p>
+      </div>
+      <img class="cfm-logo" src="assets/img/cfm.png" alt="Conselho Federal de Medicina (CFM)" loading="lazy"/>
     </div>
   </div>
 </section>
