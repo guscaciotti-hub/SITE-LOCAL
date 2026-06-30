@@ -87,6 +87,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 /* ════════════════ HERO ════════════════ */
 .hero{position:relative;background:var(--teal-fundo);color:#fff;min-height:92vh;display:flex;align-items:center;padding:130px 0 96px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;z-index:0}
+.hero-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,28,26,.9) 0%,rgba(5,43,40,.76) 52%,rgba(5,43,40,.58) 100%)}
 .hero-glow{position:absolute;top:44%;left:50%;width:920px;max-width:120vw;height:560px;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(0,212,198,.16),rgba(0,212,198,0) 64%);filter:blur(18px)}
 .hero-line{position:absolute;inset:0;width:100%;height:100%;opacity:.45}
 .hero-noise{position:absolute;inset:0;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hn)'/%3E%3C/svg%3E")}
@@ -306,6 +308,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 <!-- ════════ HERO ════════ -->
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
+    <img class="hero-photo" src="assets/img/hero-bg.jpg" alt=""/>
+    <div class="hero-scrim"></div>
     <div class="hero-glow"></div>
     <!-- linha de previsibilidade (refinada e sutil) -->
     <svg class="hero-line" viewBox="0 0 1200 600" preserveAspectRatio="none">

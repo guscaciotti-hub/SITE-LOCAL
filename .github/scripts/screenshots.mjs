@@ -27,7 +27,7 @@ for (const [name, viewport, deviceScaleFactor, isMobile] of [
   ['celular', { width: 390, height: 844 }, 2, true],
 ]) {
   const page = await browser.newPage({ viewport, deviceScaleFactor, isMobile, hasTouch: isMobile });
-  await page.goto('http://localhost:8777/', { waitUntil: 'networkidle', timeout: 90000 });
+  await page.goto('http://localhost:8777/', { waitUntil: 'load', timeout: 60000 });
   // desliga transições e força o estado final das animações de entrada (.rv/.rv2/.rv3 + .on)
   // animações de entrada "completam" instantaneamente (forwards => estado final visível)
   await page.addStyleTag({ content: '*,*::before,*::after{animation-duration:0s!important;animation-delay:0s!important;transition:none!important;scroll-behavior:auto!important}' });
