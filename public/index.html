@@ -87,8 +87,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 /* ════════════════ HERO ════════════════ */
 .hero{position:relative;background:var(--teal-fundo);color:#fff;min-height:92vh;display:flex;align-items:center;padding:130px 0 96px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;z-index:0}
-.hero-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,28,26,.9) 0%,rgba(5,43,40,.76) 52%,rgba(5,43,40,.58) 100%)}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;transform:scale(1.18);transform-origin:left center}
+.hero-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,28,26,.95) 0%,rgba(5,43,40,.88) 50%,rgba(5,43,40,.5) 100%)}
 .hero-glow{position:absolute;top:44%;left:50%;width:920px;max-width:120vw;height:560px;transform:translate(-50%,-50%);background:radial-gradient(ellipse at center,rgba(0,212,198,.16),rgba(0,212,198,0) 64%);filter:blur(18px)}
 .hero-line{position:absolute;inset:0;width:100%;height:100%;opacity:.45}
 .hero-noise{position:absolute;inset:0;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hn)'/%3E%3C/svg%3E")}
@@ -330,10 +330,10 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   <div class="container">
     <div class="hero-inner">
       <span class="eyebrow hero-rv">Assessoria especializada em marketing médico</span>
-      <h1 class="hero-rv s2">Uma agenda <span class="hl">previsível</span> de pacientes particulares para a sua clínica.</h1>
+      <h1 class="hero-rv s2">Uma agenda <span class="hl">previsível</span> de pacientes particulares — sem depender de indicação ou convênio.</h1>
       <p class="hero-sub hero-rv s3">Sem depender de indicação. Sem depender de convênio. Um fluxo constante do paciente certo — operado com rigor, do anúncio à cadeira.</p>
       <div class="hero-cta hero-rv s4">
-        <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
+        <button class="btn btn-lg" data-open-form>Quero uma análise gratuita
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
@@ -341,7 +341,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <div class="hero-creds hero-rv s6" aria-label="Credenciais">
         <span class="cred">Google Ads Certified</span>
         <span class="cred">Meta Ads</span>
-        <span class="cred" id="credClinicas">+15 clínicas atendidas</span>
+        <span class="cred" id="credClinicas">+15 clientes atendidos</span>
         <span class="cred">Operação 100% pessoal</span>
       </div>
     </div>
@@ -354,7 +354,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   <div class="container">
     <div class="vsl-head reveal">
       <span class="eyebrow">Assista antes de qualquer coisa</span>
-      <h2 class="title">Como construir um fluxo previsível de pacientes particulares na sua clínica</h2>
+      <h2 class="title">Como construir um fluxo previsível de pacientes particulares no seu consultório</h2>
     </div>
     <!-- [VSL] Troque este placeholder pelo embed (YouTube/Vimeo). Ex.: defina data-embed
          com a URL do player; ao clicar, o vídeo carrega (lazy-load). -->
@@ -366,7 +366,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       </div>
     </div>
     <div class="vsl-cta reveal">
-      <button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica</button>
+      <button class="btn btn-lg" data-open-form>Quero uma análise gratuita</button>
     </div>
   </div>
 </section>
@@ -378,8 +378,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 <section class="section alt">
   <div class="container">
     <div class="reveal">
-      <span class="eyebrow">O que muda na sua clínica</span>
-      <h2 class="title">Três coisas que acontecem quando a sua clínica para de depender da sorte</h2>
+      <span class="eyebrow">O que muda no seu dia a dia</span>
+      <h2 class="title">Três coisas que acontecem quando você para de depender da sorte</h2>
     </div>
     <div class="cards3">
       <div class="card reveal">
@@ -395,7 +395,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <div class="card reveal d2">
         <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16l4-5 3 3 5-7"/></svg></div>
         <h3>Um novo patamar</h3>
-        <p>Deixe de brigar por volume. A sua clínica cresce com margem, com a agenda cheia do tipo de paciente que faz o negócio realmente lucrar.</p>
+        <p>Deixe de brigar por volume. O seu atendimento cresce com margem, com a agenda cheia do tipo de paciente que faz o negócio realmente lucrar.</p>
       </div>
     </div>
   </div>
@@ -408,7 +408,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <span class="metodo-kicker" id="metodoKicker">Método</span>
       <h2 class="metodo-name" id="metodoName">Convênio <span class="hl">Zero</span></h2>
       <p class="metodo-support">Sistema de captação, conversão e escala de pacientes particulares.</p>
-      <p class="metodo-intro">A maioria das clínicas trata tráfego como ligar um anúncio e esperar. O resultado é lead barato que não vira paciente. O <span data-metodo>Método Convênio Zero</span> é o oposto: um sistema operado de ponta a ponta, com rigor diário, para transformar investimento em procedimento realizado — de forma previsível.</p>
+      <p class="metodo-intro">A maioria trata tráfego como ligar um anúncio e esperar. O resultado é lead barato que não vira paciente. O <span data-metodo>Método Convênio Zero</span> é o oposto: um sistema operado de ponta a ponta, com rigor diário, para transformar investimento em procedimento realizado — de forma previsível.</p>
     </div>
     <div class="pilares">
       <div class="pilar-line" aria-hidden="true">
@@ -417,7 +417,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <div class="pilar reveal"><div class="pilar-n">01</div><h3>Captação</h3><p>Tráfego pago operado com rigor (Meta e Google), atraindo o paciente particular certo — não volume, não curioso.</p></div>
       <div class="pilar reveal d1"><div class="pilar-n">02</div><h3>Conversão</h3><p>O paciente não se perde depois do clique: atendimento ágil (IA ou treinamento da equipe) e processo comercial que transforma interesse em agendamento.</p></div>
       <div class="pilar reveal d2"><div class="pilar-n">03</div><h3>Acompanhamento</h3><p>Cada real rastreado até virar procedimento. CRM, métricas e análise de ROI — você sabe exatamente o que entra e o que volta.</p></div>
-      <div class="pilar reveal d3"><div class="pilar-n">04</div><h3>Escala</h3><p>Com a máquina medida e funcionando, um plano de crescimento para elevar a clínica a um novo patamar.</p></div>
+      <div class="pilar reveal d3"><div class="pilar-n">04</div><h3>Escala</h3><p>Com a máquina medida e funcionando, um plano de crescimento para elevar o seu atendimento a um novo patamar.</p></div>
     </div>
   </div>
 </section>
@@ -459,13 +459,13 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <div class="gus-grid">
       <div class="gus-photo reveal">
         <!-- [FOTO_GUSTAVO] troque por uma foto profissional quando tiver -->
-        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em tráfego para clínicas" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=\'gus-ph-fallback\'>GS</div>')"/>
+        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em marketing médico" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=\'gus-ph-fallback\'>GS</div>')"/>
       </div>
       <div class="gus-text reveal d1">
         <span class="eyebrow">Quem conduz</span>
         <h2>Gustavo Scaciotti</h2>
         <div class="gus-role">Especialista em Marketing Médico</div>
-        <p>Sou o Gustavo, responsável pela Evoluze. Eu opero pessoalmente o tráfego de cada clínica que atendo — do anúncio ao paciente na cadeira. Não trabalho com volume nem com marketing de vaidade: trabalho com previsibilidade e retorno mensurável. Atendo um número limitado de clínicas justamente porque resultado de alto padrão exige atenção de alto padrão.</p>
+        <p>Sou o Gustavo, responsável pela Evoluze. Eu opero pessoalmente o tráfego de cada cliente que atendo — do anúncio ao paciente na cadeira. Não trabalho com volume nem com marketing de vaidade: trabalho com previsibilidade e retorno mensurável. Atendo um número limitado de clientes justamente porque resultado de alto padrão exige atenção de alto padrão.</p>
       </div>
     </div>
   </div>
@@ -513,11 +513,11 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
   <div class="container">
     <span class="eyebrow reveal" style="display:block">O próximo passo</span>
     <h2 class="reveal">Este é o momento de tirar a sua agenda da dependência da sorte.</h2>
-    <p class="lead reveal d1">Eu não faço marketing de vaidade. Faço paciente particular chegar, de forma previsível e mensurável. Se a sua clínica está pronta para isso, faça a análise gratuita.</p>
-    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise da minha clínica
+    <p class="lead reveal d1">Eu não faço marketing de vaidade. Faço paciente particular chegar, de forma previsível e mensurável. Se você está pronto para isso, faça a análise gratuita.</p>
+    <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise gratuita
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button></div>
-    <p class="cta-scarcity reveal d2">Atendo um número limitado de clínicas por vez.</p>
+    <p class="cta-scarcity reveal d2">Atendo um número limitado de clientes por vez.</p>
   </div>
 </section>
 
@@ -532,10 +532,10 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 </footer>
 
 <!-- ════════ STICKY CTA (mobile) ════════ -->
-<div class="sticky-cta"><button class="btn" data-open-form>Quero uma análise da minha clínica</button></div>
+<div class="sticky-cta"><button class="btn" data-open-form>Quero uma análise gratuita</button></div>
 
 <!-- ════════ MODAL FORMULÁRIO ════════ -->
-<div class="modal" id="formModal" role="dialog" aria-modal="true" aria-label="Análise da minha clínica">
+<div class="modal" id="formModal" role="dialog" aria-modal="true" aria-label="Análise gratuita">
   <div class="modal-inner">
     <button class="modal-close" id="formClose" aria-label="Fechar formulário">&times;</button>
     <div class="modal-progress"><div class="modal-progress-bar" id="progressBar"></div></div>
@@ -552,7 +552,7 @@ const CONFIG = {
   formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
   faixaInvestimento: "a partir de R$ 2.500/mês de honorário, mais a verba de anúncio", // Gustavo confirma
-  clinicasAtendidas: "+15 clínicas atendidas", // selo de autoridade no hero — Gustavo ajusta
+  clinicasAtendidas: "+15 clientes atendidos", // selo de autoridade no hero — Gustavo ajusta
   vslEmbed:          "https://www.youtube-nocookie.com/embed/aAWsZDoQw0U?autoplay=1&rel=0&modestbranding=1&playsinline=1", // VSL no YouTube (não listado)
   depoimentos:       [],                       // preencher quando tiver áudios reais
   formEndpoint:      "",                       // FASE 2: WhatsApp ativo via VPS
@@ -649,16 +649,16 @@ const NOME_METODO = "Método Convênio Zero";
 const _faixa = (CONFIG.faixaInvestimento && CONFIG.faixaInvestimento.indexOf('[')===-1) ? CONFIG.faixaInvestimento : 'compatível com esse objetivo';
 const STEPS=[
   {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
-  {type:'text', key:'clinica', q:'Qual o nome e a cidade da sua clínica?', placeholder:'Ex.: Clínica X — São Paulo/SP'},
+  {type:'text', key:'clinica', q:'Qual o nome e a cidade do seu consultório ou clínica?', placeholder:'Ex.: Clínica X — São Paulo/SP'},
   {type:'text', key:'area', q:'Qual a sua área de atuação?', placeholder:'Ex.: estética avançada, dermatologia, cirurgia plástica, ortopedia...'},
-  {type:'choice', key:'faturamento', q:'Quanto a sua clínica fatura por mês, aproximadamente?',
+  {type:'choice', key:'faturamento', q:'Quanto você fatura por mês, aproximadamente?',
    options:['Até R$ 30 mil','R$ 30 mil a R$ 80 mil','R$ 80 mil a R$ 200 mil','Acima de R$ 200 mil']},
   {type:'choice', key:'investe', q:'Vocês já investem em anúncio hoje?',
    options:['Não, nunca investimos','Já investimos, mas sem resultado claro','Sim, investimos e queremos escalar']},
   {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
    options:['Agenda imprevisível / depende de indicação','Dependência de convênio (queremos mais particular)','Já vamos bem, queremos escalar','Atraímos paciente errado / que pechincha']},
   {type:'choice', key:'budget', q:'O investimento faz sentido?',
-   sub:'Um trabalho sério de aquisição para uma clínica do seu porte envolve um investimento mensal '+_faixa+'. Faz sentido para o momento da sua clínica?',
+   sub:'Um trabalho sério de aquisição para um negócio do seu porte envolve um investimento mensal '+_faixa+'. Faz sentido para o seu momento?',
    options:['Sim, faz sentido','Ainda não tenho certeza']},
   {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
 ];
@@ -737,7 +737,7 @@ function finish(){
   const descarte = state.faturamento==='Até R$ 30 mil' && state.investe==='Não, nunca investimos';
   if(descarte){
     stage.innerHTML=doneHTML('Obrigado por responder!',
-      'No momento, o nosso trabalho é desenhado para clínicas num outro estágio de investimento. Assim que fizer sentido para o momento da sua clínica, a porta está aberta.');
+      'No momento, o nosso trabalho é desenhado para um outro estágio de investimento. Assim que fizer sentido para o seu momento, a porta está aberta.');
     return;
   }
   // envio qualificado
@@ -796,7 +796,7 @@ async function submitLead(){
           nome:dados.nome, whatsapp:dados.whatsapp, clinica:dados.clinica, area:dados.area,
           faturamento:dados.faturamento, investe:dados.investe, desafio:dados.desafio,
           budget:state.budget||'', origem:"site-performance",
-          _subject:'Novo lead — Evoluze (Análise de clínica)'
+          _subject:'Novo lead — Evoluze (Análise gratuita)'
         })
       });
       return r.ok===true;
