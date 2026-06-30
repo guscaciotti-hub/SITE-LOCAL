@@ -472,7 +472,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <div class="gus-grid">
       <div class="gus-photo reveal">
         <!-- [FOTO_GUSTAVO] troque por uma foto profissional quando tiver -->
-        <img src="assets/img/gustavo-scaciotti.png" alt="Gustavo Scaciotti, especialista em marketing médico" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=\'gus-ph-fallback\'>GS</div>')"/>
+        <img src="assets/img/gustavo.jpg" alt="Gustavo Scaciotti, especialista em marketing médico" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class=\'gus-ph-fallback\'>GS</div>')"/>
       </div>
       <div class="gus-text reveal d1">
         <span class="eyebrow">Quem conduz</span>
@@ -564,7 +564,7 @@ const CONFIG = {
   whatsapp:          "[WHATSAPP]",            // só dígitos com 55, ex: 5513999999999
   formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
-  faixaInvestimento: "a partir de R$ 2.500/mês de honorário, mais a verba de anúncio", // Gustavo confirma
+  faixaInvestimento: "a partir de R$ 1.997 de honorário, mais uma verba de anúncio a partir de R$ 1.000 (investida diretamente na plataforma de anúncios)", // valor oficial
   clinicasAtendidas: "+15 clientes atendidos", // selo de autoridade no hero — Gustavo ajusta
   vslEmbed:          "https://www.youtube-nocookie.com/embed/aAWsZDoQw0U?autoplay=1&rel=0&modestbranding=1&playsinline=1", // VSL no YouTube (não listado)
   depoimentos:       [],                       // preencher quando tiver áudios reais
@@ -671,7 +671,7 @@ const STEPS=[
   {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
    options:['Agenda imprevisível / depende de indicação','Dependência de convênio (queremos mais particular)','Já vamos bem, queremos escalar','Atraímos paciente errado / que pechincha']},
   {type:'choice', key:'budget', q:'O investimento faz sentido?',
-   sub:'Um trabalho sério de aquisição para um negócio do seu porte envolve um investimento mensal '+_faixa+'. Faz sentido para o seu momento?',
+   sub:'Um trabalho sério de aquisição envolve um investimento mensal '+_faixa+'. Faz sentido para o seu momento?',
    options:['Sim, faz sentido','Ainda não tenho certeza']},
   {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
 ];
@@ -746,14 +746,8 @@ function advance(){
 
 function finish(){
   setProgress();bar.style.width='100%';
-  // lógica de corte (descarte educado)
-  const descarte = state.faturamento==='Até R$ 30 mil' && state.investe==='Não, nunca investimos';
-  if(descarte){
-    stage.innerHTML=doneHTML('Obrigado por responder!',
-      'No momento, o nosso trabalho é desenhado para um outro estágio de investimento. Assim que fizer sentido para o seu momento, a porta está aberta.');
-    return;
-  }
-  // envio qualificado
+  // Sem corte duro: todos seguem. Faturamento é só informativo;
+  // o orçamento apenas CLASSIFICA o lead (quente x morno) no payload.
   submitLead();
 }
 
@@ -778,6 +772,8 @@ async function submitLead(){
     clinica:state.clinica||'', area:state.area||'',
     faturamento:state.faturamento||'', investe:state.investe||'', desafio:state.desafio||''
   };
+  // classificação pelo portão de orçamento: 'sim' (quente) x 'duvida' (morno)
+  const orcamento = (state.budget==='Sim, faz sentido') ? 'sim' : 'duvida';
 
   // ── 1) Evoluze Chat (webhook) — só leads QUALIFICADOS chegam aqui (ver finish()) ──
   const enviaChat=(async()=>{
@@ -788,7 +784,7 @@ async function submitLead(){
         body:JSON.stringify({
           nome:dados.nome, whatsapp:dados.whatsapp, email:dados.email, clinica:dados.clinica,
           area:dados.area, faturamento:dados.faturamento, investe:dados.investe,
-          desafio:dados.desafio, origem:"site-performance"
+          desafio:dados.desafio, orcamento:orcamento, origem:"site-performance"
         })
       });
       if(!r.ok){ console.error('Evoluze Chat: HTTP '+r.status); return false; }
@@ -808,7 +804,7 @@ async function submitLead(){
         body:JSON.stringify({
           nome:dados.nome, whatsapp:dados.whatsapp, clinica:dados.clinica, area:dados.area,
           faturamento:dados.faturamento, investe:dados.investe, desafio:dados.desafio,
-          budget:state.budget||'', origem:"site-performance",
+          budget:state.budget||'', orcamento:orcamento, origem:"site-performance",
           _subject:'Novo lead — Evoluze (Análise gratuita)'
         })
       });
