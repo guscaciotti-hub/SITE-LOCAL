@@ -312,6 +312,42 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .done h3{font-size:1.5rem;font-weight:800;margin-bottom:12px}
 .done p{color:var(--cinza);font-size:1rem;max-width:400px;margin:0 auto}
 
+/* ════════════════ FUNIL — como eu trabalho diferente ════════════════ */
+.funil-sub{font-size:1.02rem;color:var(--cinza);max-width:690px;margin-top:2px}
+.funil{margin-top:52px;display:flex;flex-direction:column;align-items:center}
+.funil-layer{width:var(--w,100%);max-width:100%;display:flex;align-items:center;gap:32px;background:#fff;border:1px solid rgba(5,59,55,.1);border-left:4px solid var(--teal);border-radius:16px;padding:26px 34px;box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.funil-layer:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.funil-stage{flex:0 0 158px;display:flex;flex-direction:column;gap:5px}
+.funil-tag{font-size:1.18rem;font-weight:800;letter-spacing:-.01em;color:var(--tinta)}
+.funil-step{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--teal-escuro)}
+.funil-content{flex:1;min-width:0}
+.funil-quote{font-size:1.14rem;font-weight:600;color:var(--teal-escuro);margin-bottom:7px;line-height:1.4}
+.funil-desc{font-size:.95rem;color:#374845;line-height:1.66}
+.funil-arrow{color:var(--teal);margin:3px 0;display:flex;justify-content:center}
+.funil-arrow svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.funil-layer--2{background:linear-gradient(180deg,#ffffff,#eefaf9);border-left-color:var(--teal-escuro)}
+.funil-layer--final{background:linear-gradient(150deg,#063f3a,#04302c);border-color:transparent;box-shadow:0 18px 46px rgba(5,59,55,.24)}
+.funil-layer--final .funil-tag{color:#fff}
+.funil-layer--final .funil-step{color:var(--teal)}
+.funil-layer--final .funil-quote{color:var(--teal)}
+.funil-layer--final .funil-desc{color:rgba(255,255,255,.84)}
+.funil-close{max-width:780px;margin:50px auto 0;text-align:center;font-size:clamp(1.02rem,1.7vw,1.24rem);color:var(--cinza);line-height:1.6}
+.funil-close strong{display:block;color:var(--tinta);font-size:1.16em;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+.funil-close strong .hl{color:var(--teal-escuro)}
+.funil-plano{max-width:640px;margin:24px auto 0;text-align:center;font-size:.92rem;color:var(--cinza);display:flex;align-items:flex-start;gap:9px;justify-content:center;line-height:1.55}
+.funil-plano svg{width:18px;height:18px;stroke:var(--teal-escuro);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+@media(max-width:900px){
+  .funil-layer{gap:22px;padding:24px 26px}
+  .funil-stage{flex:0 0 128px}
+}
+@media(max-width:640px){
+  .funil{margin-top:40px}
+  .funil-layer{width:100%!important;flex-direction:column;align-items:flex-start;gap:13px;padding:22px 22px}
+  .funil-stage{flex:0 0 auto;flex-direction:row;align-items:baseline;gap:10px}
+  .funil-quote{font-size:1.06rem}
+  .funil-close{margin-top:38px}
+}
+
 /* ════════════════ RESPONSIVO ════════════════ */
 @media(max-width:920px){
   .gus-grid{grid-template-columns:1fr;gap:36px}
@@ -581,6 +617,47 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
       <div class="check reveal d2"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Cada real rastreado até o procedimento. Você sempre sabe o retorno.</p></div>
       <div class="check reveal d3"><div class="check-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><p>Cuido do caminho inteiro: do anúncio ao agendamento, não só do anúncio.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ════════ FUNIL — como eu trabalho diferente ════════ -->
+<section class="section alt" id="funil">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Como eu trabalho diferente</span>
+      <h2 class="title">Médico não vende. Médico se posiciona.</h2>
+      <p class="funil-sub">A maioria dispara anúncio de oferta e espera o paciente decidir sozinho. Eu construo o caminho inteiro: primeiro a sua clínica aparece e é reconhecida, depois conquista a confiança, e só então faz o convite. A venda vira consequência da autoridade — não de pressão.</p>
+    </div>
+
+    <div class="funil">
+      <div class="funil-layer reveal" style="--w:100%">
+        <div class="funil-stage"><span class="funil-tag">Descoberta</span><span class="funil-step">Etapa 1</span></div>
+        <div class="funil-content">
+          <p class="funil-quote">“Ah, então isso tem tratamento?”</p>
+          <p class="funil-desc">A sua clínica aparece para muitas pessoas certas. Conteúdo que apresenta e educa — sem preço, sem “agende”. A pessoa te conhece pela primeira vez.</p>
+        </div>
+      </div>
+      <div class="funil-arrow reveal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="funil-layer funil-layer--2 reveal" style="--w:86%">
+        <div class="funil-stage"><span class="funil-tag">Consideração</span><span class="funil-step">Etapa 2</span></div>
+        <div class="funil-content">
+          <p class="funil-quote">“Será que funciona pra mim?”</p>
+          <p class="funil-desc">Conteúdo que responde as dúvidas e mostra a sua autoridade e os seus resultados. A confiança nasce. Você deixa de ser “uma opção” e vira a escolha certa.</p>
+        </div>
+      </div>
+      <div class="funil-arrow reveal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+      <div class="funil-layer funil-layer--final reveal" style="--w:72%">
+        <div class="funil-stage"><span class="funil-tag">Decisão</span><span class="funil-step">Etapa 3</span></div>
+        <div class="funil-content">
+          <p class="funil-quote">“Quero agendar.”</p>
+          <p class="funil-desc">O convite direto, para quem já confia e está pronto. O paciente agenda — e chega muito mais preparado e decidido do que um contato frio.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="funil-close reveal"><strong>Muita gente entra em cima. <span class="hl">As pessoas certas agendam embaixo.</span></strong> E como o paciente chega aquecido, cada agendamento tende a custar menos do que abordar um estranho do zero.</p>
+
+    <p class="funil-plano reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l1.5 4.5L18 10l-4.5 1.5L12 16l-1.5-4.5L6 10l4.5-1.5z"/></svg> Cada clínica recebe esse plano montado sob medida, com peças pensadas para cada etapa da jornada do seu paciente.</p>
   </div>
 </section>
 
