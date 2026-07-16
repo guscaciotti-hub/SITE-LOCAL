@@ -779,7 +779,7 @@ const CONFIG = {
   whatsapp:          "[WHATSAPP]",            // só dígitos com 55, ex: 5513999999999
   formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
-  faixaInvestimento: "a partir de R$ 1.997 de honorário, mais uma verba de anúncio a partir de R$ 1.000 (investida diretamente na plataforma de anúncios)", // valor oficial
+  faixaInvestimento: "a partir de R$ 1.497,00 de honorário, mais uma verba de anúncio a partir de R$ 1.000 (investida diretamente na plataforma de anúncios)", // valor oficial
   clinicasAtendidas: "+15 clientes atendidos", // selo de autoridade no hero — Gustavo ajusta
   vslEmbed:          "https://www.youtube-nocookie.com/embed/aAWsZDoQw0U?autoplay=1&rel=0&modestbranding=1&playsinline=1", // VSL no YouTube (não listado)
   // Depoimentos em áudio — edite nome/identificação/foto/áudio livremente.
@@ -899,7 +899,7 @@ const NOME_METODO = "Método Convênio Zero";
 const _faixa = (CONFIG.faixaInvestimento && CONFIG.faixaInvestimento.indexOf('[')===-1) ? CONFIG.faixaInvestimento : 'compatível com esse objetivo';
 const STEPS=[
   {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
-  {type:'text', key:'clinica', q:'Qual o nome e a cidade do seu consultório ou clínica?', placeholder:'Ex.: Clínica X — São Paulo/SP'},
+  {type:'text', key:'clinica', q:'Qual o nome do seu consultório ou clínica?', placeholder:'Ex.: Clínica São Lucas'},
   {type:'text', key:'area', q:'Qual a sua área de atuação?', placeholder:'Ex.: estética avançada, dermatologia, cirurgia plástica, ortopedia...'},
   {type:'choice', key:'faturamento', q:'Quanto você fatura por mês, aproximadamente?',
    options:['Até R$ 30 mil','R$ 30 mil a R$ 80 mil','R$ 80 mil a R$ 200 mil','Acima de R$ 200 mil']},
@@ -908,7 +908,7 @@ const STEPS=[
   {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
    options:['Agenda imprevisível / depende de indicação','Dependência de convênio (queremos mais particular)','Já vamos bem, queremos escalar','Atraímos paciente errado / que pechincha']},
   {type:'choice', key:'budget', q:'O investimento faz sentido?',
-   sub:'Um trabalho sério de aquisição envolve um investimento mensal '+_faixa+'. Faz sentido para o seu momento?',
+   sub:'Um trabalho sério de aquisição envolve um investimento mensal '+_faixa+'.<br><br>Faz sentido para o seu momento?',
    options:['Sim, faz sentido','Ainda não tenho certeza']},
   {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
 ];
