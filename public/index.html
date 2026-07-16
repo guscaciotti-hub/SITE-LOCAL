@@ -963,11 +963,22 @@ function render(){
     stage.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{state[s.key]=b.getAttribute('data-val');advance();});
   } else {
     const inp=document.getElementById('inp');
+    if(s.type==='tel'){
+      inp.setAttribute('inputmode','numeric');
+      inp.setAttribute('maxlength','16');
+      inp.value=maskPhone(inp.value);
+      inp.addEventListener('input',()=>{ inp.value=maskPhone(inp.value); });
+    }
     inp.focus();
     const go=()=>{
-      const v=inp.value.trim();
-      if(!v){err('Por favor, preencha este campo.');return;}
-      if(s.type==='tel'&&v.replace(/\D/g,'').length<10){err('Informe um WhatsApp válido com DDD.');return;}
+      let v=inp.value.trim();
+      if(s.type==='tel'){
+        if(!v.replace(/\D/g,'')){err('Por favor, informe o seu WhatsApp.');return;}
+        if(!isValidCel(v)){err('Informe um celular válido com DDD e o 9, ex.: (11) 98765-4321.');return;}
+        v=maskPhone(v);
+      } else if(!v){
+        err('Por favor, preencha este campo.');return;
+      }
       state[s.key]=v;advance();
     };
     document.getElementById('next').onclick=go;
@@ -1028,6 +1039,26 @@ function toWhatsApp(raw){
   if(d.length>=12 && d.slice(0,2)==='55') return d;   // já veio com 55
   if(d.length>=10 && d.length<=11) return '55'+d;       // DDD + número
   return d;                                             // fallback: envia como veio
+}
+
+/* máscara de celular BR enquanto digita: (DD) 9XXXX-XXXX (assume WhatsApp = celular) */
+function maskPhone(v){
+  var d=(v||'').replace(/\D/g,'').slice(0,11);
+  if(!d) return '';
+  if(d.length<3) return '('+d;
+  var out='('+d.slice(0,2)+') '+d.slice(2,7);
+  if(d.length>7) out+='-'+d.slice(7,11);
+  return out;
+}
+/* valida celular BR: 11 dígitos, DDD válido, começa com 9, sem sequência repetida */
+var DDD_VALIDOS=[11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,63,64,65,66,67,68,69,71,73,74,75,77,79,81,82,83,84,85,86,87,88,89,91,92,93,94,95,96,97,98,99];
+function isValidCel(raw){
+  var d=(raw||'').replace(/\D/g,'');
+  if(d.length!==11) return false;                 // WhatsApp = celular (11 dígitos)
+  if(DDD_VALIDOS.indexOf(parseInt(d.slice(0,2),10))===-1) return false; // DDD real
+  if(d.charAt(2)!=='9') return false;             // celular começa com 9
+  if(/^(\d)\1{10}$/.test(d)) return false;        // rejeita 11 dígitos iguais (ex.: 99999999999)
+  return true;
 }
 
 async function submitLead(){
