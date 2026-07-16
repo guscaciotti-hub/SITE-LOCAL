@@ -796,7 +796,10 @@ const CONFIG = {
   formEndpoint:      "",                       // FASE 2: WhatsApp ativo via VPS
   chatWebhookUrl:    "https://evoluzechat.com.br/webhook/lead",          // Evoluze Chat — endpoint do chatbot
   chatWebhookToken:  "4453644d8e27f253966837ff9f17566b8e1eb3cd50ce4f15", // Evoluze Chat — token Bearer
-  linkAgenda:        "https://evoluzechat.com.br/agenda/public/12"        // link público da agenda (botão na tela de sucesso p/ leads quentes)
+  linkAgenda:        "https://evoluzechat.com.br/agenda/public/12",       // link público da agenda (botão na tela de sucesso p/ leads quentes)
+  // Nomes dos parâmetros que a AGENDA aceita na URL p/ pré-preencher (o lead não digita de novo, só escolhe horário).
+  // Se a agenda usar outros nomes (ex.: telefone/phone/celular), troque aqui. Se não aceitar, é ignorado (não quebra).
+  agendaParams:      { nome:"nome", whatsapp:"whatsapp", email:"email" }
 };
 
 /* dispara conversão no Pixel/GTM se estiverem configurados */
@@ -989,12 +992,26 @@ function doneHTML(t,p){
   return '<div class="done"><div class="done-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><h3>'+t+'</h3><p>'+p+'</p></div>';
 }
 
+/* monta a URL da agenda já com os dados do lead (nome/WhatsApp) para ele NÃO
+   digitar de novo — só escolher o horário. Os nomes dos parâmetros vêm de
+   CONFIG.agendaParams. Se a agenda ignorar, não quebra (só não pré-preenche). */
+function buildAgendaUrl(){
+  var base=(CONFIG.linkAgenda||'').trim();
+  if(!base || base.indexOf('[')!==-1) return '';
+  var map=CONFIG.agendaParams||{};
+  var vals={ nome:state.nome||'', whatsapp:toWhatsApp(state.whatsapp), email:state.email||'' };
+  var qs=[];
+  for(var k in map){ if(map[k] && vals[k]){ qs.push(encodeURIComponent(map[k])+'='+encodeURIComponent(vals[k])); } }
+  if(!qs.length) return base;
+  return base+(base.indexOf('?')===-1?'?':'&')+qs.join('&');
+}
+
 /* tela de sucesso p/ lead QUALIFICADO (quente): agradecimento + botão de agenda.
    O botão é ADICIONAL — não interfere no envio (Formspree/webhook) nem na IA no WhatsApp. */
 function doneAgendaHTML(){
-  var link=(CONFIG.linkAgenda||'').trim();
-  var botao = (link && link.indexOf('[')===-1)
-    ? '<div class="step-actions"><a class="btn" href="'+link+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg> Agendar minha reunião de diagnóstico</a></div>'
+  var link=buildAgendaUrl();
+  var botao = link
+    ? '<div class="step-actions"><a class="btn" href="'+link.replace(/&/g,'&amp;')+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg> Agendar minha reunião de diagnóstico</a></div>'
     : '';
   return '<div class="done">'
     +'<div class="done-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>'
