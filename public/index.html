@@ -832,7 +832,7 @@ const CONFIG = {
   whatsapp:          "[WHATSAPP]",            // só dígitos com 55, ex: 5513999999999
   formspreeId:       "[FORMSPREE_ID]",        // ex: xabcdwef
   emailLeads:        "[EMAIL_LEADS]",         // referência (destino real é na conta Formspree)
-  faixaInvestimento: "a partir de R$ 1.997 de honorário, mais uma verba de anúncio a partir de R$ 1.000 (investida diretamente na plataforma de anúncios)", // valor oficial
+  faixaInvestimento: "a partir de R$ 997,00 de honorário, mais uma verba de anúncio a partir de R$ 1.000 (investida diretamente na plataforma de anúncios)", // valor oficial
   clinicasAtendidas: "+15 clientes atendidos", // selo de autoridade no hero — Gustavo ajusta
   vslEmbed:          "https://www.youtube-nocookie.com/embed/aAWsZDoQw0U?autoplay=1&rel=0&modestbranding=1&playsinline=1", // VSL no YouTube (não listado)
   // Depoimentos em áudio — edite nome/identificação/foto/áudio livremente.
@@ -1181,6 +1181,41 @@ async function submitLead(){
     document.getElementById('retry').onclick=submitLead;
   }
 }
+</script>
+
+<!-- ════════ ANALYTICS PRÓPRIO (Supabase) — registra acesso anônimo ════════ -->
+<script>
+(function(){
+  try{
+    var SB="https://gmycqvvvglexbtbqkjzi.supabase.co";
+    var KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdteWNxdnZ2Z2xleGJ0YnFranppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NjU1NjksImV4cCI6MjA5MzE0MTU2OX0.EZ1kmm1fcIMyQ4ALlBYhmtYeE26712ePH7HQOPkc_yQ";
+    var ua=navigator.userAgent||"";
+    var isBot=/bot|crawl|spider|slurp|bing|yandex|duckduck|baidu|facebookexternalhit|embedly|quora|pinterest|semrush|ahrefs|lighthouse|headless|preview|monitor|uptime/i.test(ua);
+    var vid=localStorage.getItem('_ev_vid');
+    if(!vid){ vid=Date.now().toString(36)+Math.random().toString(36).slice(2,10); localStorage.setItem('_ev_vid',vid); }
+    var qs=new URLSearchParams(location.search), ref=document.referrer||"", host="";
+    try{ host=ref?new URL(ref).hostname:""; }catch(e){}
+    var source=qs.get('utm_source')||"";
+    if(!source){
+      if(/facebook|instagram|fb\.|\.fb|l\.facebook|lm\.facebook/i.test(host)) source='meta';
+      else if(/google/i.test(host)) source='google';
+      else if(/bing/i.test(host)) source='bing';
+      else if(host && host.indexOf(location.hostname)===-1) source=host.replace(/^www\./,'');
+      else source='direto';
+    }
+    var device=(window.matchMedia&&window.matchMedia('(max-width:768px)').matches)?'mobile':'desktop';
+    fetch(SB+"/rest/v1/page_events",{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},
+      body:JSON.stringify({
+        path:location.pathname, referrer:ref.slice(0,300), source:source.slice(0,60),
+        medium:(qs.get('utm_medium')||'').slice(0,60), campaign:(qs.get('utm_campaign')||'').slice(0,120),
+        device:device, visitor_id:vid, is_bot:isBot
+      }),
+      keepalive:true
+    }).catch(function(){});
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
