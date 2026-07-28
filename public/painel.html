@@ -25,7 +25,7 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--tinta);-we
 .custom{display:flex;gap:6px;align-items:center;margin-left:4px}
 .custom input{border:1px solid var(--linha);border-radius:8px;padding:7px 9px;font-family:inherit;font-size:.82rem;color:var(--tinta)}
 .custom button{border:none;background:var(--teal);color:var(--tinta);font-weight:700;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;font-size:.82rem}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
 .kpi{background:var(--branco);border:1px solid var(--linha);border-radius:16px;padding:22px 24px;box-shadow:var(--sombra)}
 .kpi .lab{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--cinza);margin-bottom:8px}
 .kpi .num{font-size:2.2rem;font-weight:800;letter-spacing:-.02em;color:var(--teal-esc);line-height:1}
@@ -46,6 +46,25 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--tinta);-we
 .row .val{font-size:.85rem;font-weight:700;color:var(--tinta);min-width:66px;text-align:right}
 .row .val small{color:var(--cinza);font-weight:500}
 .muted{color:var(--cinza);font-size:.86rem;padding:10px 0}
+/* leads */
+.card h2 .cnt{display:inline-block;background:var(--teal-fnd);color:#fff;font-size:.72rem;font-weight:700;padding:1px 9px;border-radius:999px;margin-left:6px}
+.badge{display:inline-block;font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:middle;margin-left:8px}
+.badge.hot{background:#fdecea;color:#c0392b}
+.badge.warm{background:#eef6f5;color:var(--teal-esc)}
+.lead{border:1px solid var(--linha);border-radius:14px;padding:15px 17px;margin-bottom:12px}
+.lead:last-child{margin-bottom:0}
+.lead-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.lead-head .nm{font-size:1.02rem;font-weight:800}
+.lead-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lead-meta .chip{font-size:.68rem;font-weight:600;background:var(--off);border:1px solid var(--linha);border-radius:999px;padding:3px 9px;color:var(--teal-esc);text-transform:capitalize}
+.lead-meta .when{font-size:.74rem;color:var(--cinza)}
+.lead-contact{font-size:.92rem;font-weight:700;margin:8px 0 12px}
+.lead-contact .wa{margin-left:8px;font-size:.76rem;font-weight:700;color:var(--teal-esc);text-decoration:none;border:1px solid var(--linha);padding:3px 9px;border-radius:8px;white-space:nowrap}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.qa{padding:7px 0;border-top:1px solid var(--linha)}
+.qa .q{display:block;font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--cinza);margin-bottom:1px}
+.qa .a{font-size:.9rem;font-weight:600;color:var(--tinta)}
+@media(max-width:600px){.qas{grid-template-columns:1fr}}
 /* login */
 .gate{position:fixed;inset:0;background:var(--teal-fnd);display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 .gate-card{background:#fff;border-radius:18px;padding:34px 30px;max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
@@ -136,23 +155,60 @@ async function load(){
   content.innerHTML='<div class="loading">Carregando…</div>';
   var r=ranges();
   try{
-    var res=await fetch(SB+"/rest/v1/rpc/analytics_stats",{
-      method:'POST',
-      headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY},
-      body:JSON.stringify({p_from:r.from,p_to:r.to,p_token:token})
-    });
-    var data=await res.json();
+    var body=JSON.stringify({p_from:r.from,p_to:r.to,p_token:token});
+    var hdr={'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY};
+    var results=await Promise.all([
+      fetch(SB+"/rest/v1/rpc/analytics_stats",{method:'POST',headers:hdr,body:body}),
+      fetch(SB+"/rest/v1/rpc/leads_list",{method:'POST',headers:hdr,body:body})
+    ]);
+    var data=await results[0].json();
     if(Array.isArray(data)) data=data[0];
     if(!data || data.error){ sessionStorage.removeItem('ev_token'); showGate(); document.getElementById('gateErr').textContent='Senha incorreta.'; return; }
-    render(data);
+    var ld=await results[1].json();
+    if(Array.isArray(ld)) ld=ld[0];
+    render(data, (ld && ld.leads) || []);
   }catch(e){ content.innerHTML='<div class="muted">Não consegui carregar agora. Tente de novo.</div>'; }
 }
 
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 function fmtDay(d){ var p=d.split('-'); return p[2]+'/'+p[1]; }
 
-function render(d){
+function fmtDT(iso){
+  try{ var dt=new Date(iso), p=function(n){return (n<10?'0':'')+n;};
+    return p(dt.getDate())+'/'+p(dt.getMonth()+1)+' '+p(dt.getHours())+':'+p(dt.getMinutes());
+  }catch(e){ return ''; }
+}
+function kpi(lab,num){ return '<div class="kpi"><div class="lab">'+lab+'</div><div class="num">'+num+'</div></div>'; }
+
+function renderLeads(list){
+  if(!list.length) return '<div class="muted">Nenhum lead no período. Assim que alguém enviar o formulário do site, aparece aqui com todas as respostas.</div>';
+  return list.map(function(l){
+    var wa=String(l.whatsapp||'').replace(/\D/g,'');
+    var waLink= wa ? '<a class="wa" href="https://wa.me/'+wa+'" target="_blank" rel="noopener">Abrir WhatsApp ↗</a>' : '';
+    var badge = (l.orcamento==='sim') ? '<span class="badge hot">🔥 Quente</span>' : '<span class="badge warm">Morno</span>';
+    var chip = l.source ? '<span class="chip">'+esc(l.source)+'</span>' : '';
+    var camp = l.campaign ? '<span class="chip">'+esc(l.campaign)+'</span>' : '';
+    function qa(lab,val){ return val ? '<div class="qa"><span class="q">'+lab+'</span><span class="a">'+esc(val)+'</span></div>' : ''; }
+    return '<div class="lead">'
+      +'<div class="lead-head"><div class="nm">'+esc(l.nome||'(sem nome)')+badge+'</div>'
+        +'<div class="lead-meta">'+chip+camp+'<span class="when">'+fmtDT(l.created_at)+'</span></div></div>'
+      +'<div class="lead-contact">'+esc(l.whatsapp||'—')+waLink+'</div>'
+      +'<div class="qas">'
+        +qa('Clínica / consultório', l.clinica)
+        +qa('Área de atuação', l.area)
+        +qa('Faturamento / mês', l.faturamento)
+        +qa('Já investe em anúncio?', l.investe)
+        +qa('Maior desafio hoje', l.desafio)
+        +qa('Investimento faz sentido?', l.budget)
+      +'</div>'
+    +'</div>';
+  }).join('');
+}
+
+function render(d, leads){
+  leads = leads || [];
   var views=d.total_views||0, uniq=d.unique_visitors||0;
+  var nLeads=leads.length, nHot=leads.filter(function(l){return l.orcamento==='sim';}).length;
   var days=d.by_day||[], src=d.by_source||[], paths=d.by_path||[], dev=d.by_device||[];
   var maxDay=Math.max(1, ...days.map(function(x){return x.views;}));
   var chart=days.length ? days.map(function(x){
@@ -170,10 +226,12 @@ function render(d){
 
   document.getElementById('content').innerHTML=
     '<div class="kpis">'
-      +'<div class="kpi"><div class="lab">Visitas (páginas vistas)</div><div class="num">'+views+'</div></div>'
-      +'<div class="kpi"><div class="lab">Visitantes únicos</div><div class="num">'+uniq+'</div></div>'
-      +'<div class="kpi"><div class="lab">Média por visitante</div><div class="num">'+(uniq?(views/uniq).toFixed(1):'0')+'</div></div>'
+      +kpi('Visitas', views)
+      +kpi('Visitantes únicos', uniq)
+      +kpi('Leads', nLeads)
+      +kpi('Leads quentes', nHot)
     +'</div>'
+    +'<div class="card"><h2>Leads recebidos <span class="cnt">'+nLeads+'</span></h2>'+renderLeads(leads)+'</div>'
     +'<div class="card"><h2>Visitas por dia</h2><div class="chart">'+chart+'</div></div>'
     +'<div class="grid">'
       +'<div><div class="card"><h2>Origens do tráfego</h2>'+bars(src,'source')+'</div></div>'

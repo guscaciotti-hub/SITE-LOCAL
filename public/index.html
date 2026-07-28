@@ -1163,8 +1163,32 @@ async function submitLead(){
     }catch(e){ console.error('Formspree: falha no envio', e); return false; }
   })();
 
-  // os dois disparam em PARALELO; a falha de um não afeta o outro
-  const resultados = await Promise.all([enviaChat, enviaFormspree]);
+  // ── 3) Supabase (banco próprio — alimenta o Painel de leads) ──
+  const enviaSupabase=(async()=>{
+    try{
+      var O=window.__evOrigin||{};
+      var SB="https://gmycqvvvglexbtbqkjzi.supabase.co";
+      var KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdteWNxdnZ2Z2xleGJ0YnFranppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NjU1NjksImV4cCI6MjA5MzE0MTU2OX0.EZ1kmm1fcIMyQ4ALlBYhmtYeE26712ePH7HQOPkc_yQ";
+      const r=await fetch(SB+"/rest/v1/leads",{
+        method:'POST',
+        headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},
+        body:JSON.stringify({
+          nome:dados.nome, whatsapp:dados.whatsapp, email:dados.email,
+          clinica:dados.clinica, area:dados.area,
+          faturamento:dados.faturamento, investe:dados.investe, desafio:dados.desafio,
+          budget:state.budget||'', orcamento:orcamento, origem:'site-performance',
+          source:(O.source||'').slice(0,60), medium:(O.medium||'').slice(0,60),
+          campaign:(O.campaign||'').slice(0,120), device:O.device||'',
+          referrer:(O.ref||'').slice(0,300), visitor_id:O.vid||''
+        })
+      });
+      if(!r.ok){ console.error('Supabase leads: HTTP '+r.status); return false; }
+      return true;
+    }catch(e){ console.error('Supabase leads: falha no envio', e); return false; }
+  })();
+
+  // os três disparam em PARALELO; a falha de um não afeta o outro
+  const resultados = await Promise.all([enviaChat, enviaFormspree, enviaSupabase]);
   const chatOk = resultados[0], formspreeOk = resultados[1];
 
   // sucesso se ALGUM destino recebeu o lead (webhook falhar sozinho não bloqueia)
@@ -1204,6 +1228,7 @@ async function submitLead(){
       else source='direto';
     }
     var device=(window.matchMedia&&window.matchMedia('(max-width:768px)').matches)?'mobile':'desktop';
+    try{ window.__evOrigin={source:source, medium:(qs.get('utm_medium')||''), campaign:(qs.get('utm_campaign')||''), device:device, vid:vid, ref:ref}; }catch(e){}
     fetch(SB+"/rest/v1/page_events",{
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},
