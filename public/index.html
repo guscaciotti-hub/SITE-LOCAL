@@ -973,7 +973,7 @@ const stage=document.getElementById('formStage');
 const bar=document.getElementById('progressBar');
 let lastFocus=null;
 
-function openForm(){lastFocus=document.activeElement;modal.classList.add('open');document.body.style.overflow='hidden';idx=0;render();}
+function openForm(){lastFocus=document.activeElement;modal.classList.add('open');document.body.style.overflow='hidden';idx=0;render();try{window.__evForm&&window.__evForm('open',0);}catch(e){}}
 function closeForm(){modal.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
 document.querySelectorAll('[data-open-form]').forEach(b=>b.addEventListener('click',openForm));
 document.getElementById('formClose').addEventListener('click',closeForm);
@@ -1041,6 +1041,7 @@ function render(){
 function err(m){const e=document.getElementById('err');if(e)e.textContent=m;}
 
 function advance(){
+  try{ var _s=STEPS[idx]; if(_s && window.__evForm) window.__evForm(_s.key, idx+1); }catch(e){}
   if(idx<STEPS.length-1){idx++;render();}
   else finish();
 }
@@ -1194,6 +1195,7 @@ async function submitLead(){
   // sucesso se ALGUM destino recebeu o lead (webhook falhar sozinho não bloqueia)
   if(chatOk || formspreeOk){
     fireConversion();
+    try{ window.__evForm && window.__evForm('submit',9); }catch(e){}
     // lead QUALIFICADO (quente) = mesma régua que classifica o webhook: orçamento 'sim'.
     // Qualificado vê o botão de agenda; morno recebe só o agradecimento (a IA nutre no WhatsApp).
     var qualificado = (orcamento === 'sim');
@@ -1229,6 +1231,19 @@ async function submitLead(){
     }
     var device=(window.matchMedia&&window.matchMedia('(max-width:768px)').matches)?'mobile':'desktop';
     try{ window.__evOrigin={source:source, medium:(qs.get('utm_medium')||''), campaign:(qs.get('utm_campaign')||''), device:device, vid:vid, ref:ref}; }catch(e){}
+    // helper de funil: registra progresso no formulário (abrir, cada resposta, enviar)
+    try{
+      window.__evForm=function(step,i){
+        try{
+          fetch(SB+"/rest/v1/form_events",{
+            method:'POST',
+            headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},
+            body:JSON.stringify({visitor_id:vid, step:step, step_index:i, source:source.slice(0,60), device:device, is_bot:isBot}),
+            keepalive:true
+          }).catch(function(){});
+        }catch(e){}
+      };
+    }catch(e){}
     fetch(SB+"/rest/v1/page_events",{
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},

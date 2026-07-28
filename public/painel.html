@@ -65,6 +65,17 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--tinta);-we
 .qa .q{display:block;font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--cinza);margin-bottom:1px}
 .qa .a{font-size:.9rem;font-weight:600;color:var(--tinta)}
 @media(max-width:600px){.qas{grid-template-columns:1fr}}
+/* funil */
+.fnl{margin-bottom:13px}
+.fnl:last-child{margin-bottom:0}
+.fnl-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:5px}
+.fnl-lab{font-size:.85rem;font-weight:700}
+.fnl-num{font-size:.85rem;font-weight:700;color:var(--teal-esc);white-space:nowrap}
+.fnl-num small{color:var(--cinza);font-weight:500}
+.fnl-bar{height:20px;background:rgba(5,59,55,.06);border-radius:7px;overflow:hidden}
+.fnl-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-esc));border-radius:7px;min-width:3px;transition:.4s}
+.fnl-drop{font-size:.72rem;color:var(--cinza);margin-top:3px}
+.fnl-drop b{color:#c0392b;font-weight:700}
 /* login */
 .gate{position:fixed;inset:0;background:var(--teal-fnd);display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 .gate-card{background:#fff;border-radius:18px;padding:34px 30px;max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
@@ -159,14 +170,17 @@ async function load(){
     var hdr={'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY};
     var results=await Promise.all([
       fetch(SB+"/rest/v1/rpc/analytics_stats",{method:'POST',headers:hdr,body:body}),
-      fetch(SB+"/rest/v1/rpc/leads_list",{method:'POST',headers:hdr,body:body})
+      fetch(SB+"/rest/v1/rpc/leads_list",{method:'POST',headers:hdr,body:body}),
+      fetch(SB+"/rest/v1/rpc/form_funnel",{method:'POST',headers:hdr,body:body})
     ]);
     var data=await results[0].json();
     if(Array.isArray(data)) data=data[0];
     if(!data || data.error){ sessionStorage.removeItem('ev_token'); showGate(); document.getElementById('gateErr').textContent='Senha incorreta.'; return; }
     var ld=await results[1].json();
     if(Array.isArray(ld)) ld=ld[0];
-    render(data, (ld && ld.leads) || []);
+    var fn=await results[2].json();
+    if(Array.isArray(fn)) fn=fn[0];
+    render(data, (ld && ld.leads) || [], fn || {});
   }catch(e){ content.innerHTML='<div class="muted">Não consegui carregar agora. Tente de novo.</div>'; }
 }
 
@@ -205,8 +219,34 @@ function renderLeads(list){
   }).join('');
 }
 
-function render(d, leads){
+function renderFunnel(f){
+  f = f || {};
+  var stages = (f.stages || []).slice();
+  var top = f.visitors_total || 0;
+  if(!stages.length && !top) return '<div class="muted">Sem dados de funil no período ainda. Conforme as pessoas abrem o formulário, o caminho delas aparece aqui.</div>';
+  var all = [{label:'Visitantes no site', visitors: top}].concat(stages);
+  var base = all[0].visitors || (all[1] && all[1].visitors) || 1;
+  if(!base) base = 1;
+  var prev = null;
+  return all.map(function(s){
+    var w = Math.max(3, Math.round((s.visitors/base)*100));
+    var pctTop = Math.round((s.visitors/base)*100);
+    var drop = '';
+    if(prev !== null){
+      var conv = prev ? Math.round((s.visitors/prev)*100) : 0;
+      var lost = prev - s.visitors;
+      drop = '<div class="fnl-drop">'+conv+'% seguiram'+(lost>0 ? ' · <b>&minus;'+lost+' ('+(100-conv)+'%) sa&iacute;ram aqui</b>' : '')+'</div>';
+    }
+    prev = s.visitors;
+    return '<div class="fnl"><div class="fnl-top"><span class="fnl-lab">'+esc(s.label)+'</span>'
+      +'<span class="fnl-num">'+s.visitors+' <small>('+pctTop+'% do topo)</small></span></div>'
+      +'<div class="fnl-bar"><div class="fnl-fill" style="width:'+w+'%"></div></div>'+drop+'</div>';
+  }).join('');
+}
+
+function render(d, leads, funnel){
   leads = leads || [];
+  funnel = funnel || {};
   var views=d.total_views||0, uniq=d.unique_visitors||0;
   var nLeads=leads.length, nHot=leads.filter(function(l){return l.orcamento==='sim';}).length;
   var days=d.by_day||[], src=d.by_source||[], paths=d.by_path||[], dev=d.by_device||[];
@@ -232,6 +272,7 @@ function render(d, leads){
       +kpi('Leads quentes', nHot)
     +'</div>'
     +'<div class="card"><h2>Leads recebidos <span class="cnt">'+nLeads+'</span></h2>'+renderLeads(leads)+'</div>'
+    +'<div class="card"><h2>Funil do formulário</h2>'+renderFunnel(funnel)+'</div>'
     +'<div class="card"><h2>Visitas por dia</h2><div class="chart">'+chart+'</div></div>'
     +'<div class="grid">'
       +'<div><div class="card"><h2>Origens do tráfego</h2>'+bars(src,'source')+'</div></div>'
