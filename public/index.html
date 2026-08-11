@@ -112,6 +112,8 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
 .hero h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.05;margin-bottom:26px;max-width:900px}
 .hero h1 .hl{color:var(--teal)}
 .hero-sub{font-size:clamp(1.05rem,1.7vw,1.3rem);color:rgba(255,255,255,.74);max-width:620px;margin:0 auto 40px;font-weight:400}
+.hero-nicho{font-size:clamp(.92rem,1.5vw,1.1rem);font-weight:700;color:var(--teal);margin:0 auto 16px;max-width:640px;letter-spacing:.01em}
+.cta-nicho{font-size:clamp(.92rem,1.5vw,1.08rem);font-weight:700;color:var(--teal);margin-bottom:16px;letter-spacing:.01em}
 .hero-cta{display:flex;justify-content:center;width:100%}
 .hero-microtrust{font-size:.84rem;color:rgba(255,255,255,.46);margin-top:18px}
 .hero-creds{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
@@ -456,6 +458,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <div class="hero-inner">
       <span class="eyebrow hero-rv">Assessoria especializada em marketing médico</span>
       <h1 class="hero-rv s2">Uma agenda <span class="hl">previsível</span> de pacientes particulares — sem depender de indicação ou convênio.</h1>
+      <p class="hero-nicho hero-rv" style="animation-delay:.21s">Assessoria exclusiva para clínicas médicas e odontológicas</p>
       <p class="hero-sub hero-rv s3">Sem depender de indicação. Sem depender de convênio. Um fluxo constante do paciente certo — operado com rigor, do anúncio à cadeira.</p>
       <div class="hero-cta hero-rv s4">
         <button class="btn btn-lg" data-open-form>Quero uma análise gratuita
@@ -795,6 +798,7 @@ h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:18px;max-width:760px
     <span class="eyebrow reveal" style="display:block">O próximo passo</span>
     <h2 class="reveal">Este é o momento de tirar a sua agenda da dependência da sorte.</h2>
     <p class="lead reveal d1">Nós não fazemos marketing de vaidade. Fazemos paciente particular chegar, de forma previsível e mensurável. Se você está pronto para isso, faça a análise gratuita.</p>
+    <p class="cta-nicho reveal d1">Assessoria exclusiva para clínicas médicas e odontológicas</p>
     <div class="reveal d1"><button class="btn btn-lg" data-open-form>Quero uma análise gratuita
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button></div>
@@ -950,12 +954,19 @@ const NOME_METODO = "Método Convênio Zero";
    FORMULÁRIO MULTI-STEP
    ════════════════════════════════════════════════════════════ */
 const _faixa = (CONFIG.faixaInvestimento && CONFIG.faixaInvestimento.indexOf('[')===-1) ? CONFIG.faixaInvestimento : 'compatível com esse objetivo';
+/* opções da etapa "área" — dependem da formação escolhida na 1ª etapa (sem contradição possível) */
+var AREA_OPCOES = {
+  'Médico(a)': ['Dermatologia','Ginecologia','Ortopedia','Medicina estética e harmonização','Nutrologia','Cardiologia','Endocrinologia','Oftalmologia','Outra especialidade médica'],
+  'Dentista': ['Implantodontia','Ortodontia','Odontologia estética','Clínica geral','Harmonização orofacial','Outra especialidade odontológica'],
+  'Sou dono ou gestor de clínica médica/odontológica': ['Clínica médica','Clínica odontológica','Clínica de estética avançada','Policlínica ou multiespecialidades']
+};
 const STEPS=[
-  {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
+  {type:'choice', key:'formacao', q:'Qual a sua formação?',
+   options:['Médico(a)','Dentista','Sou dono ou gestor de clínica médica/odontológica','Outra área da saúde']},
+  {type:'choice', key:'area', q:'Qual a sua área de atuação?', options:function(){ return AREA_OPCOES[state.formacao]||[]; }},
   {type:'text', key:'clinica', q:'Qual o nome do seu consultório ou clínica?', placeholder:'Ex.: Clínica São Lucas'},
-  {type:'text', key:'area', q:'Qual a sua área de atuação?', placeholder:'Ex.: estética avançada, dermatologia, cirurgia plástica, ortopedia...'},
   {type:'choice', key:'faturamento', q:'Quanto você fatura por mês, aproximadamente?',
-   options:['Até R$ 30 mil','R$ 30 mil a R$ 80 mil','R$ 80 mil a R$ 200 mil','Acima de R$ 200 mil']},
+   options:['Até R$ 10 mil','R$ 10 mil a R$ 30 mil','R$ 30 mil a R$ 50 mil','R$ 50 mil a R$ 100 mil','Acima de R$ 100 mil']},
   {type:'choice', key:'investe', q:'Vocês já investem em anúncio hoje?',
    options:['Não, nunca investimos','Já investimos, mas sem resultado claro','Sim, investimos e queremos escalar']},
   {type:'choice', key:'desafio', q:'Qual o maior desafio hoje?',
@@ -963,6 +974,7 @@ const STEPS=[
   {type:'choice', key:'budget', q:'O investimento faz sentido?',
    sub:'Um trabalho sério de aquisição envolve um investimento mensal '+_faixa+'.<br><br>Faz sentido para o seu momento?',
    options:['Sim, faz sentido','Ainda não tenho certeza']},
+  {type:'text', key:'nome', q:'Qual o seu nome?', placeholder:'Seu nome completo'},
   {type:'tel', key:'whatsapp', q:'Qual o seu melhor WhatsApp?', sub:'É por onde você recebe a análise e os próximos passos.', placeholder:'(00) 00000-0000'}
 ];
 
@@ -994,8 +1006,9 @@ function render(){
     if(s.eyebrow) html+='<div class="step-eyebrow">'+s.eyebrow+'</div>';
     html+='<h3>'+s.q+(s.sub?'<small>'+s.sub+'</small>':'')+'</h3>';
     if(s.type==='choice'){
+      var opts=(typeof s.options==='function')?s.options():(s.options||[]);
       html+='<div class="opts">';
-      s.options.forEach((o,i)=>{html+='<button class="opt" data-val="'+o.replace(/"/g,'&quot;')+'"><span class="opt-dot"></span>'+o+'</button>';});
+      opts.forEach((o,i)=>{html+='<button class="opt" data-val="'+o.replace(/"/g,'&quot;')+'"><span class="opt-dot"></span>'+o+'</button>';});
       html+='</div>';
     } else {
       const it = s.type==='tel'?'tel':'text';
@@ -1013,7 +1026,11 @@ function render(){
   if(s.type==='intro'){
     document.getElementById('next').onclick=()=>{idx++;render();};
   } else if(s.type==='choice'){
-    stage.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{state[s.key]=b.getAttribute('data-val');advance();});
+    stage.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      var val=b.getAttribute('data-val'); state[s.key]=val;
+      if(s.key==='formacao' && val==='Outra área da saúde'){ disqualify(); return; }
+      advance();
+    });
   } else {
     const inp=document.getElementById('inp');
     if(s.type==='tel'){
@@ -1051,6 +1068,22 @@ function finish(){
   // Sem corte duro: todos seguem. Faturamento é só informativo;
   // o orçamento apenas CLASSIFICA o lead (quente x morno) no payload.
   submitLead();
+}
+
+/* caminho DESQUALIFICADO: "Outra área da saúde" — encerra sem NENHUMA conversão
+   (sem Pixel Lead, sem webhook, sem lead no painel). Só marca a métrica 'desqualificado'. */
+function disqualify(){
+  try{ if(window.__evForm) window.__evForm('desqualificado', 99); }catch(e){}
+  bar.style.width='100%';
+  stage.innerHTML=doneDisqualifiedHTML();
+}
+function doneDisqualifiedHTML(){
+  return '<div class="done">'
+    +'<div class="done-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>'
+    +'<h3>Obrigado pelo seu interesse! 🙏</h3>'
+    +'<p>No momento, a nossa assessoria atende <strong>exclusivamente clínicas médicas e odontológicas</strong> — por isso ainda não conseguimos te atender da melhor forma agora.</p>'
+    +'<p class="done-sub">Agradecemos de verdade o seu contato e desejamos muito sucesso no seu trabalho!</p>'
+  +'</div>';
 }
 
 function doneHTML(t,p){
@@ -1137,7 +1170,7 @@ async function submitLead(){
   // dados coletados no formulário (obs.: o form não coleta e-mail -> vai vazio)
   const dados={
     nome:state.nome||'', whatsapp:toWhatsApp(state.whatsapp), email:state.email||'',
-    clinica:state.clinica||'', area:state.area||'',
+    formacao:state.formacao||'', clinica:state.clinica||'', area:state.area||'',
     faturamento:state.faturamento||'', investe:state.investe||'', desafio:state.desafio||''
   };
   // classificação pelo portão de orçamento: 'sim' (quente) x 'duvida' (morno)
@@ -1191,7 +1224,7 @@ async function submitLead(){
         headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY,'Prefer':'return=minimal'},
         body:JSON.stringify({
           nome:dados.nome, whatsapp:dados.whatsapp, email:dados.email,
-          clinica:dados.clinica, area:dados.area,
+          formacao:dados.formacao, clinica:dados.clinica, area:dados.area,
           faturamento:dados.faturamento, investe:dados.investe, desafio:dados.desafio,
           budget:state.budget||'', orcamento:orcamento, origem:'site-performance',
           source:(O.source||'').slice(0,60), medium:(O.medium||'').slice(0,60),

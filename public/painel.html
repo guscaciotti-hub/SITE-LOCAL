@@ -25,7 +25,7 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--tinta);-we
 .custom{display:flex;gap:6px;align-items:center;margin-left:4px}
 .custom input{border:1px solid var(--linha);border-radius:8px;padding:7px 9px;font-family:inherit;font-size:.82rem;color:var(--tinta)}
 .custom button{border:none;background:var(--teal);color:var(--tinta);font-weight:700;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;font-size:.82rem}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:22px}
 .kpi{background:var(--branco);border:1px solid var(--linha);border-radius:16px;padding:22px 24px;box-shadow:var(--sombra)}
 .kpi .lab{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--cinza);margin-bottom:8px}
 .kpi .num{font-size:2.2rem;font-weight:800;letter-spacing:-.02em;color:var(--teal-esc);line-height:1}
@@ -51,12 +51,14 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--tinta);-we
 .badge{display:inline-block;font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:middle;margin-left:8px}
 .badge.hot{background:#fdecea;color:#c0392b}
 .badge.warm{background:#eef6f5;color:var(--teal-esc)}
+.badge.cold{background:#eef2f7;color:#3b5568}
 .lead{border:1px solid var(--linha);border-radius:14px;padding:15px 17px;margin-bottom:12px}
 .lead:last-child{margin-bottom:0}
 .lead-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .lead-head .nm{font-size:1.02rem;font-weight:800}
 .lead-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .lead-meta .chip{font-size:.68rem;font-weight:600;background:var(--off);border:1px solid var(--linha);border-radius:999px;padding:3px 9px;color:var(--teal-esc);text-transform:capitalize}
+.lead-meta .chip.chip-form{background:var(--teal-fnd);color:#fff;border-color:var(--teal-fnd);text-transform:none}
 .lead-meta .when{font-size:.74rem;color:var(--cinza)}
 .lead-contact{font-size:.92rem;font-weight:700;margin:8px 0 12px}
 .lead-contact .wa{margin-left:8px;font-size:.76rem;font-weight:700;color:var(--teal-esc);text-decoration:none;border:1px solid var(--linha);padding:3px 9px;border-radius:8px;white-space:nowrap}
@@ -194,18 +196,36 @@ function fmtDT(iso){
 }
 function kpi(lab,num){ return '<div class="kpi"><div class="lab">'+lab+'</div><div class="num">'+num+'</div></div>'; }
 
+/* faturamento de R$ 30 mil pra cima? (funciona com as faixas novas e as antigas) */
+function fatAlto(f){
+  f=String(f||''); var nums=(f.match(/\d+/g)||[]).map(Number);
+  if(!nums.length) return false;
+  if(/acima/i.test(f)) return true;          // "Acima de R$ X"
+  if(/^at[eé]/i.test(f.trim())) return nums[0]>30; // "Até R$ X" (só é alto se X>30)
+  return nums[0]>=30;                          // faixa "X a Y" → piso = X
+}
+/* etiqueta de prioridade — NÃO bloqueia ninguém, só classifica */
+function classifyLead(l){
+  var sim = l.orcamento ? (l.orcamento==='sim') : (l.budget==='Sim, faz sentido');
+  if(!sim) return {tier:'frio', cls:'cold', label:'❄️ Frio'};
+  return fatAlto(l.faturamento) ? {tier:'quente', cls:'hot', label:'🔥 Quente'}
+                                : {tier:'morno', cls:'warm', label:'Morno'};
+}
+
 function renderLeads(list){
   if(!list.length) return '<div class="muted">Nenhum lead no período. Assim que alguém enviar o formulário do site, aparece aqui com todas as respostas.</div>';
   return list.map(function(l){
     var wa=String(l.whatsapp||'').replace(/\D/g,'');
     var waLink= wa ? '<a class="wa" href="https://wa.me/'+wa+'" target="_blank" rel="noopener">Abrir WhatsApp ↗</a>' : '';
-    var badge = (l.orcamento==='sim') ? '<span class="badge hot">🔥 Quente</span>' : '<span class="badge warm">Morno</span>';
+    var c = classifyLead(l);
+    var badge = '<span class="badge '+c.cls+'">'+c.label+'</span>';
+    var form = l.formacao ? '<span class="chip chip-form">'+esc(l.formacao)+'</span>' : '';
     var chip = l.source ? '<span class="chip">'+esc(l.source)+'</span>' : '';
     var camp = l.campaign ? '<span class="chip">'+esc(l.campaign)+'</span>' : '';
     function qa(lab,val){ return val ? '<div class="qa"><span class="q">'+lab+'</span><span class="a">'+esc(val)+'</span></div>' : ''; }
     return '<div class="lead">'
       +'<div class="lead-head"><div class="nm">'+esc(l.nome||'(sem nome)')+badge+'</div>'
-        +'<div class="lead-meta">'+chip+camp+'<span class="when">'+fmtDT(l.created_at)+'</span></div></div>'
+        +'<div class="lead-meta">'+form+chip+camp+'<span class="when">'+fmtDT(l.created_at)+'</span></div></div>'
       +'<div class="lead-contact">'+esc(l.whatsapp||'—')+waLink+'</div>'
       +'<div class="qas">'
         +qa('Clínica / consultório', l.clinica)
@@ -248,7 +268,7 @@ function render(d, leads, funnel){
   leads = leads || [];
   funnel = funnel || {};
   var views=d.total_views||0, uniq=d.unique_visitors||0;
-  var nLeads=leads.length, nHot=leads.filter(function(l){return l.orcamento==='sim';}).length;
+  var nLeads=leads.length, nHot=leads.filter(function(l){return classifyLead(l).tier==='quente';}).length, nDesq=(funnel.desqualificados||0);
   var days=d.by_day||[], src=d.by_source||[], paths=d.by_path||[], dev=d.by_device||[];
   var maxDay=Math.max(1, ...days.map(function(x){return x.views;}));
   var chart=days.length ? days.map(function(x){
@@ -270,6 +290,7 @@ function render(d, leads, funnel){
       +kpi('Visitantes únicos', uniq)
       +kpi('Leads', nLeads)
       +kpi('Leads quentes', nHot)
+      +kpi('Desqualificados', nDesq)
     +'</div>'
     +'<div class="card"><h2>Leads recebidos <span class="cnt">'+nLeads+'</span></h2>'+renderLeads(leads)+'</div>'
     +'<div class="card"><h2>Funil do formulário</h2>'+renderFunnel(funnel)+'</div>'
