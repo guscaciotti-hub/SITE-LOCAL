@@ -208,8 +208,14 @@ function fatAlto(f){
 function classifyLead(l){
   var sim = l.orcamento ? (l.orcamento==='sim') : (l.budget==='Sim, faz sentido');
   if(!sim) return {tier:'frio', cls:'cold', label:'❄️ Frio'};
-  return fatAlto(l.faturamento) ? {tier:'quente', cls:'hot', label:'🔥 Quente'}
-                                : {tier:'morno', cls:'warm', label:'Morno'};
+  if(fatAlto(l.faturamento)) return {tier:'quente', cls:'hot', label:'🔥 Quente'};
+  // exceção ticket alto: Dentista em Implantodontia/Harmonização orofacial na faixa 10-30 mil → Quente
+  if(l.formacao==='Dentista'
+     && (l.area==='Implantodontia' || l.area==='Harmonização orofacial')
+     && l.faturamento==='R$ 10 mil a R$ 30 mil'){
+    return {tier:'quente', cls:'hot', label:'🔥 Quente'};
+  }
+  return {tier:'morno', cls:'warm', label:'Morno'};
 }
 
 function renderLeads(list){
