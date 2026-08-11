@@ -1164,6 +1164,16 @@ function isValidFone(raw){
   return true;
 }
 
+/* faturamento de R$ 30 mil pra cima? (mesma régua do painel) */
+function fatAlto(f){ f=String(f||''); var nums=(f.match(/\d+/g)||[]).map(Number); if(!nums.length) return false; if(/acima/i.test(f)) return true; if(/^at[eé]/i.test(f.trim())) return nums[0]>30; return nums[0]>=30; }
+/* classificação do lead: quente | morno | frio (idêntica à do painel) */
+function classificarLead(st, orc){
+  if(orc!=='sim') return 'frio';
+  if(fatAlto(st.faturamento)) return 'quente';
+  if(st.formacao==='Dentista' && (st.area==='Implantodontia' || st.area==='Harmonização orofacial') && st.faturamento==='R$ 10 mil a R$ 30 mil') return 'quente';
+  return 'morno';
+}
+
 async function submitLead(){
   stage.innerHTML='<div class="done"><h3>Enviando...</h3><p>Só um instante.</p></div>';
 
@@ -1176,6 +1186,12 @@ async function submitLead(){
   // classificação pelo portão de orçamento: 'sim' (quente) x 'duvida' (morno)
   const orcamento = (state.budget==='Sim, faz sentido') ? 'sim' : 'duvida';
 
+  // ── campos p/ o webhook: formação codificada + classificação (quente/morno/frio) ──
+  // "Outra área da saúde" nem chega aqui (rota de desqualificação não dispara webhook).
+  var FORMACAO_COD = {'Médico(a)':'medico','Dentista':'dentista','Sou dono ou gestor de clínica médica/odontológica':'dono_clinica'};
+  var formacaoCod = FORMACAO_COD[state.formacao] || '';
+  var classificacao = classificarLead(state, orcamento);
+
   // ── 1) Evoluze Chat (webhook) — só leads QUALIFICADOS chegam aqui (ver finish()) ──
   const enviaChat=(async()=>{
     try{
@@ -1185,7 +1201,8 @@ async function submitLead(){
         body:JSON.stringify({
           nome:dados.nome, whatsapp:dados.whatsapp, email:dados.email, clinica:dados.clinica,
           area:dados.area, faturamento:dados.faturamento, investe:dados.investe,
-          desafio:dados.desafio, orcamento:orcamento, origem:"site-performance"
+          desafio:dados.desafio, orcamento:orcamento, origem:"site-performance",
+          formacao:formacaoCod, classificacao:classificacao
         })
       });
       if(!r.ok){ console.error('Evoluze Chat: HTTP '+r.status); return false; }
