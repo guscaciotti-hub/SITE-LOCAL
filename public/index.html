@@ -870,8 +870,10 @@ const CONFIG = {
 
 /* dispara conversão no Pixel/GTM se estiverem configurados */
 function fireConversion(){
+  // id único por lead → Google DEDUPLICA (conta 1) mesmo se a tag mandar o hit 2x
+  var _txid='lead_'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
   try{ if(typeof fbq==='function') fbq('track','Lead'); }catch(e){}
-  try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-17785540924/R5RwCPWs_ewcELyi56BC'}); }catch(e){}
+  try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-17785540924/R5RwCPWs_ewcELyi56BC','transaction_id':_txid}); }catch(e){}
   try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_form_submit'}); }catch(e){}
 }
 
