@@ -1257,10 +1257,12 @@ async function submitLead(){
 
   // os três disparam em PARALELO; a falha de um não afeta o outro
   const resultados = await Promise.all([enviaChat, enviaFormspree, enviaSupabase]);
-  const chatOk = resultados[0], formspreeOk = resultados[1];
+  const chatOk = resultados[0], formspreeOk = resultados[1], supabaseOk = resultados[2];
 
-  // sucesso se ALGUM destino recebeu o lead (webhook falhar sozinho não bloqueia)
-  if(chatOk || formspreeOk){
+  // sucesso se ALGUM destino recebeu o lead. O banco (Supabase) é confiável, então a
+  // conversão (Pixel Lead + evento do Google) dispara sempre que o lead é CAPTURADO —
+  // nunca fica refém do webhook do Evoluze Chat. Só cai no erro se TODOS falharem.
+  if(chatOk || formspreeOk || supabaseOk){
     fireConversion();
     try{ window.__evForm && window.__evForm('submit',9); }catch(e){}
     // lead QUALIFICADO (quente) = mesma régua que classifica o webhook: orçamento 'sim'.
