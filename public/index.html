@@ -32,6 +32,15 @@ fbq('init','1596531545529516');
 fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1596531545529516&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google tag (gtag.js) — Google Ads. A conversão "LEAD - Médico/Dentista/Dono" dispara no envio do form (ver fireConversion). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17785540924"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17785540924');
+</script>
 <!-- End Meta Pixel -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -862,6 +871,7 @@ const CONFIG = {
 /* dispara conversão no Pixel/GTM se estiverem configurados */
 function fireConversion(){
   try{ if(typeof fbq==='function') fbq('track','Lead'); }catch(e){}
+  try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-17785540924/R5RwCPWs_ewcELyi56BC'}); }catch(e){}
   try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_form_submit'}); }catch(e){}
 }
 
