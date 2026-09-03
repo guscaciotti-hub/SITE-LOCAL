@@ -34,12 +34,12 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1596531545529516&ev=PageView&noscript=1"/></noscript>
 
 <!-- Google tag (gtag.js) — Google Ads. A conversão "LEAD - Médico/Dentista/Dono" dispara no envio do form (ver fireConversion). -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17785540924"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18428282557"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-17785540924');
+  gtag('config', 'AW-18428282557');
 </script>
 <!-- End Meta Pixel -->
 
@@ -873,7 +873,7 @@ function fireConversion(){
   // id único por lead → Google DEDUPLICA (conta 1) mesmo se a tag mandar o hit 2x
   var _txid='lead_'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
   try{ if(typeof fbq==='function') fbq('track','Lead'); }catch(e){}
-  try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-17785540924/R5RwCPWs_ewcELyi56BC','transaction_id':_txid}); }catch(e){}
+  try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-18428282557/HXZuCNGd0e0cEL2NpdNE','transaction_id':_txid}); }catch(e){}
   try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_form_submit'}); }catch(e){}
 }
 
